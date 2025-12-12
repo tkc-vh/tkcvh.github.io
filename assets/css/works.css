@@ -1,6 +1,5 @@
 /* ===================================================
    TKC-VH — WORKS / CONTENT BASE CSS
-   Dùng chung cho tất cả trang nội dung
    =================================================== */
 
 *{ box-sizing:border-box; }
@@ -114,24 +113,22 @@ a{
   color:#f2de9c;
   text-decoration:none;
 }
-
 a:hover{ text-decoration:underline; }
 
 /* ===================================================
-   T35-C1 — SONG HÀNH VI | EN
+   GENERIC BILINGUAL GRID (DÙNG CHUNG)
    =================================================== */
 
-.t35c1-grid{
+.bilingual-grid{
   display:grid;
   grid-template-columns:1fr 1fr;
   gap:18px;
-  margin-top:16px;
 }
 
-.t35c1-grid .box{
+.bilingual-grid .box{
   margin:0;
 }
 
 @media(max-width:768px){
-  .t35c1-grid{ grid-template-columns:1fr; }
+  .bilingual-grid{ grid-template-columns:1fr; }
 }
