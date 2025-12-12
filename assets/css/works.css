@@ -481,3 +481,134 @@ h1::before{
   line-height: 1.75;
   color: rgba(227,221,207,.92);
 }
+
+/* =========================================
+   DARK THEME — Royal refine (append last)
+   ========================================= */
+
+/* 1) Nền đen sâu + sương tím rất nhẹ */
+body{
+  background:
+    radial-gradient(1000px 700px at 18% 18%, rgba(180,120,255,.10), rgba(0,0,0,0) 62%),
+    radial-gradient(1100px 760px at 82% 24%, rgba(255,255,255,.05), rgba(0,0,0,0) 64%),
+    radial-gradient(1200px 840px at 50% 105%, rgba(242,222,156,.06), rgba(0,0,0,0) 58%),
+    linear-gradient(180deg, #05070d, #03040a);
+}
+
+/* 2) Khung: vàng ấm hơn + viền 2 lớp rõ mà tinh */
+.sanctuary{
+  border-color: rgba(242,222,156,.34);
+  box-shadow:
+    0 30px 110px rgba(0,0,0,.68),
+    0 0 0 1px rgba(214,178,94,.20) inset,
+    0 0 48px rgba(242,222,156,.12);
+}
+.sanctuary::before{
+  border-color: rgba(242,222,156,.14);
+}
+.sanctuary::after{
+  box-shadow: 0 0 0 1px rgba(255,255,255,.05) inset;
+}
+
+/* 3) Góc triện: sáng vừa đủ, không “chói bốn góc” */
+.corner{
+  border-color: rgba(242,222,156,.62) !important;
+  box-shadow: 0 0 12px rgba(242,222,156,.20) !important;
+  opacity:.92 !important;
+}
+
+/* 4) Logo: glow mềm + nhịp thở sâu (không giật) */
+.seal{
+  box-shadow:
+    0 0 22px rgba(255,240,210,.55),
+    0 0 90px rgba(190,130,255,.14),
+    0 18px 60px rgba(0,0,0,.55);
+  animation: sealBreath 10.8s ease-in-out infinite;
+}
+@keyframes sealBreath{
+  0%,100%{ transform:translateY(0) scale(1); filter:brightness(1); }
+  50%{ transform:translateY(-1px) scale(1.02); filter:brightness(1.03); }
+}
+
+/* 5) Tiêu đề: viền vàng khắc nổi + rõ chữ hơn */
+h1{
+  letter-spacing:.35px;
+  text-shadow:
+    0 2px 0 rgba(0,0,0,.80),
+    0 0 22px rgba(242,222,156,.22);
+}
+h1::before{
+  -webkit-text-stroke: 1.35px rgba(242,222,156,.78);
+}
+.subtitle{
+  color: rgba(242,222,156,.82);
+  opacity:.95;
+}
+
+/* 6) Card: “lụa đen” + đường viền hoàng gia, giảm cảm giác mỏng */
+.box{
+  border-color: rgba(242,222,156,.26);
+  background:
+    radial-gradient(640px 240px at 32% 0%, rgba(242,222,156,.09), rgba(0,0,0,0) 62%),
+    linear-gradient(180deg, rgba(0,0,0,.30), rgba(0,0,0,.18));
+  box-shadow:
+    0 16px 44px rgba(0,0,0,.44),
+    0 0 0 1px rgba(214,178,94,.16) inset;
+}
+.box::before{
+  border-color: rgba(255,240,210,.11);
+}
+.box::after{
+  opacity:.82;
+}
+
+/* 7) Bìa: gương nhẹ + ánh vàng trên đỉnh + hover “đẳng cấp” */
+.cover-card{
+  border-color: rgba(242,222,156,.26);
+  box-shadow:
+    0 18px 56px rgba(0,0,0,.54),
+    0 0 0 1px rgba(214,178,94,.14) inset;
+}
+.cover-card::after{
+  background:
+    radial-gradient(700px 320px at 50% 0%, rgba(242,222,156,.16), rgba(0,0,0,0) 55%),
+    linear-gradient(180deg, rgba(0,0,0,.06), rgba(0,0,0,.55));
+}
+
+/* “Moon mirror” reflection (nhẹ, không lố) */
+.cover-card{ position:relative; overflow:hidden; }
+.cover-card::before{
+  content:"";
+  position:absolute;
+  left:0; right:0;
+  bottom:-34%;
+  height:34%;
+  background:
+    linear-gradient(to bottom,
+      rgba(255,255,255,.20),
+      rgba(255,255,255,.10) 30%,
+      rgba(0,0,0,.30) 62%,
+      rgba(0,0,0,.72)
+    );
+  filter: blur(2px);
+  opacity:.38;
+  transform: scaleY(-1);
+  pointer-events:none;
+}
+.cover-card:hover{
+  transform: translateY(-2px);
+  transition:.22s ease;
+  box-shadow:
+    0 22px 70px rgba(0,0,0,.62),
+    0 0 0 1px rgba(242,222,156,.16) inset,
+    0 0 28px rgba(242,222,156,.10);
+}
+
+/* 8) Link: vàng cổ điển hơn, bớt “gắt” */
+a{
+  color: rgba(242,222,156,.92);
+  border-bottom-color: rgba(242,222,156,.28);
+}
+a:hover{
+  border-bottom-color: rgba(242,222,156,.70);
+}
