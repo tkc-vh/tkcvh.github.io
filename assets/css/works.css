@@ -1,67 +1,193 @@
-/* ================================
-   ROYAL FRAME UPGRADE (WORKS)
-   ================================ */
+/* =========================================================
+   TKC-VH — WORKS / CONTENT SHARED CSS (ROYAL EDITION)
+   Use for Works page + all detail/content pages (NO banner)
+   ========================================================= */
 
+/* ---------- Tokens ---------- */
 :root{
-  --royal-gold: rgba(242, 222, 156, .95);
-  --royal-gold-soft: rgba(242, 222, 156, .22);
-  --royal-gold-dim: rgba(214, 178, 94, .35);
-  --royal-ink: rgba(6, 10, 16, .72);
-  --royal-ink2: rgba(0, 0, 0, .22);
-  --royal-stroke: rgba(255, 240, 210, .18);
+  --bgA:#070a12;
+  --bgB:#070f1a;
+
+  --ink:#f3f0e6;
+  --muted:#c7c2b2;
+
+  --gold:#d6b25e;
+  --gold2:#f2de9c;
+  --goldSoft: rgba(242,222,156,.22);
+  --goldLine: rgba(242,222,156,.28);
+  --stroke: rgba(255,240,210,.18);
+
+  --cardTop: rgba(0,0,0,.26);
+  --cardBot: rgba(0,0,0,.14);
+
+  --frameA: rgba(8,12,18,.55);
+  --frameB: rgba(6,10,16,.35);
+
+  --shadowA: 0 26px 90px rgba(0,0,0,.62);
+  --shadowB: 0 14px 38px rgba(0,0,0,.38);
+
+  --radiusFrame: 26px;
+  --radiusInner: 20px;
+  --radiusCard: 18px;
+
+  --max: 980px;
 }
 
-/* Khung tổng: 2 lớp + ánh vàng + chiều sâu */
+/* ---------- Reset ---------- */
+*{ box-sizing:border-box; }
+html,body{ height:100%; }
+body{
+  margin:0;
+  color:var(--ink);
+  font-family: ui-serif, Georgia, "Times New Roman", Times, serif;
+  background:
+    radial-gradient(900px 560px at 22% 18%, rgba(210,160,255,.10), rgba(0,0,0,0) 60%),
+    radial-gradient(1000px 700px at 78% 22%, rgba(255,255,255,.06), rgba(0,0,0,0) 62%),
+    radial-gradient(1200px 820px at 50% 105%, rgba(214,178,94,.06), rgba(0,0,0,0) 58%),
+    linear-gradient(180deg, var(--bgB), var(--bgA));
+  overflow-x:hidden;
+}
+
+/* ---------- Ambient layers ---------- */
+.veil{
+  position:fixed; inset:-20%;
+  pointer-events:none; z-index:0;
+  background:
+    radial-gradient(820px 520px at 30% 22%, rgba(255,255,255,.08), rgba(255,255,255,0) 60%),
+    radial-gradient(980px 640px at 70% 28%, rgba(190,130,255,.10), rgba(190,130,255,0) 62%),
+    radial-gradient(1200px 760px at 48% 72%, rgba(255,255,255,.05), rgba(255,255,255,0) 66%),
+    radial-gradient(900px 700px at 15% 80%, rgba(140,90,220,.08), rgba(140,90,220,0) 70%);
+  filter: blur(12px);
+  opacity:.95;
+  animation: veilDrift 18s ease-in-out infinite;
+}
+@keyframes veilDrift{
+  0%,100%{transform:translate3d(0,0,0) scale(1);opacity:.78;}
+  50%{transform:translate3d(-1.2%,.8%,0) scale(1.02);opacity:.88;}
+}
+
+.vignette{
+  position:fixed; inset:0;
+  pointer-events:none; z-index:1;
+  background: radial-gradient(1200px 800px at 50% 45%, rgba(0,0,0,0), rgba(0,0,0,.55) 70%, rgba(0,0,0,.78) 100%);
+  opacity:.9;
+}
+
+/* ---------- Layout ---------- */
+main{
+  position:relative; z-index:2;
+  max-width:var(--max);
+  margin:70px auto;
+  padding:0 18px;
+}
+
+/* ---------- Royal frame ---------- */
 .sanctuary{
   position:relative;
-  border-radius:26px;
+  border-radius:var(--radiusFrame);
   padding:30px 24px 26px;
-  border: 1px solid rgba(242, 222, 156, .28);
+  border: 1px solid var(--goldLine);
   background:
     radial-gradient(900px 520px at 50% -10%, rgba(242,222,156,.10), rgba(0,0,0,0) 55%),
     radial-gradient(900px 520px at 15% 25%, rgba(190,130,255,.09), rgba(0,0,0,0) 60%),
     radial-gradient(900px 520px at 85% 25%, rgba(255,255,255,.06), rgba(0,0,0,0) 62%),
-    linear-gradient(180deg, rgba(8,12,18,.55), rgba(6,10,16,.35));
+    linear-gradient(180deg, var(--frameA), var(--frameB));
   box-shadow:
-    0 26px 90px rgba(0,0,0,.62),
+    var(--shadowA),
     0 0 0 1px rgba(214,178,94,.18) inset,
     0 0 38px rgba(242,222,156,.10);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
+  overflow:hidden;
 }
-
 .sanctuary::before{
   content:"";
   position:absolute;
   inset:12px;
-  border-radius:20px;
+  border-radius:var(--radiusInner);
   border:1px solid rgba(242,222,156,.12);
   pointer-events:none;
 }
-
 .sanctuary::after{
   content:"";
   position:absolute;
   inset:0;
-  border-radius:26px;
+  border-radius:var(--radiusFrame);
   pointer-events:none;
   box-shadow: 0 0 0 1px rgba(255,255,255,.06) inset;
 }
 
-/* Card: “lụa đen” + viền vàng 2 lớp + gờ nhẹ */
+/* ---------- Seal / Logo ---------- */
+.seal-wrap{ display:flex; justify-content:center; margin-top:6px; }
+
+.seal{
+  width:150px; height:150px; border-radius:999px;
+  display:grid; place-items:center;
+  background: radial-gradient(circle at 50% 45%, rgba(0,0,0,.35) 0%, rgba(0,0,0,.92) 62%, rgba(0,0,0,1) 100%);
+  border:4px solid rgba(255,240,210,.95);
+  box-shadow:0 0 18px rgba(255,240,210,.60), 0 0 60px rgba(190,130,255,.16);
+  overflow:hidden;
+  animation: moonPulse 8.6s ease-in-out infinite;
+}
+@keyframes moonPulse{ 0%,100%{transform:scale(1)} 50%{transform:scale(1.03)} }
+
+.seal img{
+  width:88%; height:88%;
+  border-radius:999px;
+  object-fit:cover;
+  display:block;
+  box-shadow: inset 0 0 16px rgba(0,0,0,.75);
+}
+
+/* ---------- Headings ---------- */
+h1{
+  margin:14px 0 4px;
+  text-align:center;
+  font-size:34px;
+  letter-spacing:.2px;
+}
+.subtitle{
+  text-align:center;
+  color:var(--muted);
+  font-size:13px;
+  letter-spacing:.9px;
+  text-transform:uppercase;
+  margin-bottom:10px;
+}
+.divider{
+  width:240px; height:2px;
+  margin:14px auto 18px;
+  background:linear-gradient(to right, rgba(255,255,255,0), rgba(242,222,156,.85), rgba(255,255,255,0));
+  box-shadow:0 0 12px rgba(242,222,156,.30);
+  border-radius:999px;
+  opacity:.95;
+}
+
+/* ---------- Body text ---------- */
+p{ margin:10px 0; line-height:1.7; font-size:15px; color:#e3ddcf; }
+ul{ margin:0; padding-left:18px; line-height:1.75; color:#d0c8b8; font-size:15px; }
+
+/* ---------- Links ---------- */
+a{
+  color:var(--gold2);
+  text-decoration:none;
+  border-bottom:1px dotted rgba(242,222,156,.32);
+}
+a:hover{ border-bottom-color: rgba(242,222,156,.75); }
+
+/* ---------- Royal cards ---------- */
 .box{
   position:relative;
-  border-radius:18px;
+  border-radius:var(--radiusCard);
   padding:16px 16px 14px;
   border:1px solid rgba(242,222,156,.22);
   background:
     radial-gradient(600px 220px at 30% 0%, rgba(242,222,156,.08), rgba(0,0,0,0) 60%),
-    linear-gradient(180deg, rgba(0,0,0,.26), rgba(0,0,0,.14));
+    linear-gradient(180deg, var(--cardTop), var(--cardBot));
   box-shadow:
-    0 14px 38px rgba(0,0,0,.38),
+    var(--shadowB),
     0 0 0 1px rgba(214,178,94,.18) inset;
 }
-
 .box::before{
   content:"";
   position:absolute;
@@ -70,7 +196,6 @@
   border:1px solid rgba(255,240,210,.10);
   pointer-events:none;
 }
-
 .box::after{
   content:"";
   position:absolute;
@@ -81,7 +206,6 @@
   opacity:.75;
 }
 
-/* Hover: sang – nhẹ – không lố */
 .box:hover{
   border-color: rgba(242,222,156,.34);
   box-shadow:
@@ -92,7 +216,7 @@
   transition: .22s ease;
 }
 
-/* Tiêu đề nhỏ (kicker) cho “hoàng gia” hơn */
+/* ---------- Kicker ---------- */
 .kicker{
   margin:0 0 10px;
   font-size:13px;
@@ -100,28 +224,23 @@
   text-transform:uppercase;
   color: rgba(242,222,156,.92);
 }
-
 .kicker b{
   color: rgba(255,255,255,.92);
   font-weight:700;
 }
 
-/* Link: vàng cổ điển */
-a{
-  color: rgba(242,222,156,.95);
-  text-decoration:none;
-  border-bottom: 1px dotted rgba(242,222,156,.32);
-}
-a:hover{
-  border-bottom-color: rgba(242,222,156,.75);
-}
-
-/* Lưới song hành: thêm “vách vàng” giữa 2 cột */
+/* ---------- Bilingual grid (generic, reusable) ---------- */
 .bilingual-grid{
-  position:relative;
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap:18px;
   margin-top:16px;
+  position:relative;
 }
-
+.bilingual-grid .box{
+  margin:0;
+  max-width:none;
+}
 .bilingual-grid::before{
   content:"";
   position:absolute;
@@ -140,7 +259,24 @@ a:hover{
   pointer-events:none;
 }
 
-/* Mobile: bỏ vách giữa */
+/* ---------- Footer ---------- */
+.footer{
+  margin-top:14px;
+  text-align:center;
+  font-size:13px;
+  color:#bdb7a5;
+}
+
+/* ---------- Accessibility ---------- */
+@media (prefers-reduced-motion: reduce){
+  .veil,.seal{ animation:none !important; }
+}
+
+/* ---------- Mobile ---------- */
 @media (max-width: 768px){
+  main{ margin:44px auto 64px; }
+  h1{ font-size:24px; }
+  .seal{ width:120px; height:120px; }
+  .bilingual-grid{ grid-template-columns:1fr; }
   .bilingual-grid::before{ display:none; }
 }
