@@ -467,3 +467,17 @@ h1::before{
     box-shadow: 0 22px 56px rgba(0,0,0,.55);
   }
 }
+
+.intro-box .intro-verse{
+  margin: 6px 0 10px;
+  font-style: italic;
+  letter-spacing: .2px;
+  line-height: 1.85;
+  color: rgba(255,255,255,.88);
+}
+
+.intro-box .intro-desc{
+  margin: 0;
+  line-height: 1.75;
+  color: rgba(227,221,207,.92);
+}
