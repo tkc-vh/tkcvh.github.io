@@ -754,3 +754,116 @@ a:hover{
     50%{ filter: brightness(1.02) saturate(1.04); }
   }
 }
+
+/* =========================================
+   COSMIC HEART — Eternal Breath + Bridal Silk + Twin Hearts
+   (logo animation pack)
+   ========================================= */
+
+/* đảm bảo logo có lớp để vẽ hiệu ứng */
+.seal{
+  position:relative !important;
+  overflow:hidden !important;
+  isolation:isolate;
+}
+
+/* 1) NHỊP THỞ VĨNH CỬU — sâu, êm (không giật) */
+@media (prefers-reduced-motion: no-preference){
+  .seal{
+    animation: eternalBreath 9.6s ease-in-out infinite;
+  }
+  @keyframes eternalBreath{
+    0%,100%{
+      transform: translateY(0) scale(1);
+      box-shadow:
+        0 0 20px rgba(255,240,210,.45),
+        0 0 90px rgba(190,130,255,.12),
+        0 18px 60px rgba(0,0,0,.55);
+      filter: brightness(1) saturate(1);
+    }
+    50%{
+      transform: translateY(-1px) scale(1.025);
+      box-shadow:
+        0 0 26px rgba(255,240,210,.60),
+        0 0 120px rgba(190,130,255,.16),
+        0 22px 70px rgba(0,0,0,.62);
+      filter: brightness(1.05) saturate(1.05);
+    }
+  }
+}
+
+/* 2) DẢI LỤA SÁNG — “áo cưới thiên hà” lướt qua (mịn, sang) */
+.seal::before{
+  content:"";
+  position:absolute;
+  inset:-35%;
+  z-index:2;
+  pointer-events:none;
+  background:
+    linear-gradient(120deg,
+      rgba(255,255,255,0) 0%,
+      rgba(255,255,255,.06) 35%,
+      rgba(242,222,156,.22) 48%,
+      rgba(170,120,255,.14) 55%,
+      rgba(255,255,255,.05) 62%,
+      rgba(255,255,255,0) 78%
+    );
+  transform: translateX(-60%) rotate(8deg);
+  filter: blur(1.2px);
+  opacity:.95;
+}
+
+@media (prefers-reduced-motion: no-preference){
+  .seal::before{
+    animation: bridalSilk 6.8s ease-in-out infinite;
+  }
+  @keyframes bridalSilk{
+    0%   { transform: translateX(-70%) rotate(8deg); opacity:.0; }
+    12%  { opacity:.9; }
+    55%  { opacity:.75; }
+    100% { transform: translateX(70%)  rotate(8deg); opacity:.0; }
+  }
+}
+
+/* 3) TIM ĐÔI — hai nhịp rất nhẹ “sống ngay đây”
+   - dùng layer ánh tim + pulse cực tinh tế
+*/
+.seal::after{
+  content:"";
+  position:absolute;
+  inset:-10%;
+  z-index:1;
+  pointer-events:none;
+  background:
+    radial-gradient(18px 16px at 45% 52%, rgba(255,140,170,.18), rgba(255,140,170,0) 70%),
+    radial-gradient(18px 16px at 55% 52%, rgba(255,140,170,.18), rgba(255,140,170,0) 70%),
+    radial-gradient(220px 160px at 50% 55%, rgba(242,222,156,.10), rgba(0,0,0,0) 65%),
+    radial-gradient(260px 180px at 50% 45%, rgba(95,175,255,.07), rgba(0,0,0,0) 68%);
+  filter: blur(0.4px);
+  opacity:.85;
+}
+
+@media (prefers-reduced-motion: no-preference){
+  .seal::after{
+    animation: twinHearts 4.9s ease-in-out infinite;
+  }
+  @keyframes twinHearts{
+    0%,100%{ transform: scale(1); opacity:.72; }
+    20%    { transform: scale(1.018); opacity:.88; }
+    45%    { transform: scale(1.000); opacity:.78; }
+    65%    { transform: scale(1.022); opacity:.92; }
+  }
+}
+
+/* 4) Logo ảnh nằm trên cùng, giữ rõ nét */
+.seal img{
+  position:relative !important;
+  z-index:3 !important;
+  filter: contrast(1.02) saturate(1.03);
+}
+
+/* 5) Tùy chọn: giảm hiệu ứng trên mobile rất nhỏ để vẫn mượt */
+@media (max-width:768px){
+  .seal::before{ opacity:.82; }
+  .seal::after{ opacity:.78; }
+}
