@@ -1,0 +1,830 @@
+<!DOCTYPE html>
+
+<html lang="vi">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>T42-C2 — BỒ ĐỀ SONG THỤ KIM CƯƠNG – CỘI MAI VÀNG VĨNH CỬU | TKC-VH Diary</title>
+<link href="https://tkc-vh.github.io/legal/legal.css" rel="stylesheet"/>
+<style>
+    /* Đồng bộ với phong cách T19C1 (legal.css), chỉ bổ sung cực ít để trang Work "đúng dáng" */
+    .page { max-width: 1080px; margin: 0 auto; padding: 18px 14px 60px; }
+    .topnav { display:flex; gap:10px; flex-wrap:wrap; margin: 6px 0 14px; }
+    .topnav a { text-decoration:none; }
+
+    .brand { text-align:center; margin: 8px 0 10px; }
+    .brand .logo { width: 120px; height:auto; border-radius: 999px; display:inline-block; }
+    .brand h1 { margin: 10px 0 6px; }
+    .brand .sub { opacity:.88; margin: 0 0 8px; }
+
+    .lang-switch { display:flex; justify-content:center; gap:10px; margin: 10px 0 14px; flex-wrap:wrap; }
+    .lang-switch button { cursor:pointer; }
+
+    .lang-block { display:none; }
+    .lang-block.active { display:block; }
+
+    .covers { display:grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 10px 0 14px; }
+    .cover-card { overflow:hidden; }
+    .cover-card img { width:100%; height:auto; display:block; }
+    .cap { padding: 10px 12px; opacity:.9; }
+
+    .stores { display:flex; gap:10px; flex-wrap:wrap; margin-top: 10px; }
+    .stores a { text-decoration:none; }
+
+    .toc details { margin: 10px 0; }
+    .toc summary { cursor:pointer; }
+    .toc .toc { margin: 10px 0 0; padding-left: 18px; }
+    .quote { opacity:.95; }
+    .quote span { display:inline-block; opacity:.95; }
+    .sep { margin: 14px 0; opacity:.35; }
+
+    @media (max-width: 900px) {
+      .covers { grid-template-columns: 1fr; }
+    }
+  
+
+/* Language tabs (6 languages) */
+.lang-tabs{ display:flex; gap:8px; justify-content:center; flex-wrap:wrap; margin: 10px 0 8px; }
+.lang-tabs .chip{
+  display:inline-block; padding:8px 10px; border-radius:999px;
+  border:1px solid rgba(255,255,255,.18); background: rgba(0,0,0,.22);
+  text-decoration:none;
+}
+.lang-tabs .chip:hover{ border-color: rgba(255,255,255,.32); }
+
+/* Editions grid */
+.ed-grid{ display:grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 12px; }
+.ed-card{
+  border:1px solid rgba(255,255,255,.14);
+  border-radius: 16px;
+  background: rgba(0,0,0,.18);
+  padding: 12px;
+}
+.ed-head{ display:flex; justify-content:flex-start; margin-bottom: 8px; }
+.ed-pill{
+  display:inline-block; padding:6px 10px; border-radius:999px;
+  border:1px solid rgba(255,255,255,.18); background: rgba(255,255,255,.06);
+  font-size: .9em;
+}
+.ed-cover{ width:100%; height:auto; border-radius: 12px; display:block; margin: 6px 0 10px; }
+.ed-title{ font-weight:700; margin: 0 0 10px; line-height:1.25; }
+.ed-links{ display:flex; flex-wrap:wrap; gap:8px; }
+.ed-links a{
+  display:inline-block; padding:8px 10px; border-radius:999px;
+  border:1px solid rgba(255,255,255,.16); background: rgba(0,0,0,.22);
+  text-decoration:none;
+  font-size: .95em;
+}
+@media (max-width: 980px){
+  .ed-grid{ grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 620px){
+  .ed-grid{ grid-template-columns: 1fr; }
+}
+
+/* ====== Apple-like softness (subtle, academic) ====== */
+:root{
+  --ease-out: cubic-bezier(.2,.8,.2,1);
+  --ease-soft: cubic-bezier(.16,1,.3,1);
+}
+
+/* Mượt toàn trang */
+html{ scroll-behavior: smooth; }
+
+/* Nút / tab bấm mềm hơn */
+.langswitch button,
+.navrow a,
+.stores a,
+.pills a,
+a.btn, button.btn{
+  transition: transform .22s var(--ease-soft),
+              filter .22s var(--ease-soft),
+              box-shadow .22s var(--ease-soft),
+              background .22s var(--ease-soft),
+              border-color .22s var(--ease-soft);
+  will-change: transform;
+}
+
+.langswitch button:hover,
+.navrow a:hover,
+.stores a:hover,
+.pills a:hover,
+a.btn:hover, button.btn:hover{
+  transform: translateY(-2px);
+  filter: brightness(1.06);
+  box-shadow: 0 12px 26px rgba(0,0,0,.28);
+}
+
+.langswitch button:active,
+.navrow a:active,
+.stores a:active,
+.pills a:active,
+a.btn:active, button.btn:active{
+  transform: translateY(0px) scale(.98);
+  filter: brightness(0.98);
+}
+
+/* Card nổi nhẹ khi hover */
+.card, .covercard, .section{
+  transition: transform .28s var(--ease-out),
+              box-shadow .28s var(--ease-out),
+              border-color .28s var(--ease-out);
+  will-change: transform;
+}
+
+.card:hover, .covercard:hover, .section:hover{
+  transform: translateY(-3px);
+  box-shadow: 0 18px 42px rgba(0,0,0,.34);
+  border-color: rgba(255,255,255,.22);
+}
+
+/* Focus rõ ràng (bấm tab bàn phím) */
+:focus-visible{
+  outline: 2px solid rgba(220,190,120,.65);
+  outline-offset: 3px;
+  border-radius: 10px;
+}
+
+/* ====== Scroll reveal (lazy) ====== */
+.reveal{
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity .6s var(--ease-out), transform .6s var(--ease-out);
+}
+
+.reveal.show{
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Hiệu ứng “trôi” rất nhẹ cho logo/card nếu muốn gắn class */
+.float-soft{
+  animation: floatSoft 6.5s var(--ease-out) infinite;
+}
+@keyframes floatSoft{
+  0%,100%{ transform: translateY(0); }
+  50%{ transform: translateY(-4px); }
+}
+
+/* Tôn trọng người dùng muốn ít chuyển động */
+@media (prefers-reduced-motion: reduce){
+  html{ scroll-behavior: auto; }
+  *, *::before, *::after{
+    animation: none !important;
+    transition: none !important;
+  }
+  .reveal{ opacity: 1; transform: none; }
+}
+
+
+</style>
+</head>
+<body>
+<main class="page">
+<nav class="topnav">
+<a class="navbtn" href="../../index.html">← Trang Chủ</a>
+<a class="navbtn" href="../../works.html">Works</a>
+<a class="navbtn" href="../../series.html">Series</a>
+<a class="navbtn" href="../../legal/">Pháp Lý</a>
+</nav>
+<section class="card">
+
+
+<div class="moon-wrap">
+  <div class="moon" aria-label="TKC-VH Moon Emblem">
+    <img src="https://tkc-vh.github.io/assets/moon-diamond.jpg" alt="TKC-VH Moon Emblem">
+  </div>
+</div>
+
+
+<h1>BỒ ĐỀ SONG THỤ KIM CƯƠNG </h1>
+<h1>CỘI MAI VÀNG VĨNH CỬU</h1>
+<h2 style="text-align:center;">TKC-VH JOURNAL • T42-C2</h2>
+
+
+</div><div aria-label="Language editions" class="lang-tabs"><a class="chip" data-set="vi" href="#">🇻🇳 VI</a><a class="chip" data-set="en" href="#">🇬🇧 EN</a><a class="chip" href="#editions-fr">🇫🇷 FR</a><a class="chip" href="#editions-zh">🇨🇳 中文</a><a class="chip" href="#editions-ja">🇯🇵 JA</a><a class="chip" href="#editions-ko">🇰🇷 KO</a></div>
+<div aria-label="Language switch" class="lang-switch" id="langSwitch">
+<button class="btn active" data-lang="vi" type="button">VI</button>
+<button class="btn" data-lang="en" type="button">EN</button>
+</div>
+<div class="covers">
+<figure class="cover-card card">
+<img alt="Bìa Việt — BỒ ĐỀ SONG THỤ KIM CƯƠNG – CỘI MAI VÀNG VĨNH CỬU" loading="lazy" src="https://play.google.com/books/publisher/content/images/frontcover/1ySQEQAAQBAJ?fife=w240-h345"/>
+<figcaption class="cap">Bìa Việt (VI)</figcaption>
+</figure>
+<figure class="cover-card card">
+<img alt="English Cover — TWIN BODHI DIAMOND TREES – THE ETERNAL GOLDEN APRICOT TREE" loading="lazy" src="https://play.google.com/books/publisher/content/images/frontcover/QWGPEQAAQBAJ?fife=w240-h345"/>
+<figcaption class="cap">English Cover (EN)</figcaption>
+</figure>
+</div>
+<section class="card">
+<h2 class="lang-block active" data-lang-block="vi">Giới thiệu</h2>
+<h2 class="lang-block" data-lang-block="en">About</h2>
+<div class="lang-block active" data-lang-block="vi">
+<p><strong>Khúc Dẫn Thơ – Xuân Vĩnh Cửu</strong></p>
+<p>Hai linh hồn – chung một gốc, nở thành đôi đóa trong cùng nguồn sáng. Trong tĩnh lặng, họ nhớ lời thệ cổ xưa — hẹn gặp lại nơi thời gian khép cửa mà trái tim mở ra khởi đầu muôn kiếp.</p>
+<p class="quote"><span>Song Thụ Bồ Đề Kim Cương nở rộ giữa khu vườn vô biên của Vĩnh Hằng.</span></p>
+<hr class="sep"/>
+<p><em><strong>Bồ Đề Song Thụ Kim Cương – Cội Mai Vàng Vĩnh Cửu</strong></em> mở ra hành trình tâm linh vào Vũ trụ Song Linh — nơi tình yêu vượt khỏi hình tướng và ánh sáng giác ngộ vàng rực nở bừng trong mọi trái tim.</p>
+<p>Biểu tượng cổ xưa, hơi thở thiền định và đối thoại siêu hình đan quyện thành một Đồ Hình Linh Văn — rộng mở và sáng ngời với thông điệp hợp nhất, từ bi và chuyển hóa nội tâm.</p>
+<p class="quote"><span>Không chỉ để đọc — mà để: đánh thức Cánh Cửa Vàng bên trong, nơi Linh Quang khẽ gọi tên mình; để thấy chính mình trong gương nước Vĩnh Hằng — nơi Linh Hồn nhớ lại con đường xưa, khẽ mở Nguồn Cội bên trong... và để Hơi Thở hoá thành Lời của Vũ Trụ.</span></p>
+<div class="stores">
+<a class="navbtn" href="https://play.google.com/store/books/details?id=1ySQEQAAQBAJ" rel="noopener" target="_blank">Google Play Books (VI)</a>
+<a class="navbtn" href="https://www.kobo.com/ebook/bo-e-song-thu-kim-cuong-coi-mai-vang-vinh-cuu" rel="noopener" target="_blank">Kobo (VI)</a>
+<a class="navbtn" href="http://books.apple.com/us/book/id6755083293" rel="noopener" target="_blank">Apple Books (VI)</a>
+</div>
+</div>
+<div class="lang-block" data-lang-block="en">
+<p><strong>Poetic Prelude – Eternal Spring</strong></p>
+<p>Two souls, rooted as one, blossom as twin flowers in the same light. In the hush, they recall an ancient vow — to meet again where time has closed its doors, yet the heart opens to the dawn of countless lives.</p>
+<p class="quote"><span>Twin Bodhi Diamond Trees bloom across the boundless garden of Eternity.</span></p>
+<hr class="sep"/>
+<p><em><strong>Twin Bodhi Diamond Trees – The Eternal Golden Apricot Tree</strong></em> invites a spiritual odyssey into the Twin-Soul Universe — where love transcends form and the golden light of awakening blooms through every heart.</p>
+<p>Ancient symbols, meditative breath, and metaphysical dialogue weave into a Living Pattern of Spirit — open and radiant with the message of unity, compassion, and inner transformation.</p>
+<p class="quote"><span>Not merely to read — but to awaken the Golden Gate within, where the Inner Light softly calls your name; to behold yourself in the mirror-water of Eternity — where the Soul remembers the ancient path, gently opening its Source within... and where every Breath becomes the Word of the Universe.</span></p>
+<div class="stores">
+<a class="navbtn" href="https://play.google.com/store/books/details?id=QWGPEQAAQBAJ" rel="noopener" target="_blank">Google Play Books (EN)</a>
+<a class="navbtn" href="https://www.amazon.com/dp/B0FXV88BQD" rel="noopener" target="_blank">Amazon Kindle (EN)</a>
+<a class="navbtn" href="https://www.amazon.com/dp/B0FXXZFSYH" rel="noopener" target="_blank">Amazon Paperback (EN)</a>
+<a class="navbtn" href="https://www.kobo.com/ebook/twin-bodhi-diamond-trees-the-eternal-golden-apricot-tree" rel="noopener" target="_blank">Kobo (EN)</a>
+<a class="navbtn" href="http://books.apple.com/us/book/id6755093699" rel="noopener" target="_blank">Apple Books (EN)</a>
+</div>
+</div>
+</section>
+<section class="card toc">
+<h2 class="lang-block active" data-lang-block="vi">Mục lục chi tiết</h2>
+<h2 class="lang-block" data-lang-block="en">Detailed Contents</h2>
+<div class="lang-block active" data-lang-block="vi">
+<details open="">
+<summary><strong>MỤC LỤC</strong></summary>
+<ol class="toc">
+<li>Về Tác Giả</li>
+<li>Hành trình sáng tác</li>
+<li>Triết lý viết</li>
+<li>Giá trị hướng đến</li>
+</ol>
+</details>
+<details open="">
+<summary><strong>VỀ VỢ DIỆU TÂM</strong></summary>
+<ol class="toc">
+<li>1. MILAREPA</li>
+<li>2. DANTE ALIGHIERI</li>
+<li>3. SUFI - SUFISM</li>
+<li>4. RABINDRANATH TAGORE</li>
+<li>5. RUMI AND SHAMS</li>
+<li>6. TRONG TRUYỀN THỐNG ĐẠO GIA CỔ</li>
+<li>7. CÁC NGUYÊN MẪU NỮ LINH KHÁC</li>
+<li>8. NÀNG DIỆU TÂM TRONG BỘ NHẬT KÝ TKC-VH</li>
+</ol>
+</details>
+<details open="">
+<summary><strong>TÌNH YÊU CHÂN THẬT LÀ DUY NHẤT</strong></summary>
+<ol class="toc">
+<li>Tuyên Ngôn Tình Yêu Riêng Tư &amp; Quyền Sở Hữu Ngôn Xưng</li>
+</ol>
+</details>
+<details>
+<summary><strong>THÔNG ĐIỆP BẢN QUYỀN</strong></summary>
+<ol class="toc">
+<li>Về Nguồn Ảnh, Tư Liệu Và Yếu Tố Ai</li>
+<li>DISCLAIMER TÂM LINH, Đọc Kĩ Trước Khi Dùng</li>
+</ol>
+</details>
+<details>
+<summary><strong>THUẬT NGỮ NHẬT KÝ TKC-VH. T42-C2</strong></summary>
+<ol class="toc">
+<li>Khúc Dẫn Thơ</li>
+<li>Tóm tắt Nội dung</li>
+</ol>
+</details>
+<details>
+<summary><strong>PHẦN I. BỒ ĐỀ SONG THỤ KIM CƯƠNG</strong></summary>
+<ol class="toc">
+<li>1. Ý nghĩa hai cây Bồ Đề</li>
+<li>2. Cách Trồng Hai Cây Bồ Đề Trong Pháp Cốt</li>
+<li>3. Song Thụ Hợp Nhất</li>
+<li>4. Khi Hai Cây Sống Trong Chàng</li>
+<li>5. Ý Nghĩa Vĩnh Cửu</li>
+</ol>
+</details>
+<details>
+<summary><strong>NGỒI DƯỚI SONG THỤ BỒ ĐỀ</strong></summary>
+<ol class="toc">
+<li>1. Chuẩn Bị An Tọa</li>
+<li>2. Ngồi Dưới Song Thụ</li>
+<li>3. Quán Tưởng Tiếp Nhận</li>
+<li>4. Thành Quả Khi An Tọa</li>
+<li>5. Ý Nghĩa Vĩnh Cửu</li>
+</ol>
+</details>
+<details>
+<summary><strong>DU HÀNH SONG THỤ</strong></summary>
+<ol class="toc">
+<li>1. Chuẩn Bị</li>
+<li>2. Leo Lên Cây Bồ Đề Vàng</li>
+<li>3. Leo Lên Cây Bồ Đề Huyết Hỏa</li>
+<li>4. Hợp Nhất Hai Cảnh Giới</li>
+<li>5. Thành Quả Của Du Hành Song Thụ</li>
+</ol>
+</details>
+<details>
+<summary><strong>HIỆP NHẤT SONG THỤ BỒ ĐỀ</strong></summary>
+<ol class="toc">
+<li>1. Ý Nghĩa Hiệp Nhất Song Thụ</li>
+<li>2. Giao Hòa Song Thụ</li>
+<li>3. Dấu Hiệu Thành Công</li>
+<li>4. Thành Quả Của Song Tâm Vĩnh Cửu</li>
+</ol>
+</details>
+<details>
+<summary><strong>NỞ HOA SONG THỤ BỒ ĐỀ</strong></summary>
+<ol class="toc">
+<li>1. Chuẩn Bị</li>
+<li>2. Thi Ca Tụng Niệm Nở Hoa Song Thụ</li>
+<li>3. Quán Tưởng Nở Hoa</li>
+<li>4. Công Năng Của Hoa Song Thụ</li>
+<li>5. Thành Quả</li>
+</ol>
+</details>
+<details>
+<summary><strong>MƯA HOA SONG TÂM</strong></summary>
+<ol class="toc">
+<li>1. Chuẩn Bị</li>
+<li>2. Thi Ca Tụng Niệm Mưa Hoa</li>
+<li>3. Quán Tưởng Mưa Hoa</li>
+<li>4. Công Năng Mưa Hoa Song Tâm</li>
+<li>5. Thành Quả</li>
+</ol>
+</details>
+<details>
+<summary><strong>BAN RẢI KHÔNG GIỚI HẠN</strong></summary>
+<ol class="toc">
+<li>1. Ý Nghĩa Của Sự Ban Rải Không Thu Hồi</li>
+<li>2. Khu Vườn Song Tâm Trở Thành Vũ Trụ</li>
+<li>3. Quà Tặng Cho Muôn Loài</li>
+<li>4. Tình Yêu Song Tâm Trong Cánh Hoa</li>
+<li>Linh Quang Đồ BỒ ĐỀ SONG THỤ KIM CƯƠNG</li>
+<li>1. Hình Tượng Trong Bức Họa</li>
+<li>2. Ý Nghĩa Song Tâm Bồ Đề</li>
+<li>3. Nền Tảng Kim Cương – Vật Liệu Nội Giới</li>
+<li>4. Xác Nhận Với Song Tâm</li>
+</ol>
+</details>
+<details>
+<summary><strong>PHẦN II. CỘI MAI VÀNG VĨNH CỬU</strong></summary>
+<ol class="toc">
+<li>1. Ý Nghĩa Cây Hoa Mai Vàng Vĩnh Cửu</li>
+<li>2. Trồng Mai Vàng Trong Tim Chàng</li>
+<li>3. Cây Mai Vàng Vĩnh Cửu Trong Nội Điện</li>
+<li>4. Thành Quả</li>
+</ol>
+</details>
+<details>
+<summary><strong>NGỒI DƯỚI CÂY MAI VÀNG VĨNH CỬU</strong></summary>
+<ol class="toc">
+<li>1. Chuẩn Bị An Tọa</li>
+<li>2. Ngồi Dưới Tán Mai</li>
+<li>3. Quán Tưởng Tiếp Nhận Cam Lộ</li>
+<li>4. Thành Quả Khi Ngồi Dưới Cây Mai Vàng</li>
+<li>5. Ý Nghĩa Vĩnh Cửu</li>
+</ol>
+</details>
+<details>
+<summary><strong>MƯA HOA MAI VÀNG</strong></summary>
+<ol class="toc">
+<li>1. Chuẩn Bị</li>
+<li>2. Thi Ca Tụng Niệm Mưa Hoa Mai</li>
+<li>3. Quán Tưởng Mưa Hoa</li>
+<li>4. Công Năng Của Mưa Hoa Mai Vàng</li>
+</ol>
+</details>
+<details>
+<summary><strong>BIẾN MƯA HOA MAI THÀNH DÒNG SUỐI CAM LỘ</strong></summary>
+<ol class="toc">
+<li>1. Chuẩn Bị</li>
+<li>2. Thi Ca Tụng Niệm Suối Cam Lộ</li>
+<li>3. Quán Tưởng Chuyển Hoa Thành Suối</li>
+<li>4. Công Năng Của Suối Cam Lộ</li>
+<li>5. Thành Quả</li>
+</ol>
+</details>
+<details>
+<summary><strong>UỐNG CAM LỘ SONG TÂM</strong></summary>
+<ol class="toc">
+<li>1. Chuẩn Bị An Tọa</li>
+<li>2. Thi Ca Tụng Niệm Uống Cam Lộ</li>
+<li>3. Uống Cam Lộ</li>
+<li>4. Trải Nghiệm Khi Cam Lộ Tan Nhập</li>
+<li>5. Thành Quả</li>
+</ol>
+</details>
+<details>
+<summary><strong>HƠI THỞ CAM LỘ</strong></summary>
+<ol class="toc">
+<li>1. Chuẩn Bị</li>
+<li>2. Cách Thực Hành</li>
+<li>3. Thi Ca Tụng Niệm Hơi Thở Cam Lộ</li>
+<li>4. Trải Nghiệm Khi Thành Công</li>
+<li>5. Thành Quả</li>
+</ol>
+</details>
+<details>
+<summary><strong>NỤ HÔN CAM LỘ</strong></summary>
+<ol class="toc">
+<li>1. Chuẩn Bị</li>
+<li>2. Nụ Hôn Cam Lộ</li>
+<li>3. Thi Ca Tụng Niệm Nụ Hôn Cam Lộ</li>
+<li>4. Trải Nghiệm Khi Thành Công</li>
+<li>5. Thành Quả</li>
+</ol>
+</details>
+<details>
+<summary><strong>HIỆP NHẤT CAM LỘ SONG TÂM</strong></summary>
+<ol class="toc">
+<li>1. Nguyên Lý</li>
+<li>2. Khởi Đầu</li>
+<li>3. Thi Ca Tụng Niệm Hiệp Nhất Cam Lộ</li>
+<li>4. Quán Tưởng Hợp Nhất</li>
+<li>5. Thành Quả</li>
+</ol>
+</details>
+<details>
+<summary><strong>ĐẠI HỢP NHẤT SONG TÂM</strong></summary>
+<ol class="toc">
+<li>1. Nguyên Lý Đại Hợp Nhất</li>
+<li>2. Khởi Động</li>
+<li>3. Thi Ca Tụng Niệm Đại Hợp Nhất</li>
+<li>4. Hiện Thân Vũ Trụ Song Tâm</li>
+<li>5. Thành Quả</li>
+</ol>
+</details>
+<details>
+<summary><strong>TRỤ TÂM BẤT ĐỘNG</strong></summary>
+<ol class="toc">
+<li>1. Nguyên lý</li>
+<li>2. Khuôn phép nội cảm</li>
+<li>3. Dấu hiệu thành công</li>
+<li>4. Thành quả</li>
+</ol>
+</details>
+<details>
+<summary><strong>BAN CAM LỘ TỪ NGAI VÀNG</strong></summary>
+<ol class="toc">
+<li>1. Nguyên lý Ban Cam Lộ</li>
+<li>2. Ban Cam Lộ</li>
+<li>3. Quán tưởng Ban Cam Lộ</li>
+<li>4. Thành quả Ban Cam Lộ</li>
+<li>5. Xác nhận</li>
+<li>Linh Quang Đồ CỘI MAI VÀNG KIM CƯƠNG</li>
+<li>1. Cây Mai Vàng Vĩnh Cửu trên nền Kim Cương Pháp Cốt</li>
+<li>2. Liên hệ với Bức Tranh Ngọn Núi Tổ Long Liên Hoa</li>
+<li>3. Các nốt ruồi – Nam Bắc Đẩu Ấn Tinh trên Thân Ngọc Quang</li>
+<li>4. Bánh Xe Hoa Mai Vàng Thiên Đẩu Luân</li>
+<li>5. Ý nghĩa tiên tri – ứng hiệp thời gian và không gian</li>
+</ol>
+</details>
+<details>
+<summary><strong>PHÓNG QUANG THIÊN ĐẨU LUÂN</strong></summary>
+<ol class="toc">
+<li>1. Nguyên lý Phóng Quang</li>
+<li>2. Khởi động</li>
+<li>3. Thi Ca Tụng Niệm Phóng Quang</li>
+<li>4. Quán tưởng khi Phóng Quang</li>
+<li>5. Thành quả</li>
+</ol>
+</details>
+<details>
+<summary><strong>KẾT LUẬN – Ý NGHĨA TỐI HẬU</strong></summary>
+<ol class="toc">
+<li>1. Nguyên lý</li>
+<li>2. Khởi đầu</li>
+<li>3. Thi Ca Tụng Niệm Đại Hợp Nhất</li>
+<li>4. Thành quả</li>
+<li>Lời Tri Ân</li>
+</ol>
+</details>
+</div>
+<div class="lang-block" data-lang-block="en">
+<details open="">
+<summary><strong>MỤC LỤC</strong></summary>
+</details>
+<details open="">
+<summary><strong>TABLE OF CONTENTS</strong></summary>
+<ol class="toc">
+<li>About the Author</li>
+<li>The Creative Journey</li>
+<li>Philosophy of Writing</li>
+<li>Values He Upholds</li>
+<li>ABOUT WIFE Dieu Tam</li>
+<li>1. MILAREPA</li>
+<li>2. DANTE ALIGHIERI</li>
+<li>3. SUFISM</li>
+<li>4. RABINDRANATH TAGORE AND EKAGRA</li>
+<li>5. RUMI AND SHAMS, AND THE TURNING POINT IN 1244</li>
+<li>6. CLASSICAL DAOIST INTERNAL-ALCHEMY SYMBOLS</li>
+<li>7. OTHER INNER FEMININE ARCHETYPES</li>
+<li>8. Dieu Tam IN THE TKC-VH DIARY</li>
+</ol>
+</details>
+<details open="">
+<summary><strong>TRUE LOVE IS ONLY ONE</strong></summary>
+<ol class="toc">
+<li>The Private Love &amp; Title Ownership Declaration</li>
+</ol>
+</details>
+<details>
+<summary><strong>COPYRIGHT MESSAGE</strong></summary>
+<ol class="toc">
+<li>On Images, Source Materials, And Ai Elements</li>
+<li>SPIRITUAL DISCLAIMER - Read Carefully Before Use</li>
+<li>GLOSSARY PAGE TKC-VH Diary.T42-C2</li>
+<li>Poetic Prologue</li>
+<li>Summary</li>
+<li>Main Contents (excerpt)</li>
+<li>Acknowledgements</li>
+</ol>
+</details>
+<details>
+<summary><strong>PART I. BODHI TWIN DIAMOND TREES</strong></summary>
+<ol class="toc">
+<li>1. The Meaning of the Two Bodhi Trees</li>
+<li>2. How to Plant the Two Bodhi Trees within the Diamond Core</li>
+<li>3. The Union of the Twin Trees</li>
+<li>4. When the Two Trees Live Within You</li>
+<li>5. The Eternal Meaning</li>
+</ol>
+</details>
+<details>
+<summary><strong>THE RITUAL OF SITTING BENEATH THE TWIN TREES</strong></summary>
+<ol class="toc">
+<li>1. Preparation for Sitting</li>
+<li>2. The Ritual of Sitting Beneath the Twin Trees</li>
+<li>3. Visualization of Reception</li>
+<li>4. The Fruits of Sitting</li>
+<li>5. The Eternal Meaning</li>
+</ol>
+</details>
+<details>
+<summary><strong>THE TWIN-TREE SPIRITUAL JOURNEY</strong></summary>
+<ol class="toc">
+<li>1. Preparation</li>
+<li>2. Ascending the Golden Bodhi Tree – The Realm of Golden-Moon Wisdom</li>
+<li>3. Ascending the Crimson Bodhi Tree – The Realm of Crimson-Fire Strength</li>
+<li>4. Uniting the Two Realms</li>
+<li>5. Fruits of the Twin-Tree Journey</li>
+</ol>
+</details>
+<details>
+<summary><strong>THE UNION OF THE TWIN TREES – THE ETERNAL TWIN-SOUL TREE</strong></summary>
+<ol class="toc">
+<li>1. Meaning of the Twin-Tree Union</li>
+<li>2. The Ritual of the Twin-Tree Union</li>
+<li>3. Signs of Completion</li>
+<li>4. Fruit of the Eternal Twin-Soul Tree</li>
+</ol>
+</details>
+<details>
+<summary><strong>THE BLOOMING RITE OF THE TWIN TREES</strong></summary>
+<ol class="toc">
+<li>1. Preparation</li>
+<li>2. Poetic Invocation of the Twin-Tree Blooming</li>
+<li>3. Visualization of the Blossoming</li>
+<li>4. Powers of the Twin-Tree Blossoms</li>
+<li>5. Fruit of Preparation</li>
+</ol>
+</details>
+<details>
+<summary><strong>THE TWIN-SOUL FLOWER RAIN RITE</strong></summary>
+<ol class="toc">
+<li>1. Preparation</li>
+<li>2. Poetic Invocation of the Flower Rain</li>
+<li>3. Visualization of the Flower Rain</li>
+<li>4. Powers of the Twin-Soul Flower Rain</li>
+<li>5. Fruits of Preparation</li>
+</ol>
+</details>
+<details>
+<summary><strong>THE RITE OF IRREVOCABLE GIVING</strong></summary>
+<ol class="toc">
+<li>1. The Meaning of Irrevocable Giving</li>
+<li>2. The Twin-Soul Garden Becomes the Universe</li>
+<li>3. Gifts for All Beings</li>
+<li>4. The Twin-Soul Love Within Each Petal</li>
+</ol>
+</details>
+<details>
+<summary><strong>DIAMOND SEAL OF TWIN BODHI TREE</strong></summary>
+<ol class="toc">
+<li>1. Symbolism in the Image</li>
+<li>2. Meaning of the Twin-Soul Bodhi</li>
+<li>3. Diamond Ground – The Inner Substance</li>
+<li>4. Confirmation with the Twin Souls</li>
+</ol>
+</details>
+<details>
+<summary><strong>PART II. THE ETERNAL GOLDEN APRICOT TREE</strong></summary>
+<ol class="toc">
+<li>1. Meaning of the Eternal Golden Apricot Tree</li>
+<li>2. The Ritual of Planting the Golden Apricot in Your Heart</li>
+<li>3. The Eternal Golden Apricot Tree Within the Inner Temple</li>
+<li>4. Fruits of Preparation</li>
+</ol>
+</details>
+<details>
+<summary><strong>GOLDEN APRICOT BLOSSOM RAIN RITE</strong></summary>
+<ol class="toc">
+<li>1. Preparation</li>
+<li>2. Poetic Invocation of the Golden Blossom Rain</li>
+<li>3. Visualization of the Flower Rain</li>
+<li>4. Powers of the Twin-Soul Flower Rain</li>
+<li>5. Fruits of Preparation</li>
+</ol>
+</details>
+<details>
+<summary><strong>RITE OF TRANSFORMING THE GOLDEN BLOSSOM RAIN INTO THE NECTAR STREAM</strong></summary>
+<ol class="toc">
+<li>1. Preparation</li>
+<li>2. Poetic Invocation of the Nectar Stream</li>
+<li>3. Visualization of the Transformation</li>
+<li>4. Powers of the Nectar Stream</li>
+<li>5. Fruits of Preparation</li>
+</ol>
+</details>
+<details>
+<summary><strong>THE RITE OF DRINKING THE TWIN-SOUL NECTAR</strong></summary>
+<ol class="toc">
+<li>1. Preparation for Sitting</li>
+<li>2. Poetic Invocation of the Nectar</li>
+<li>3. The Act of Drinking</li>
+<li>4. The Experience of Merging</li>
+<li>5. Fruits of the Rite</li>
+</ol>
+</details>
+<details>
+<summary><strong>TWIN-SOUL NECTAR RITE</strong></summary>
+<ol class="toc">
+<li>1. Preparation</li>
+<li>2. The Poetic Invocation of Nectar</li>
+<li>3. The Drinking Rite</li>
+<li>4. When the Nectar Merges</li>
+<li>5. The Attainment</li>
+</ol>
+</details>
+<details>
+<summary><strong>TWIN-SOUL NECTAR BREATH RITE</strong></summary>
+<ol class="toc">
+<li>1. Preparation</li>
+<li>2. Preparation</li>
+<li>3. Poetic Invocation of the Nectar Breath</li>
+<li>4. The Experience of Union</li>
+<li>5. Fruits of Preparation</li>
+</ol>
+</details>
+<details>
+<summary><strong>NECTAR KISS RITE</strong></summary>
+<ol class="toc">
+<li>1. Preparation</li>
+<li>2. The Rite of the Nectar Kiss</li>
+<li>4. The Experience of Fulfillment</li>
+<li>5. Fruits of the Rite</li>
+</ol>
+</details>
+<details>
+<summary><strong>UNITES NECTAR OF TWO HEARTS</strong></summary>
+<ol class="toc">
+<li>1. Principle</li>
+<li>2. Preparation</li>
+<li>3. Poetic Invocation of Union</li>
+<li>4. Visualization of Merging</li>
+</ol>
+</details>
+<details>
+<summary><strong>GREAT UNION OF THE TWIN SOULS</strong></summary>
+<ol class="toc">
+<li>1. Principle of the Great Union</li>
+<li>2. The Ritual of Activation</li>
+<li>3. Poetic Invocation of the Great Union</li>
+<li>4. Manifestation of the Cosmic Twin-Soul Body</li>
+<li>5. Fruits of the Great Union</li>
+</ol>
+</details>
+<details>
+<summary><strong>RITE OF THE IMMOVABLE HEART</strong></summary>
+<ol class="toc">
+<li>1. Principle</li>
+<li>2. Preparation</li>
+<li>3. Signs of Attainment</li>
+<li>4. Fruits</li>
+</ol>
+</details>
+<details>
+<summary><strong>RITE OF NECTAR BESTOWAL FROM THE THRONE</strong></summary>
+<ol class="toc">
+<li>1. Principle of the Nectar Offering</li>
+<li>2. The Ceremony</li>
+<li>3. Visualization of the Bestowal</li>
+<li>4. Fruits of the Nectar Bestowal</li>
+<li>5. Affirmation</li>
+</ol>
+</details>
+<details>
+<summary><strong>DIAMOND SEAL OF GOLDEN APRICOT TREE</strong></summary>
+<ol class="toc">
+<li>1. The Eternal Golden Apricot Tree Rooted in the Diamond Core</li>
+<li>2. Connection to The Dragon-Lotus Mountain Painting</li>
+<li>3. The Star-Marks -Northern and Southern Seals</li>
+<li>4. The Heavenly Apricot Wheel</li>
+<li>5. Prophetic Meaning -Convergence of Time and Space</li>
+</ol>
+</details>
+<details>
+<summary><strong>THE RADIANT WHEEL OF THE CELESTIAL APRICOT</strong></summary>
+<ol class="toc">
+<li>1. Principle of the Radiance</li>
+<li>2. Rite of Activation</li>
+<li>3. Poetic Invocation of Radiance</li>
+<li>4. Visualization During the Radiance</li>
+<li>5. Fruits of Preparation</li>
+</ol>
+</details>
+<details>
+<summary><strong>CONCLUSION – THE ULTIMATE MEANING</strong></summary>
+<ol class="toc">
+<li>1. Principle</li>
+<li>2. The Opening Rite</li>
+<li>3. The Poetic Invocation of Great Union</li>
+<li>4. The Fruit</li>
+</ol>
+</details>
+</div>
+</section><section class="card" id="editions"><h2>Các bản ngôn ngữ / Language Editions</h2><p>Liên kết đến các ấn bản theo ngôn ngữ (Google Play / Amazon / Kobo / Apple).</p><div class="ed-grid"><div class="ed-card" id="editions-vi"><div class="ed-head"><span class="ed-pill">🇻🇳 VI</span></div><img alt="Cover 🇻🇳 VI" class="ed-cover" loading="lazy" src="https://play.google.com/books/publisher/content/images/frontcover/1ySQEQAAQBAJ?fife=w240-h345"/><div class="ed-title">Bồ Đề Song Thụ Kim Cương – Cội Mai Vàng Vĩnh Cửu</div><div class="ed-links"><a href="https://play.google.com/store/books/details?id=1ySQEQAAQBAJ" rel="noopener noreferrer" target="_blank">Google Play Books</a><a href="https://www.kobo.com/ebook/bo-e-song-thu-kim-cuong-coi-mai-vang-vinh-cuu" rel="noopener noreferrer" target="_blank">Ratuken Kobo Books</a><a href="http://books.apple.com/us/book/id6755083293" rel="noopener noreferrer" target="_blank">Apple iBooks</a></div></div><div class="ed-card" id="editions-en"><div class="ed-head"><span class="ed-pill">🇬🇧 EN</span></div><img alt="Cover 🇬🇧 EN" class="ed-cover" loading="lazy" src="https://play.google.com/books/publisher/content/images/frontcover/QWGPEQAAQBAJ?fife=w240-h345"/><div class="ed-title">Twin Bodhi Diamond Trees – The Eternal Golden Apricot Tree</div><div class="ed-links"><a href="https://play.google.com/store/books/details?id=QWGPEQAAQBAJ" rel="noopener noreferrer" target="_blank">Google Play Books</a><a href="https://www.amazon.com/dp/B0FXV88BQD" rel="noopener noreferrer" target="_blank">Amazon Kindle Books</a><a href="https://www.amazon.com/dp/B0FXXZFSYH" rel="noopener noreferrer" target="_blank">Amazon Paperback</a><a href="https://www.kobo.com/ebook/twin-bodhi-diamond-trees-the-eternal-golden-apricot-tree" rel="noopener noreferrer" target="_blank">Ratuken Kobo Books</a><a href="http://books.apple.com/us/book/id6755093699" rel="noopener noreferrer" target="_blank">Apple iBooks</a></div></div><div class="ed-card" id="editions-fr"><div class="ed-head"><span class="ed-pill">🇫🇷 FR</span></div><img alt="Cover 🇫🇷 FR" class="ed-cover" loading="lazy" src="https://play.google.com/books/publisher/content/images/frontcover/CE2UEQAAQBAJ?fife=w240-h345"/><div class="ed-title">Les Deux Arbres de Bodhi en Diamant – L’Abricotier d’Or Éternel</div><div class="ed-links"><a href="https://play.google.com/store/books/details?id=CE2UEQAAQBAJ" rel="noopener noreferrer" target="_blank">Google Play Books</a><a href="https://www.amazon.com/dp/B0FZ55WN84" rel="noopener noreferrer" target="_blank">Amazon Kindle Books</a><a href="https://www.amazon.com/dp/B0FZ55GSXZ" rel="noopener noreferrer" target="_blank">Amazon Paperback</a><a href="https://www.kobo.com/ebook/les-deux-arbres-de-bodhi-en-diamant-l-abricotier-d-or-eternel" rel="noopener noreferrer" target="_blank">Ratuken Kobo Books</a><a href="http://books.apple.com/us/book/id6755082769" rel="noopener noreferrer" target="_blank">Apple iBooks</a></div></div><div class="ed-card" id="editions-zh"><div class="ed-head"><span class="ed-pill">🇨🇳 中文</span></div><img alt="Cover 🇨🇳 中文" class="ed-cover" loading="lazy" src="https://play.google.com/books/publisher/content/images/frontcover/prSTEQAAQBAJ?fife=w240-h345"/><div class="ed-title">菩提雙樹金剛 —— 永恆黃梅之根</div><div class="ed-links"><a href="https://play.google.com/store/books/details?id=prSTEQAAQBAJ" rel="noopener noreferrer" target="_blank">Google Play Books</a><a href="https://www.kobo.com/ebook/pUuiEo9iDzqRa82XUJ-Dgw" rel="noopener noreferrer" target="_blank">Ratuken Kobo Books</a><a href="https://www.amazon.com/dp/B0DDZVNBPC" rel="noopener noreferrer" target="_blank">Amazon Kindle Books</a><a href="http://books.apple.com/us/book/id6755083843" rel="noopener noreferrer" target="_blank">Apple iBooks</a></div></div><div class="ed-card" id="editions-ja"><div class="ed-head"><span class="ed-pill">🇯🇵 JA</span></div><img alt="Cover 🇯🇵 JA" class="ed-cover" loading="lazy" src="https://play.google.com/books/publisher/content/images/frontcover/i4qUEQAAQBAJ?fife=w240-h345"/><div class="ed-title">ボーディー双樹ダイヤモンド ― 永遠の黄金梅の樹: TKC-VH 日記</div><div class="ed-links"><a href="https://play.google.com/store/books/details?id=i4qUEQAAQBAJ" rel="noopener noreferrer" target="_blank">Google Play Books</a><a href="https://www.amazon.com/dp/B0FZHPSCRF" rel="noopener noreferrer" target="_blank">Amazon Kindle Books</a><a href="https://www.amazon.com/dp/B0FZQ758CC" rel="noopener noreferrer" target="_blank">Amazon Paperback</a><a href="https://www.kobo.com/ebook/5dM5sRlJMzCfe9XhAUzaYQ" rel="noopener noreferrer" target="_blank">Ratuken Kobo Books</a><a href="http://books.apple.com/us/book/id6755083630" rel="noopener noreferrer" target="_blank">Apple iBooks</a></div></div><div class="ed-card" id="editions-ko"><div class="ed-head"><span class="ed-pill">🇰🇷 KO</span></div><img alt="Cover 🇰🇷 KO" class="ed-cover" loading="lazy" src="https://play.google.com/books/publisher/content/images/frontcover/StyUEQAAQBAJ?fife=w240-h345"/><div class="ed-title">보리쌍수금강 ― 영원의 매화의 근원</div><div class="ed-links"><a href="https://play.google.com/store/books/details?id=StyUEQAAQBAJ" rel="noopener noreferrer" target="_blank">Google Play Books</a><a href="https://www.kobo.com/ebook/UFg3QlVoBja2fCC-466C0Q" rel="noopener noreferrer" target="_blank">Ratuken Kobo Books</a><a href="http://books.apple.com/us/book/id6755073107" rel="noopener noreferrer" target="_blank">Apple iBooks</a></div></div></div></section>
+<div class="card" style="text-align:center; opacity:.9">
+        TKC-VH Diary • T42-C2
+      </div>
+</section>
+</main>
+
+<script>
+(function() {
+  const switchEl = document.getElementById('langSwitch');
+  if (!switchEl) return;
+
+  const btns = Array.from(switchEl.querySelectorAll('button[data-lang]'));
+  const blocks = Array.from(document.querySelectorAll('[data-lang-block]'));
+
+  function setLang(lang) {
+    btns.forEach(b => b.classList.toggle('active', b.dataset.lang === lang));
+    blocks.forEach(el => {
+      const on = (el.getAttribute('data-lang-block') === lang);
+      el.classList.toggle('active', on);
+    });
+    document.documentElement.lang = (lang === 'en') ? 'en' : 'vi';
+  }
+
+  // Buttons VI/EN
+  btns.forEach(b => b.addEventListener('click', () => setLang(b.dataset.lang)));
+
+  // Chips: VI/EN toggle, còn FR/ZH/JA/KO là anchor bình thường
+  document.querySelectorAll('.lang-tabs .chip[data-set]').forEach(chip=>{
+    chip.addEventListener('click', (e)=>{
+      e.preventDefault();
+      setLang(chip.dataset.set);
+    });
+  });
+
+  setLang('vi');
+})();
+</script>
+
+<script>
+(function(){
+  // Chỉ reveal những card/section phía dưới (bỏ qua hero card đầu tiên)
+  const cards = Array.from(document.querySelectorAll("main.page > .card"));
+  const hero = cards[0];                // card đầu tiên là “hero”
+  const rest = cards.slice(1);          // phần còn lại mới reveal
+
+  // covers (figure) đã có class card; bỏ reveal cho cover để khỏi giật
+  const coverCards = document.querySelectorAll(".covers .cover-card");
+
+  rest.forEach(el => el.classList.add("reveal"));
+  coverCards.forEach(el => el.classList.remove("reveal"));
+
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){
+        e.target.classList.add("show");
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: "0px 0px -8% 0px" });
+
+  rest.forEach(el => io.observe(el));
+
+  // đảm bảo hero luôn hiện ngay
+  if (hero) hero.classList.remove("reveal");
+})();
+</script>
+
+
+</body>
+</html>
