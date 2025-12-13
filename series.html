@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>TKC-VH Diary – Series</title>
+
+  <!-- CSS chung -->
+  <link rel="stylesheet" href="https://tkc-vh.github.io/legal/legal.css">
+</head>
+
+<body>
+  <div class="page">
+    <div class="card">
+
+      <!-- Vân mây hoàng gia 4 góc -->
+      <div class="orn tl" aria-hidden="true">
+        <svg viewBox="0 0 260 180">
+          <path d="M20,120 C40,82 78,92 92,72 C106,52 92,34 66,36 C98,10 144,26 150,58 C156,90 120,94 110,112 C98,134 126,150 162,138"/>
+          <path class="mist" d="M22,138 C60,120 82,138 108,126 C134,114 136,94 122,84"/>
+          <path class="mist" d="M34,98 C58,84 74,92 90,82"/>
+        </svg>
+      </div>
+      <div class="orn tr" aria-hidden="true"><svg viewBox="0 0 260 180"><path d="M20,120 C40,82 78,92 92,72 C106,52 92,34 66,36 C98,10 144,26 150,58 C156,90 120,94 110,112 C98,134 126,150 162,138"/><path class="mist" d="M22,138 C60,120 82,138 108,126 C134,114 136,94 122,84"/><path class="mist" d="M34,98 C58,84 74,92 90,82"/></svg></div>
+      <div class="orn bl" aria-hidden="true"><svg viewBox="0 0 260 180"><path d="M20,120 C40,82 78,92 92,72 C106,52 92,34 66,36 C98,10 144,26 150,58 C156,90 120,94 110,112 C98,134 126,150 162,138"/><path class="mist" d="M22,138 C60,120 82,138 108,126 C134,114 136,94 122,84"/><path class="mist" d="M34,98 C58,84 74,92 90,82"/></svg></div>
+      <div class="orn br" aria-hidden="true"><svg viewBox="0 0 260 180"><path d="M20,120 C40,82 78,92 92,72 C106,52 92,34 66,36 C98,10 144,26 150,58 C156,90 120,94 110,112 C98,134 126,150 162,138"/><path class="mist" d="M22,138 C60,120 82,138 108,126 C134,114 136,94 122,84"/><path class="mist" d="M34,98 C58,84 74,92 90,82"/></svg></div>
+
+      <div class="gold-frame">
+
+        <!-- Logo -->
+        <div class="moon-wrap">
+          <div class="moon">
+            <img alt="TKC-VH Moon Emblem" src="https://tkc-vh.github.io/assets/moon-diamond.jpg">
+          </div>
+        </div>
+
+        <h1>TKC-VH Diary – Series</h1>
+        <div class="subtitle">MULTI-LANGUAGE SPIRITUAL DIARY SERIES • TRAN KHAC CUONG (TKC-VH)</div>
+
+        <hr>
+
+        <style>
+          /* Đường kiếm quang mảnh */
+          .swordline{
+            height:1px; margin:14px 0 12px;
+            background:linear-gradient(90deg,
+              transparent,
+              rgba(255,255,255,.18),
+              rgba(255,205,220,.14),
+              rgba(200,220,255,.12),
+              rgba(255,255,255,.18),
+              transparent
+            );
+          }
+
+          /* Language switch (đồng bộ với các trang legal) */
+          .lang-switch{margin-top:10px}
+
+          /* Khối văn bản */
+          .prose{line-height:1.85; opacity:.95}
+          .bridge{margin-top:12px; font-style:italic; opacity:.92}
+
+          /* Store cards */
+          .store-grid{
+            display:grid;
+            grid-template-columns:repeat(auto-fit, minmax(240px,1fr));
+            gap:14px;
+            margin-top:14px;
+          }
+          .store{
+            display:block;
+            text-decoration:none;
+            color:inherit;
+            border:1px solid rgba(255,255,255,.10);
+            border-radius:18px;
+            padding:14px 14px 12px;
+            background:rgba(255,255,255,.03);
+            box-shadow:0 10px 30px rgba(0,0,0,.25);
+            position:relative;
+            overflow:hidden;
+            transition:transform .2s ease, border-color .2s ease, background .2s ease;
+          }
+          .store:before{
+            content:"";
+            position:absolute;left:14px;right:14px;top:12px;height:1px;
+            background:linear-gradient(90deg,
+              transparent,
+              rgba(255,255,255,.18),
+              rgba(255,205,220,.14),
+              rgba(200,220,255,.12),
+              rgba(255,255,255,.18),
+              transparent
+            );
+            opacity:.9;
+            pointer-events:none;
+          }
+          .store:after{
+            content:"";
+            position:absolute;inset:-2px;
+            background:radial-gradient(140px 90px at 18% 18%, rgba(255,170,200,.10), transparent 60%),
+                       radial-gradient(220px 120px at 80% 30%, rgba(170,190,255,.08), transparent 62%),
+                       radial-gradient(260px 120px at 50% 120%, rgba(255,220,160,.06), transparent 60%);
+            pointer-events:none;
+          }
+          .store:hover{
+            transform:translateY(-2px);
+            border-color:rgba(255,255,255,.16);
+            background:rgba(255,255,255,.04);
+          }
+          .store h3{margin:10px 0 6px; font-size:1.06rem; letter-spacing:.2px}
+          .store p{margin:0; opacity:.90; line-height:1.45}
+
+          /* Nút điều hướng chân trang */
+          .nav-row{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin:10px 0 0;opacity:.92}
+          .navbtn{
+            display:inline-block;text-decoration:none;color:inherit;
+            padding:8px 12px;border-radius:999px;
+            border:1px solid rgba(255,255,255,.12);
+            background:rgba(255,255,255,.02);
+            box-shadow:0 10px 22px rgba(0,0,0,.18);
+            font-size:.95rem;
+          }
+          .navbtn:hover{transform:translateY(-1px);transition:.2s ease}
+        </style>
+
+        <!-- Switch ngôn ngữ -->
+        <div class="lang-switch">
+          <button class="active" type="button" data-lang="vi">VI</button>
+          <button type="button" data-lang="en">EN</button>
+        </div>
+
+        <div class="swordline" aria-hidden="true"></div>
+
+        <!-- VI -->
+        <section id="vi" class="lang-block active">
+          <h2>Giới thiệu Series – Tiếng Việt</h2>
+
+          <p class="prose"><strong>“TKC-VH Diary”</strong> là chuỗi nhật ký tinh thần được ghi lại trong những khoảnh khắc lắng đọng nhất của hành trình tâm linh và chiêm nghiệm nội tâm. Mỗi tập sách mở ra một cánh cửa nhỏ dẫn vào thế giới nội quán – nơi trải nghiệm đời thường hòa vào trực giác sâu thẳm, nơi sự tĩnh lặng kết nối với ánh linh quang bên trong.</p>
+
+          <p class="prose">Mỗi cuốn sách là một <em>đoạn đường của sự thức nhận</em>: những dòng ghi chú, những hình ảnh, những đối thoại thầm lặng giữa tâm trí và nguồn sáng nội tâm, cùng kết thành một dòng chảy liên tục – vừa mang dấu vết truyền thống Á Đông, vừa hướng đến nhu cầu kiếm tìm sáng rõ của người đọc hôm nay.</p>
+
+          <p class="prose">Series được phát hành đồng thời bằng nhiều ngôn ngữ, kết nối bạn đọc Việt Nam với độc giả quốc tế, tạo nên một thư viện tâm linh đa văn hóa – nơi mỗi tập sách là một cánh hoa riêng biệt trong khu vườn Bồ Đề rộng lớn.</p>
+
+          <p class="prose"><strong>“TKC-VH Diary”</strong> không chỉ là nhật ký; đó là lời mời bước vào cuộc gặp gỡ với chính mình – nơi nội tâm trở thành người dẫn đường, và từng dòng chữ khẽ thì thầm những chuyển hóa âm thầm nhưng bền bỉ trong đời sống.</p>
+
+          <p class="bridge">Và rồi, như những lối nhỏ dẫn vào nội điện, bảng chỉ đường dưới đây mở ra từng tàng thư riêng của Series.</p>
+        </section>
+
+        <!-- EN -->
+        <section id="en" class="lang-block">
+          <h2>About the Series – English</h2>
+
+          <p class="prose"><strong>“TKC-VH Diary”</strong> is a contemplative spiritual journal capturing the most intimate moments of inner reflection and awakening. Each volume opens a quiet passage into the landscape of introspection—where everyday experiences merge with deep intuition, and where stillness meets the inner light that guides from within.</p>
+
+          <p class="prose">Every book becomes a <em>milestone of awareness</em>: a flow of notes, images, and silent dialogues between the mind and its luminous inner source. Together, the volumes form a continuous journey shaped by Eastern traditions while speaking clearly to the modern seeker.</p>
+
+          <p class="prose">Published simultaneously in multiple languages, the series builds a global bridge between Vietnamese roots and international readers—creating a multicultural spiritual library where each volume blooms like a unique petal in a vast Bodhi Garden.</p>
+
+          <p class="prose"><strong>“TKC-VH Diary”</strong> is more than a diary. It is an invitation to meet your true self—where the inner world becomes the guide, and every line whispers quiet but enduring transformation.</p>
+
+          <p class="bridge">And then, like small paths leading into the inner sanctuary, the signs below open each separate archive of the Series.</p>
+        </section>
+
+        <div class="swordline" aria-hidden="true"></div>
+
+        <!-- Store Cards -->
+        <div class="store-grid">
+          <a class="store" href="https://play.google.com/store/books/series?id=e9eOHAAAABD0yM" target="_blank" rel="noopener">
+            <h3>Google Play Books</h3>
+            <p>Series Page (Official)</p>
+          </a>
+
+          <a class="store" href="https://www.amazon.com/author/tkc-vh" target="_blank" rel="noopener">
+            <h3>Amazon</h3>
+            <p>Author Page</p>
+          </a>
+
+          <a class="store" href="https://www.amazon.com/dp/B0G2N7FBJ7" target="_blank" rel="noopener">
+            <h3>Amazon</h3>
+            <p>Series Page</p>
+          </a>
+
+          <a class="store" href="https://books.apple.com/us/author/tran-khac-cuong/id1849300929" target="_blank" rel="noopener">
+            <h3>Apple Books</h3>
+            <p>Author Page</p>
+          </a>
+        </div>
+
+        <!-- Điều hướng chân trang -->
+        <div class="swordline" aria-hidden="true"></div>
+        <div class="nav-row">
+          <a class="navbtn" href="/index.html">← Trang Chủ</a>
+          <a class="navbtn" href="/works.html">→ Works</a>
+          <a class="navbtn" href="/legal/">↩ Pháp Lý</a>
+        </div>
+
+        <div class="footer">© TKC-VH • Series</div>
+
+      </div>
+    </div>
+  </div>
+
+  <script>
+    (function(){
+      const btns = document.querySelectorAll('.lang-switch button');
+      const blocks = { vi: document.getElementById('vi'), en: document.getElementById('en') };
+
+      function setLang(lang){
+        Object.keys(blocks).forEach(k => blocks[k].classList.toggle('active', k === lang));
+        btns.forEach(b => b.classList.toggle('active', b.dataset.lang === lang));
+      }
+
+      btns.forEach(b => b.addEventListener('click', () => setLang(b.dataset.lang)));
+      setLang('vi');
+    })();
+  </script>
+</body>
+</html>
