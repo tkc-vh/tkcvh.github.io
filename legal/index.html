@@ -1,1 +1,204 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Legal Library | TKC-VH</title>
+  <link rel="stylesheet" href="https://tkc-vh.github.io/legal/legal.css">
+</head>
 
+<body>
+  <div class="page">
+    <div class="card">
+
+      <!-- Vân mây hoàng gia 4 góc -->
+      <div class="orn tl" aria-hidden="true">
+        <svg viewBox="0 0 260 180">
+          <path d="M20,120 C40,82 78,92 92,72 C106,52 92,34 66,36 C98,10 144,26 150,58 C156,90 120,94 110,112 C98,134 126,150 162,138"/>
+          <path class="mist" d="M22,138 C60,120 82,138 108,126 C134,114 136,94 122,84"/>
+          <path class="mist" d="M34,98 C58,84 74,92 90,82"/>
+        </svg>
+      </div>
+      <div class="orn tr" aria-hidden="true"><svg viewBox="0 0 260 180"><path d="M20,120 C40,82 78,92 92,72 C106,52 92,34 66,36 C98,10 144,26 150,58 C156,90 120,94 110,112 C98,134 126,150 162,138"/><path class="mist" d="M22,138 C60,120 82,138 108,126 C134,114 136,94 122,84"/><path class="mist" d="M34,98 C58,84 74,92 90,82"/></svg></div>
+      <div class="orn bl" aria-hidden="true"><svg viewBox="0 0 260 180"><path d="M20,120 C40,82 78,92 92,72 C106,52 92,34 66,36 C98,10 144,26 150,58 C156,90 120,94 110,112 C98,134 126,150 162,138"/><path class="mist" d="M22,138 C60,120 82,138 108,126 C134,114 136,94 122,84"/><path class="mist" d="M34,98 C58,84 74,92 90,82"/></svg></div>
+      <div class="orn br" aria-hidden="true"><svg viewBox="0 0 260 180"><path d="M20,120 C40,82 78,92 92,72 C106,52 92,34 66,36 C98,10 144,26 150,58 C156,90 120,94 110,112 C98,134 126,150 162,138"/><path class="mist" d="M22,138 C60,120 82,138 108,126 C134,114 136,94 122,84"/><path class="mist" d="M34,98 C58,84 74,92 90,82"/></svg></div>
+
+      <div class="gold-frame">
+
+        <div class="moon-wrap">
+          <div class="moon">
+            <img alt="TKC-VH Moon Emblem" src="https://tkc-vh.github.io/assets/moon-diamond.jpg">
+          </div>
+        </div>
+
+        <style>
+          /* Tiêu đề vàng kim phát sáng – nét, không lố */
+          .gold-title{
+            margin: 0;
+            letter-spacing: .6px;
+            background: linear-gradient(180deg, #fff6d6 0%, #ffd36a 40%, #d6a23a 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-shadow:
+              0 0 18px rgba(255, 210, 120, .18),
+              0 0 42px rgba(255, 210, 120, .10);
+          }
+          .gold-sub{
+            margin-top: 6px;
+            letter-spacing: .35px;
+            background: linear-gradient(180deg, #fff2c8 0%, #f3c96a 55%, #c28a25 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-shadow: 0 0 30px rgba(255, 215, 140, .10);
+          }
+
+          /* Lưới “cổng” – bỏ keyword/tag để khỏi mùi SEO */
+          .gate-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px;margin-top:16px}
+          .gate{
+            display:block;text-decoration:none;color:inherit;
+            border:1px solid rgba(255,255,255,.10);
+            border-radius:18px;padding:14px 14px 12px;
+            background:rgba(255,255,255,.03);
+            box-shadow:0 10px 30px rgba(0,0,0,.25);
+            position:relative;overflow:hidden;
+            transition:transform .2s ease, border-color .2s ease, background .2s ease;
+          }
+
+          /* “Ánh kiếm dưới trăng” – đường kẻ mảnh đầu mỗi cổng */
+          .gate:before{
+            content:"";
+            position:absolute;left:14px;right:14px;top:12px;height:1px;
+            background:linear-gradient(90deg,
+              transparent,
+              rgba(255,255,255,.18),
+              rgba(255,205,220,.14),
+              rgba(200,220,255,.12),
+              rgba(255,255,255,.18),
+              transparent
+            );
+            opacity:.9;
+            pointer-events:none;
+          }
+
+          /* Sương pha lê hồng – rất nhẹ */
+          .gate:after{
+            content:"";
+            position:absolute;inset:-2px;
+            background:radial-gradient(140px 90px at 18% 18%, rgba(255,170,200,.10), transparent 60%),
+                       radial-gradient(220px 120px at 80% 30%, rgba(170,190,255,.08), transparent 62%),
+                       radial-gradient(260px 120px at 50% 120%, rgba(255,220,160,.06), transparent 60%);
+            pointer-events:none;
+          }
+
+          .gate:hover{
+            transform:translateY(-2px);
+            border-color:rgba(255,255,255,.16);
+            background:rgba(255,255,255,.04);
+          }
+
+          .gate h3{margin:10px 0 6px;font-size:1.08rem;letter-spacing:.2px}
+          .gate p{margin:0;opacity:.90;line-height:1.45}
+
+          .rowline{height:1px;background:linear-gradient(90deg, transparent, rgba(255,255,255,.14), transparent);margin:16px 0}
+          .mini{font-size:.95rem;opacity:.9}
+
+          /* 3 nút điều hướng ở chân trang */
+          .nav-row{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin:10px 0 0;opacity:.92}
+          .navbtn{
+            display:inline-block;text-decoration:none;color:inherit;
+            padding:8px 12px;border-radius:999px;
+            border:1px solid rgba(255,255,255,.12);
+            background:rgba(255,255,255,.02);
+            box-shadow:0 10px 22px rgba(0,0,0,.18);
+            font-size:.95rem;
+          }
+          .navbtn:hover{transform:translateY(-1px);transition:.2s ease}
+        </style>
+
+        <h1 class="gold-title">THƯ VIỆN LEGAL</h1>
+        <div class="subtitle gold-sub">THE LEGAL LIBRARY • CÁC CỔ THƯ BẢO HỘ & TUYÊN NGÔN (VI/EN)</div>
+
+        <hr>
+
+        <div class="note">
+          Đây là “Đại Sảnh Pháp Chế” của TKC-VH. Mỗi cánh cửa là một hành lang pha lê.
+          Chọn đúng mục, đọc chậm, và để mọi thứ rõ ràng như ánh trăng.
+        </div>
+
+        <div class="gate-grid">
+
+          <a class="gate" href="./copyright.html">
+            <h3>Bản quyền</h3>
+            <p>Khung bảo hộ tác phẩm, điều kiện trích dẫn, và tuyên bố nguồn.</p>
+          </a>
+
+          <a class="gate" href="./disclaimer.html">
+            <h3>Disclaimer</h3>
+            <p>Tuyên bố miễn trừ trách nhiệm: văn chương nội quan, không phải hướng dẫn trị liệu.</p>
+          </a>
+
+          <a class="gate" href="./nguon-anh-va-tu-lieu.html">
+            <h3>Nguồn ảnh & Tư liệu</h3>
+            <p>Minh bạch về hình ảnh, tư liệu tham khảo và yếu tố AI hỗ trợ trong sáng tác.</p>
+          </a>
+
+          <a class="gate" href="./public-gpg-key.html">
+            <h3>Public GPG Key</h3>
+            <p>Khóa công khai và hướng dẫn đối chiếu fingerprint trước khi tin dùng.</p>
+          </a>
+
+          <a class="gate" href="./quyen-so-huu-danh-xung.html">
+            <h3>Quyền sở hữu danh xưng</h3>
+            <p>Tuyên ngôn danh xưng riêng tư: độc quyền cảm xúc, không phong, không tấn, không “cấp”.</p>
+          </a>
+
+          <a class="gate" href="./author.html">
+            <h3>Author</h3>
+            <p>Về tác giả TKC-VH: nhịp viết, kỷ luật truyền thống, và tầm nhìn nội quan.</p>
+          </a>
+
+          <a class="gate" href="./vo-dieu-tam.html">
+            <h3>Về Vợ Diệu Tâm</h3>
+            <p>Giải thích truyền thống nội quan về hình tượng Diệu Tâm trong hệ nhật ký.</p>
+          </a>
+
+          <a class="gate" href="./tkc-vh-glossary.html">
+            <h3>Thuật ngữ TKC-VH</h3>
+            <p>Tổng hợp thuật ngữ song ngữ: Linh Quang, Song Tâm, Linh Quang Đồ, và bản đồ biểu tượng.</p>
+          </a>
+
+          <a class="gate" href="./logo.html">
+            <h3>Logo • Slogan</h3>
+            <p>Tuyên ngôn nhận diện: logo TKC-VH và “Lời Thệ Trung” (VI/EN).</p>
+          </a>
+
+        </div>
+
+        <div class="rowline"></div>
+
+      
+
+<div class="mini">
+  Thư viện Legal được trình bày như một đại sảnh thống nhất.
+  Độc giả nên bắt đầu từ trang tổng hợp để cảm nhận trọn vẹn bố cục
+  và tinh thần của các tuyên ngôn đi kèm.
+</div>
+
+
+        <!-- 3 nút điều hướng -->
+        <div class="rowline"></div>
+        <div class="nav-row">
+          <a class="navbtn" href="https://tkc-vh.github.io/index.html">← Trang Chủ</a>
+          <a class="navbtn" href="https://tkc-vh.github.io/works.html">→ Works</a>
+          <a class="navbtn" href="https://tkc-vh.github.io/legal/logo.html">Logo</a>
+        </div>
+
+        <div class="footer">© TKC-VH • Legal Library Index</div>
+
+      </div>
+    </div>
+  </div>
+</body>
+</html>
