@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>TKC-VH Diary</title>
+  <title>TKC-VH Temple</title>
 
   <meta name="description" content="Public gateway of the TKC-VH Diary. Official site: nhatkytkcvh.blogspot.com" />
   <meta property="og:title" content="TKC-VH Temple" />
@@ -11,7 +11,8 @@
   <meta property="og:image" content="assets/moon-diamond.jpg" />
   <meta property="og:type" content="website" />
 
-  <link rel="icon" href="moon-diamond.jpg" />
+  <!-- Favicon: dùng đúng đường dẫn trong repo -->
+  <link rel="icon" href="assets/moon-diamond.jpg" />
 
   <style>
     :root{
@@ -45,7 +46,6 @@
       overflow-x:hidden;
     }
 
-    /* Sương + khói tím: “thở” chậm, không loá */
     .veil{
       position:fixed;
       inset:-20%;
@@ -65,7 +65,6 @@
       50%{ transform: translate3d(0,-18px,0) scale(1.02); }
     }
 
-    /* vignette: làm “đêm sâu” ở rìa, giữ tâm sáng */
     .vignette{
       position:fixed;
       inset:0;
@@ -85,7 +84,6 @@
       margin: 56px auto 80px;
     }
 
-    /* “ĐIỆN” – một khối mềm, không nhà tù */
     .sanctuary{
       border-radius: var(--r);
       background: linear-gradient(160deg, rgba(255,255,255,.06), rgba(255,255,255,0) 40%),
@@ -93,7 +91,6 @@
       box-shadow: var(--shadow);
       overflow:hidden;
 
-      /* rise như T35-C1 nhưng nhẹ hơn */
       opacity:0;
       transform: translateY(26px);
       animation: rise 1.25s ease-out .15s forwards;
@@ -104,7 +101,6 @@
       100%{ opacity:1; transform: translateY(0); }
     }
 
-    /* Tranh: để nó thở – không viền dày */
     .banner{
       padding: 20px 20px 8px;
       display:flex;
@@ -122,7 +118,6 @@
       filter: saturate(1.02) contrast(1.02);
     }
 
-    /* “GATE TEXT” – đặt dưới tranh, như bệ đá */
     .gate{
       padding: 8px 26px 26px;
       text-align:center;
@@ -143,7 +138,6 @@
       opacity: .95;
     }
 
-    /* Nguyệt Ấn: ôm sáng + vệt lướt (giống T35-C1), nhưng gọn để khỏi “Con Mắt” */
     .seal-wrap{
       display:flex;
       justify-content:center;
@@ -232,12 +226,12 @@
     }
 
     .content{
-      max-width: 620px;
+      max-width: 720px;
       margin: 0 auto;
       text-align:left;
       background: linear-gradient(180deg, rgba(0,0,0,.10), rgba(0,0,0,0));
       border-radius: 14px;
-      padding: 14px 16px 10px;
+      padding: 14px 16px 12px;
     }
 
     p{
@@ -253,6 +247,7 @@
       color: #d0c8b8;
       font-size: 15px;
     }
+
     a{
       color: var(--gold2);
       text-decoration:none;
@@ -260,10 +255,90 @@
     }
     a:hover{ border-bottom-color: rgba(242,222,156,.95); }
 
+    /* ===== CARDS: điều hướng chống dead-link ===== */
+    .cards{
+      margin: 14px auto 6px;
+      max-width: 760px;
+      display:grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+    }
+    .card{
+      border-radius: 16px;
+      background:
+        linear-gradient(160deg, rgba(255,255,255,.06), rgba(255,255,255,0) 52%),
+        linear-gradient(180deg, var(--card), var(--card2));
+      border: 1px solid rgba(255,240,210,.18);
+      box-shadow: 0 14px 40px rgba(0,0,0,.35);
+      padding: 14px 14px 12px;
+      text-align:left;
+      position:relative;
+      overflow:hidden;
+    }
+    .card::before{
+      content:"";
+      position:absolute;
+      inset:-2px;
+      background: radial-gradient(420px 220px at 20% 10%, rgba(190,130,255,.10), rgba(0,0,0,0) 55%);
+      opacity:.9;
+      pointer-events:none;
+    }
+    .card h3{
+      margin: 0 0 6px;
+      font-size: 16px;
+      font-weight: 700;
+      letter-spacing:.2px;
+      position:relative;
+      z-index:1;
+    }
+    .card p{
+      margin: 0 0 10px;
+      font-size: 14px;
+      color: #d7d0c0;
+      position:relative;
+      z-index:1;
+    }
+    .card .btn{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding: 9px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(242,222,156,.35);
+      background: rgba(0,0,0,.20);
+      color: var(--gold2);
+      text-decoration:none;
+      font-size: 14px;
+      position:relative;
+      z-index:1;
+      box-shadow: 0 0 18px rgba(242,222,156,.10);
+    }
+    .card .btn:hover{
+      border-color: rgba(242,222,156,.70);
+      box-shadow: 0 0 28px rgba(242,222,156,.18);
+    }
+    .mini-links{
+      margin-top: 10px;
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px 12px;
+      position:relative;
+      z-index:1;
+      font-size: 13px;
+      color:#cfc7b7;
+    }
+    .mini-links a{
+      border-bottom: 1px dotted rgba(242,222,156,.35);
+    }
+
     footer{
-      margin-top: 16px;
+      margin-top: 14px;
       font-size: 14px;
       color: #bdb7a5;
+    }
+
+    @media (max-width: 860px){
+      .cards{ grid-template-columns: 1fr; }
     }
 
     @media (max-width: 620px){
@@ -272,6 +347,7 @@
       .gate{ padding: 6px 16px 18px; }
       h1{ font-size: 24px; }
       .seal{ width: 120px; height: 120px; }
+      .content{ padding: 12px 12px 10px; }
     }
   </style>
 </head>
@@ -283,27 +359,26 @@
   <main>
     <section class="sanctuary" aria-label="TKC-VH Temple">
 
+      <!-- Banner: chỉ ở Temple -->
       <div class="banner">
         <img src="assets/bodhi-songlong1.png" alt="Twin Bodhi – Golden Apricot – Orion" />
       </div>
 
-     <p></p>
-
-        <div class="seal-wrap">
-          <div class="seal" aria-label="Moon Emblem">
-            <img src="assets/moon-diamond.jpg" alt="Moon–Diamond Emblem" />
-          </div>
+      <div class="seal-wrap">
+        <div class="seal" aria-label="Moon Emblem">
+          <img src="assets/moon-diamond.jpg" alt="Moon–Diamond Emblem" />
         </div>
+      </div>
 
-        <div class="divider"></div>
+      <div class="divider"></div>
 
-   <div class="gate">
+      <div class="gate">
         <h1>TKC-VH Temple</h1>
         <div class="subtitle">PUBLIC GATEWAY OF THE TKC-VH DIARY</div>
 
-      <div class="divider"></div>
-     
-      <div class="content">
+        <div class="divider"></div>
+
+        <div class="content">
           <p>This is the public gateway of the TKC-VH Diary.</p>
           <p>The original manuscripts, source texts, and master editions are preserved in a private archive.</p>
 
@@ -315,8 +390,42 @@
             <li>references to published editions</li>
           </ul>
 
+          <!-- CARDS: chống dead link -->
+          <div class="cards" aria-label="Navigation Cards">
+            <div class="card">
+              <h3>Works</h3>
+              <p>Thư viện tác phẩm đã phát hành (đa ngôn ngữ) và các trang chi tiết.</p>
+              <a class="btn" href="./works.html">→ Enter Works</a>
+              <div class="mini-links">
+                <a href="./t19/">T19</a>
+                <a href="./t35/">T35</a>
+                <a href="./t42/">T42</a>
+              </div>
+            </div>
+
+            <div class="card">
+              <h3>Series</h3>
+              <p>Hệ thống Series/volumes: lối đi theo tuyến mạch, giúp người đọc vào đúng cổng.</p>
+              <a class="btn" href="./series.html">→ Enter Series</a>
+              <div class="mini-links">
+                <a href="./series.html#published">Published</a>
+                <a href="./series.html#paths">Pathways</a>
+              </div>
+            </div>
+
+            <div class="card">
+              <h3>Legal</h3>
+              <p>Đại sảnh pháp lý: bản quyền, điều khoản, logo, và các quy ước sử dụng.</p>
+              <a class="btn" href="./legal/">→ Enter Legal Hall</a>
+              <div class="mini-links">
+                <a href="./legal/logo.html">Logo</a>
+                <a href="./legal/">Copyright</a>
+              </div>
+            </div>
+          </div>
+
           <footer>
-            Nothing essential is revealed before its time.<br />
+            <br />
             Official site:
             <a href="https://nhatkytkcvh.blogspot.com" target="_blank" rel="noopener">nhatkytkcvh.blogspot.com</a>
           </footer>
