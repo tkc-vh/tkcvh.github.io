@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Works | TKC-VH Diary</title>
+
+  <!-- CSS chung (Legal style dùng tạm cho Works để đồng bộ “khung vàng lồng ngọc”) -->
+  <link rel="stylesheet" href="https://tkc-vh.github.io/legal/legal.css">
+</head>
+
+<body>
+  <div class="page">
+    <div class="card">
+
+      <!-- Vân mây 4 góc (giữ đồng bộ thẩm mỹ) -->
+      <div class="orn tl" aria-hidden="true">
+        <svg viewBox="0 0 260 180">
+          <path d="M20,120 C40,82 78,92 92,72 C106,52 92,34 66,36 C98,10 144,26 150,58 C156,90 120,94 110,112 C98,134 126,150 162,138"/>
+          <path class="mist" d="M22,138 C60,120 82,138 108,126 C134,114 136,94 122,84"/>
+          <path class="mist" d="M34,98 C58,84 74,92 90,82"/>
+        </svg>
+      </div>
+      <div class="orn tr" aria-hidden="true"><svg viewBox="0 0 260 180"><path d="M20,120 C40,82 78,92 92,72 C106,52 92,34 66,36 C98,10 144,26 150,58 C156,90 120,94 110,112 C98,134 126,150 162,138"/><path class="mist" d="M22,138 C60,120 82,138 108,126 C134,114 136,94 122,84"/><path class="mist" d="M34,98 C58,84 74,92 90,82"/></svg></div>
+      <div class="orn bl" aria-hidden="true"><svg viewBox="0 0 260 180"><path d="M20,120 C40,82 78,92 92,72 C106,52 92,34 66,36 C98,10 144,26 150,58 C156,90 120,94 110,112 C98,134 126,150 162,138"/><path class="mist" d="M22,138 C60,120 82,138 108,126 C134,114 136,94 122,84"/><path class="mist" d="M34,98 C58,84 74,92 90,82"/></svg></div>
+      <div class="orn br" aria-hidden="true"><svg viewBox="0 0 260 180"><path d="M20,120 C40,82 78,92 92,72 C106,52 92,34 66,36 C98,10 144,26 150,58 C156,90 120,94 110,112 C98,134 126,150 162,138"/><path class="mist" d="M22,138 C60,120 82,138 108,126 C134,114 136,94 122,84"/><path class="mist" d="M34,98 C58,84 74,92 90,82"/></svg></div>
+
+      <div class="gold-frame">
+
+        <!-- Logo (Works chỉ dùng Logo, không dùng banner) -->
+        <div class="moon-wrap">
+          <div class="moon">
+            <img alt="TKC-VH Moon Emblem" src="https://tkc-vh.github.io/assets/moon-diamond.jpg">
+          </div>
+        </div>
+
+        <h1>Works</h1>
+        <div class="subtitle">TKC-VH DIARY • THƯ VIỆN TÁC PHẨM • SERIES & EDITIONS</div>
+
+        <hr>
+
+        <style>
+          /* Đường kiếm quang mảnh */
+          .swordline{
+            height:1px;
+            margin:14px 0 12px;
+            background:linear-gradient(90deg,
+              transparent,
+              rgba(255,255,255,.18),
+              rgba(255,205,220,.14),
+              rgba(200,220,255,.12),
+              rgba(255,255,255,.18),
+              transparent
+            );
+          }
+
+          /* Điều hướng */
+          .nav-row{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin:10px 0 0;opacity:.92}
+          .navbtn{
+            display:inline-block;text-decoration:none;color:inherit;
+            padding:8px 12px;border-radius:999px;
+            border:1px solid rgba(255,255,255,.12);
+            background:rgba(255,255,255,.02);
+            box-shadow:0 10px 22px rgba(0,0,0,.18);
+            font-size:.95rem;
+          }
+          .navbtn:hover{transform:translateY(-1px);transition:.2s ease}
+
+          /* Khối giới thiệu series */
+          .panel{
+            margin: 14px 0 0;
+            padding: 14px 14px 12px;
+            border-radius: 18px;
+            border: 1px solid rgba(255,255,255,.10);
+            background: rgba(255,255,255,.02);
+            box-shadow: 0 12px 32px rgba(0,0,0,.22);
+            line-height: 1.85;
+          }
+
+          /* Lưới tác phẩm */
+          .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px;margin-top:14px}
+          .work{
+            border:1px solid rgba(255,255,255,.10);
+            border-radius:18px;
+            padding:14px 14px 12px;
+            background:rgba(255,255,255,.03);
+            box-shadow:0 10px 30px rgba(0,0,0,.25);
+            position:relative;overflow:hidden;
+          }
+          .work:before{
+            content:"";
+            position:absolute;left:14px;right:14px;top:12px;height:1px;
+            background:linear-gradient(90deg, transparent, rgba(255,255,255,.18), rgba(255,205,220,.14), rgba(200,220,255,.12), rgba(255,255,255,.18), transparent);
+            opacity:.9;
+            pointer-events:none;
+          }
+          .work h3{margin:10px 0 6px;font-size:1.08rem;letter-spacing:.2px}
+          .work .meta{opacity:.88;margin:0 0 10px;line-height:1.55}
+          .editions{margin:10px 0 0;padding:0 0 0 18px;opacity:.92;line-height:1.6}
+          .editions li{margin:4px 0}
+
+          /* Nút “an toàn” chống dead link */
+          .btn-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px}
+          .btn{
+            display:inline-block;
+            padding:8px 12px;
+            border-radius:999px;
+            border:1px solid rgba(255,255,255,.12);
+            background:rgba(255,255,255,.02);
+            box-shadow:0 10px 22px rgba(0,0,0,.18);
+            color:inherit;
+            text-decoration:none;
+            font-size:.95rem;
+            opacity:.95;
+          }
+          .btn:hover{transform:translateY(-1px);transition:.2s ease}
+          .btn.disabled{
+            opacity:.45;
+            pointer-events:none;
+            filter:saturate(.7);
+          }
+
+          .mini{font-size:.95rem;opacity:.90}
+        </style>
+
+        <!-- Điều hướng chính (không dead link) -->
+        <div class="nav-row">
+          <a class="navbtn" href="./index.html">← Trang Chủ</a>
+          <a class="navbtn" href="./legal/">↩ Pháp Lý</a>
+          <a class="navbtn" href="./legal/logo.html">Logo</a>
+        </div>
+
+        <div class="swordline" aria-hidden="true"></div>
+
+        <!-- Giới thiệu series -->
+        <div class="panel">
+          <p style="margin:0 0 10px;">
+            <strong>TKC-VH Diary</strong> là một hệ tác phẩm văn chương nội quan, xây dựng theo cấu trúc “series”
+            và mở rộng đa ngôn ngữ theo thời gian. Đây là trang <em>Works</em> tạm thời để giữ nhịp thư viện,
+            tránh liên kết đứt gãy, và giúp độc giả đi đúng lối khi các cổng nội dung đang tiếp tục hoàn thiện.
+          </p>
+          <p style="margin:0;">
+            <strong>Ba tác phẩm đã phát hành</strong> bên dưới được trình bày theo dạng “ấn bản” (editions).
+            Khi chàng gắn link chính thức cho từng ngôn ngữ, nút “Đọc” sẽ tự sáng; còn hiện tại, mọi nút không có link sẽ tự “ngủ”
+            để không bao giờ tạo dead link.
+          </p>
+        </div>
+
+        <!-- 3 tác phẩm đã phát hành -->
+        <div class="grid">
+
+          <!-- Work 1 -->
+          <div class="work" id="t19c1">
+            <h3>T19-C1 • Khai Mở Mạng Quang Tuyến – Cây Trường Sinh – Thân Thủy Sinh</h3>
+            <p class="meta">
+              Một trục tác phẩm mang tính “khai mở” – đặt nền cho hệ quang tuyến và thân-thức nội quan.
+            </p>
+
+            <ul class="editions">
+              <li>VI • Vietnamese Edition</li>
+              <li>EN • English Edition</li>
+              <li>FR • French Edition</li>
+              <li>JA / KO / ZH • Editions in progress / released (tuỳ thời điểm)</li>
+            </ul>
+
+            <div class="btn-row">
+              <!-- Gắn link sau: data-href="..." -->
+              <a class="btn disabled" data-href="" href="#">Đọc (VI)</a>
+              <a class="btn disabled" data-href="" href="#">Đọc (EN)</a>
+              <a class="btn disabled" data-href="" href="#">Đọc (FR)</a>
+              <a class="btn" href="./legal/copyright.html">Thông tin Bản quyền</a>
+            </div>
+          </div>
+
+          <!-- Work 2 -->
+          <div class="work" id="t35c1">
+            <h3>T35-C1 • Aqua-Fire Luminous Body & The Unicorn Spirit Embryo</h3>
+            <p class="meta">
+              Một trục tác phẩm về “thân quang” và trường biểu tượng, đi theo kỷ luật cổ điển: rõ – sâu – bền.
+            </p>
+
+            <ul class="editions">
+              <li>VI • Vietnamese Edition</li>
+              <li>EN • English Edition</li>
+              <li>FR • French Edition</li>
+              <li>JA / KO / ZH • Editions in progress / released (tuỳ thời điểm)</li>
+            </ul>
+
+            <div class="btn-row">
+              <a class="btn disabled" data-href="" href="#">Đọc (VI)</a>
+              <a class="btn disabled" data-href="" href="#">Đọc (EN)</a>
+              <a class="btn disabled" data-href="" href="#">Đọc (FR)</a>
+              <a class="btn" href="./legal/disclaimer.html">Disclaimer</a>
+            </div>
+          </div>
+
+          <!-- Work 3 -->
+          <div class="work" id="t42c2">
+            <h3>T42-C2 • Twin Bodhi Diamond Trees – Eternal Golden Apricot Tree</h3>
+            <p class="meta">
+              Một trục tác phẩm “cổ thụ” – biểu tượng Bồ Đề song thụ và Mai Vàng vĩnh cửu; nhịp văn thơ bền như kim thạch.
+            </p>
+
+            <ul class="editions">
+              <li>VI • Vietnamese Edition</li>
+              <li>EN • English Edition</li>
+              <li>FR • French Edition</li>
+              <li>JA / KO / ZH • Editions in progress / released (tuỳ thời điểm)</li>
+            </ul>
+
+            <div class="btn-row">
+              <a class="btn disabled" data-href="" href="#">Đọc (VI)</a>
+              <a class="btn disabled" data-href="" href="#">Đọc (EN)</a>
+              <a class="btn disabled" data-href="" href="#">Đọc (FR)</a>
+              <a class="btn" href="./legal/nguon-anh-va-tu-lieu.html">Nguồn ảnh & Tư liệu</a>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="swordline" aria-hidden="true"></div>
+
+        <div class="mini">
+          Ghi chú:    Khi có link đọc chính thức cho từng ấn bản, chỉ cần điền vào thuộc tính <strong>data-href</strong> của nút.
+          Nút sẽ tự hoạt động; còn không có link thì tự khóa để không dẫn người đọc vào khoảng trống.
+        </div>
+
+        <!-- Nút điều hướng chân trang -->
+        <div class="swordline" aria-hidden="true"></div>
+        <div class="nav-row">
+          <a class="navbtn" href="./index.html">← Trang Chủ</a>
+          <a class="navbtn" href="./legal/">↩ Pháp Lý</a>
+          <a class="navbtn" href="./legal/public-gpg-key.html">GPG Key</a>
+        </div>
+
+        <div class="footer">© TKC-VH • Works (Temporary)</div>
+
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Chống dead link: nút nào có data-href thì bật; không có thì tắt
+    (function(){
+      const btns = document.querySelectorAll('a.btn[data-href]');
+      btns.forEach(a => {
+        const href = (a.getAttribute('data-href') || '').trim();
+        if(href){
+          a.setAttribute('href', href);
+          a.classList.remove('disabled');
+        }else{
+          a.setAttribute('href', '#');
+          a.classList.add('disabled');
+          a.setAttribute('aria-disabled', 'true');
+        }
+      });
+    })();
+  </script>
+</body>
+</html>
