@@ -6,7 +6,22 @@
   <title>Author | TKC-VH Diary</title>
 
   <!-- CSS chung -->
-  <link rel="stylesheet" href="https://tkc-vh.github.io/legal/legal.css">
+  <link rel="stylesheet" href="./legal.css">
+
+  <style>
+/* =========================
+   NAVDOCK: Global + Legal
+   (injected by build script)
+   ========================= */
+.navdock{margin:14px auto 10px;display:grid;gap:10px}
+.tabs{display:flex;flex-wrap:wrap;gap:8px;justify-content:center}
+.tab{display:inline-flex;align-items:center;justify-content:center;padding:9px 12px;border-radius:999px;text-decoration:none;font-weight:600;font-size:.92rem;letter-spacing:.2px;color:rgba(245,230,195,.92);background:rgba(0,0,0,.25);border:1px solid rgba(210,180,110,.28);box-shadow:0 0 0 1px rgba(255,215,140,.05) inset;transition:transform .15s ease,background .15s ease,border-color .15s ease}
+.tab:hover{transform:translateY(-1px);background:rgba(0,0,0,.34);border-color:rgba(235,200,120,.45)}
+.tab.is-active,.tab[aria-current="page"]{background:rgba(30,18,8,.55);border-color:rgba(255,215,140,.65);box-shadow:0 0 0 1px rgba(255,215,140,.18) inset,0 0 18px rgba(255,215,140,.08)}
+.tabs-global .tab{background:rgba(0,0,0,.30)}
+.tabs-legal .tab{font-size:.88rem;opacity:.96}
+@media (max-width:520px){.tab{padding:10px 12px;font-size:.95rem}}
+  </style>
 </head>
 
 <body>
@@ -30,12 +45,27 @@
         <div class="moon-wrap">
           <div class="moon">
             <img alt="TKC-VH Moon Emblem"
-                 src="https://tkc-vh.github.io/assets/moon-diamond.jpg">
+                 src="../assets/moon-diamond.jpg">
           </div>
         </div>
 
         <h1>Author</h1>
         <div class="subtitle">VỀ TÁC GIẢ • ABOUT THE AUTHOR</div>
+
+        
+
+        <!-- NAV: Global + Legal (2 tầng tap) -->
+        <nav class="navdock" aria-label="Điều hướng nhanh">
+        
+          <div class="tabs tabs-global" role="navigation" aria-label="Global">
+            <a class="tab" href="../index.html">Trang Chủ</a><a class="tab" href="../works.html">Works</a><a class="tab is-active" href="./index.html" aria-current="page">Legal</a><a class="tab" href="../series.html">Series</a>
+          </div>
+        
+          <div class="tabs tabs-legal" role="navigation" aria-label="Legal">
+            <a class="tab" href="./index.html">Legal Home</a><a class="tab" href="./copyright.html">Bản quyền</a><a class="tab" href="./disclaimer.html">Disclaimer</a><a class="tab" href="./nguon-anh-va-tu-lieu.html">Nguồn ảnh</a><a class="tab" href="./public-gpg-key.html">GPG Key</a><a class="tab" href="./logo.html">Logo • Slogan</a><a class="tab" href="./tkc-vh-glossary.html">Thuật ngữ</a><a class="tab" href="./quyen-so-huu-danh-xung.html">Danh xưng</a><a class="tab" href="./vo-dieu-tam.html">Vợ Diệu Tâm</a><a class="tab is-active" href="./author.html" aria-current="page">Author</a>
+          </div>
+        
+        </nav>
 
         <hr>
 
