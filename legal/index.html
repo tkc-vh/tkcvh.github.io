@@ -4,7 +4,22 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Legal Library | TKC-VH</title>
-  <link rel="stylesheet" href="https://tkc-vh.github.io/legal/legal.css">
+  <link rel="stylesheet" href="./legal.css">
+
+  <style>
+/* =========================
+   NAVDOCK: Global + Legal
+   (injected by build script)
+   ========================= */
+.navdock{margin:14px auto 10px;display:grid;gap:10px}
+.tabs{display:flex;flex-wrap:wrap;gap:8px;justify-content:center}
+.tab{display:inline-flex;align-items:center;justify-content:center;padding:9px 12px;border-radius:999px;text-decoration:none;font-weight:600;font-size:.92rem;letter-spacing:.2px;color:rgba(245,230,195,.92);background:rgba(0,0,0,.25);border:1px solid rgba(210,180,110,.28);box-shadow:0 0 0 1px rgba(255,215,140,.05) inset;transition:transform .15s ease,background .15s ease,border-color .15s ease}
+.tab:hover{transform:translateY(-1px);background:rgba(0,0,0,.34);border-color:rgba(235,200,120,.45)}
+.tab.is-active,.tab[aria-current="page"]{background:rgba(30,18,8,.55);border-color:rgba(255,215,140,.65);box-shadow:0 0 0 1px rgba(255,215,140,.18) inset,0 0 18px rgba(255,215,140,.08)}
+.tabs-global .tab{background:rgba(0,0,0,.30)}
+.tabs-legal .tab{font-size:.88rem;opacity:.96}
+@media (max-width:520px){.tab{padding:10px 12px;font-size:.95rem}}
+  </style>
 </head>
 
 <body>
@@ -27,7 +42,7 @@
 
         <div class="moon-wrap">
           <div class="moon">
-            <img alt="TKC-VH Moon Emblem" src="https://tkc-vh.github.io/assets/moon-diamond.jpg">
+            <img alt="TKC-VH Moon Emblem" src="../assets/moon-diamond.jpg">
           </div>
         </div>
 
@@ -192,7 +207,7 @@
         <div class="nav-row">
           <a class="navbtn" href="https://tkc-vh.github.io/index.html">← Trang Chủ</a>
           <a class="navbtn" href="https://tkc-vh.github.io/works.html">→ Works</a>
-          <a class="navbtn" href="https://tkc-vh.github.io/legal/logo.html">Logo</a>
+          <a class="navbtn" href="./logo.html">Logo</a>
         </div>
 
         <div class="footer">© TKC-VH • Legal Library Index</div>
