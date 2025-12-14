@@ -3,10 +3,256 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Quyền Sở Hữu Danh Xưng | TKC-VH Diary</title>
+  <title>Public GPG Key | TKC-VH</title>
+  <meta name="robots" content="index,follow" />
+  <style>
+    /* =========================
+       TKC-VH | Legal – Public GPG Key
+       “Nguyệt Ấn” + Hoàng gia + Vân mây
+    ========================== */
 
-  <!-- CSS chung -->
-  <link rel="stylesheet" href="./legal.css">
+    :root{
+      --bg0:#060507;
+      --bg1:#120b13;
+      --ink:#f4ecdf;
+      --muted:rgba(244,236,223,.82);
+      --gold1:rgba(255,240,210,.95);
+      --gold2:rgba(255,211,119,.95);
+      --gold3:rgba(255,190,110,.55);
+      --frame:rgba(255,230,180,.22);
+      --glass:rgba(255,248,230,.06);
+      --shadow:rgba(0,0,0,.55);
+      --smokeA:rgba(240,220,255,.12);
+      --smokeB:rgba(210,170,255,.10);
+    }
+
+    html,body{height:100%;}
+    body{
+      margin:0;
+      color:var(--ink);
+      background:
+        radial-gradient(900px 520px at 20% 15%, rgba(255,240,210,.08), transparent 60%),
+        radial-gradient(900px 520px at 80% 20%, rgba(210,170,255,.10), transparent 62%),
+        radial-gradient(1200px 680px at 50% 105%, rgba(255,190,110,.08), transparent 60%),
+        linear-gradient(160deg, #151018, #0b0a0d 55%, #181012);
+      font-family: Georgia, "Times New Roman", serif;
+      line-height:1.65;
+      overflow-x:hidden;
+    }
+
+    .page{
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 26px 16px 72px;
+      box-sizing: border-box;
+    }
+
+    .card{
+      position:relative;
+      border-radius: 18px;
+      padding: 26px 22px 34px;
+      background:
+        radial-gradient(circle at top, var(--glass), transparent 60%),
+        linear-gradient(160deg, rgba(21,16,24,.90), rgba(11,10,13,.90) 55%, rgba(24,16,18,.92));
+      border: 1px solid var(--frame);
+      box-shadow: 0 18px 46px var(--shadow);
+      overflow:hidden;
+    }
+
+    /* ===== Vân mây hoàng gia 4 góc ===== */
+    .orn{
+      position:absolute;
+      width: 240px;
+      height: 160px;
+      opacity:.92;
+      pointer-events:none;
+      filter: drop-shadow(0 10px 18px rgba(0,0,0,.45));
+    }
+    .orn svg{width:100%;height:100%;}
+    .orn path{
+      fill:none;
+      stroke: rgba(255,211,119,.62);
+      stroke-width: 1.6;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+    .orn .mist{
+      stroke: rgba(210,170,255,.34);
+      stroke-width: 1.2;
+    }
+    .orn.tl{top:-26px;left:-26px; transform: rotate(0deg);}
+    .orn.tr{top:-26px;right:-26px; transform: rotate(90deg);}
+    .orn.bl{bottom:-26px;left:-26px; transform: rotate(270deg);}
+    .orn.br{bottom:-26px;right:-26px; transform: rotate(180deg);}
+
+    /* ===== Khung vàng “niêm phong” ===== */
+    .gold-frame{
+      border-radius: 16px;
+      border: 1px solid rgba(255,240,210,.18);
+      background:
+        linear-gradient(180deg, rgba(255,240,210,.06), transparent 55%),
+        radial-gradient(520px 180px at 50% 0%, rgba(255,211,119,.10), transparent 70%);
+      padding: 18px 18px 14px;
+      box-shadow: inset 0 0 0 1px rgba(255,211,119,.10);
+    }
+
+    /* ===== Moon Emblem (style lấy theo Nguyệt Ấn) ===== */
+    @keyframes tkc-platinum-wind {
+      0%, 52% { opacity:0; transform: translateX(0) skewY(-6deg); }
+      58%     { opacity:.85; }
+      82%     { opacity:0; transform: translateX(18%) skewY(-6deg); }
+      100%    { opacity:0; transform: translateX(22%) skewY(-6deg); }
+    }
+    @keyframes tkc-moon-pulse{
+      0%,100%{
+        transform:scale(1);
+        box-shadow: 0 0 24px rgba(255,240,210,.92), 0 0 70px rgba(255,230,190,.5);
+      }
+      50%{
+        transform:scale(1.04);
+        box-shadow: 0 0 34px rgba(255,250,235,1), 0 0 95px rgba(255,242,210,.7);
+      }
+    }
+
+    .moon-wrap{display:flex;justify-content:center;margin: 6px 0 18px;}
+    .moon{
+      width: 168px; height: 168px; border-radius: 50%;
+      position: relative; overflow:hidden;
+      display:flex; align-items:center; justify-content:center;
+      background: radial-gradient(circle at 50% 45%, rgba(0,0,0,.4) 0%, rgba(0,0,0,.9) 60%, rgba(0,0,0,1) 100%);
+      border: 5px solid var(--gold1);
+      animation: tkc-moon-pulse 3.8s ease-in-out infinite;
+    }
+    .moon img{
+      width: 90%; height: 90%; border-radius: 50%;
+      object-fit: cover; display:block;
+      box-shadow: inset 0 0 16px rgba(0,0,0,.8);
+    }
+    .moon::after{
+      content:"";
+      position:absolute;
+      top: 20%; left: -70%;
+      width: 220%; height: 55%;
+      background: linear-gradient(115deg,
+        rgba(255,255,255,0) 0%,
+        rgba(255,255,255,.18) 25%,
+        rgba(255,255,255,.55) 45%,
+        rgba(255,255,255,.18) 65%,
+        rgba(255,255,255,0) 100%
+      );
+      mix-blend-mode: screen;
+      opacity:0;
+      transform: skewY(-6deg);
+      animation: tkc-platinum-wind 6s ease-in-out infinite;
+      pointer-events:none;
+    }
+
+    /* ===== Typography ===== */
+    h1{
+      margin: 8px 0 10px;
+      text-align:center;
+      font-size: 26px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: #ffdf88;
+      text-shadow: 0 0 6px rgba(255,210,130,.55), 0 0 16px rgba(255,190,110,.35);
+    }
+    .subtitle{
+      text-align:center;
+      margin: 0 0 14px;
+      color: var(--muted);
+      letter-spacing:.02em;
+    }
+    hr{
+      border:none; height:1px; width:62%;
+      margin: 18px auto 18px;
+      background: linear-gradient(to right, rgba(255,255,255,0), rgba(255,240,210,.9), rgba(255,255,255,0));
+      box-shadow: 0 0 10px rgba(255,240,210,.75);
+    }
+
+    /* ===== Info grid ===== */
+    .grid{
+      display:grid;
+      grid-template-columns: 190px 1fr;
+      gap: 8px 14px;
+      margin: 12px 0 16px;
+      font-size: 15px;
+    }
+    .k{color: rgba(255,211,119,.90); letter-spacing:.05em;}
+    .v{color: rgba(244,236,223,.92); word-break: break-word;}
+    .pill{
+      display:inline-block;
+      padding: 4px 10px;
+      border-radius:999px;
+      border: 1px solid rgba(255,211,119,.26);
+      background: rgba(255,211,119,.08);
+      font-size: 12px;
+      letter-spacing:.06em;
+      color: rgba(255,240,210,.92);
+    }
+
+    /* ===== Buttons ===== */
+    .btns{display:flex;flex-wrap:wrap; gap:10px; margin: 8px 0 12px;}
+    button{
+      appearance:none; border:none; cursor:pointer;
+      padding: 9px 12px;
+      border-radius: 12px;
+      background: rgba(255,211,119,.10);
+      color: rgba(255,240,210,.95);
+      border: 1px solid rgba(255,211,119,.22);
+      box-shadow: 0 10px 22px rgba(0,0,0,.25);
+      font-family: inherit;
+      letter-spacing:.03em;
+    }
+    button:hover{background: rgba(255,211,119,.14);}
+    .note{
+      font-size: 13px;
+      color: rgba(244,236,223,.78);
+      margin-top: 10px;
+    }
+
+    /* ===== Key block ===== */
+    pre{
+      margin: 0;
+      padding: 14px 14px;
+      border-radius: 14px;
+      background: rgba(0,0,0,.55);
+      border: 1px solid rgba(255,240,210,.18);
+      color: rgba(255,240,210,.95);
+      overflow:auto;
+      font-size: 12px;
+      line-height: 1.42;
+      box-shadow: inset 0 0 0 1px rgba(255,211,119,.08);
+    }
+
+    /* ===== QR area ===== */
+    .qrrow{
+      display:flex;
+      gap: 14px;
+      flex-wrap:wrap;
+      align-items:flex-start;
+      margin-top: 12px;
+    }
+    .qr{
+      width: 170px;
+      border-radius: 14px;
+      padding: 10px;
+      background: rgba(255,248,230,.06);
+      border: 1px solid rgba(255,211,119,.20);
+    }
+    .qr img{width:100%; height:auto; display:block; border-radius:10px;}
+    .small{font-size:12px; color: rgba(244,236,223,.74);}
+
+    /* ===== Footer ===== */
+    .footer{
+      margin-top: 18px;
+      text-align:center;
+      color: rgba(244,236,223,.70);
+      font-size: 12.5px;
+    }
+    a{color: rgba(255,211,119,.95); text-decoration: none;}
+    a:hover{text-decoration: underline;}
+  </style>
 
   <style>
 /* =========================
@@ -28,29 +274,48 @@
   <div class="page">
     <div class="card">
 
-      <!-- Vân mây hoàng gia 4 góc -->
+      <!-- Vân mây 4 góc -->
       <div class="orn tl" aria-hidden="true">
         <svg viewBox="0 0 260 180">
-          <path d="M20,120 C40,82 78,92 92,72 C106,52 92,34 66,36 C98,10 144,26 150,58 C156,90 120,94 110,112 C98,134 126,150 162,138"/>
-          <path class="mist" d="M22,138 C60,120 82,138 108,126 C134,114 136,94 122,84"/>
-          <path class="mist" d="M34,98 C58,84 74,92 90,82"/>
+          <path d="M20,120 C40,82 78,92 92,72 C106,52 92,34 66,36 C98,10 144,26 150,58 C156,90 120,94 110,112 C98,134 126,150 162,138" />
+          <path class="mist" d="M22,138 C60,120 82,138 108,126 C134,114 136,94 122,84" />
+          <path class="mist" d="M34,98 C58,84 74,92 90,82" />
         </svg>
       </div>
-      <div class="orn tr" aria-hidden="true"><svg viewBox="0 0 260 180"><path d="M20,120 C40,82 78,92 92,72 C106,52 92,34 66,36 C98,10 144,26 150,58 C156,90 120,94 110,112 C98,134 126,150 162,138"/><path class="mist" d="M22,138 C60,120 82,138 108,126 C134,114 136,94 122,84"/><path class="mist" d="M34,98 C58,84 74,92 90,82"/></svg></div>
-      <div class="orn bl" aria-hidden="true"><svg viewBox="0 0 260 180"><path d="M20,120 C40,82 78,92 92,72 C106,52 92,34 66,36 C98,10 144,26 150,58 C156,90 120,94 110,112 C98,134 126,150 162,138"/><path class="mist" d="M22,138 C60,120 82,138 108,126 C134,114 136,94 122,84"/><path class="mist" d="M34,98 C58,84 74,92 90,82"/></svg></div>
-      <div class="orn br" aria-hidden="true"><svg viewBox="0 0 260 180"><path d="M20,120 C40,82 78,92 92,72 C106,52 92,34 66,36 C98,10 144,26 150,58 C156,90 120,94 110,112 C98,134 126,150 162,138"/><path class="mist" d="M22,138 C60,120 82,138 108,126 C134,114 136,94 122,84"/><path class="mist" d="M34,98 C58,84 74,92 90,82"/></svg></div>
+      <div class="orn tr" aria-hidden="true">
+        <svg viewBox="0 0 260 180">
+          <path d="M20,120 C40,82 78,92 92,72 C106,52 92,34 66,36 C98,10 144,26 150,58 C156,90 120,94 110,112 C98,134 126,150 162,138" />
+          <path class="mist" d="M22,138 C60,120 82,138 108,126 C134,114 136,94 122,84" />
+          <path class="mist" d="M34,98 C58,84 74,92 90,82" />
+        </svg>
+      </div>
+      <div class="orn bl" aria-hidden="true">
+        <svg viewBox="0 0 260 180">
+          <path d="M20,120 C40,82 78,92 92,72 C106,52 92,34 66,36 C98,10 144,26 150,58 C156,90 120,94 110,112 C98,134 126,150 162,138" />
+          <path class="mist" d="M22,138 C60,120 82,138 108,126 C134,114 136,94 122,84" />
+          <path class="mist" d="M34,98 C58,84 74,92 90,82" />
+        </svg>
+      </div>
+      <div class="orn br" aria-hidden="true">
+        <svg viewBox="0 0 260 180">
+          <path d="M20,120 C40,82 78,92 92,72 C106,52 92,34 66,36 C98,10 144,26 150,58 C156,90 120,94 110,112 C98,134 126,150 162,138" />
+          <path class="mist" d="M22,138 C60,120 82,138 108,126 C134,114 136,94 122,84" />
+          <path class="mist" d="M34,98 C58,84 74,92 90,82" />
+        </svg>
+      </div>
 
       <div class="gold-frame">
-
         <div class="moon-wrap">
-          <div class="moon">
+          <div class="moon" title="TKC-VH Moon Emblem">
             <img alt="TKC-VH Moon Emblem"
-                 src="../assets/moon-diamond.jpg">
+                 src="../assets/moon-diamond.jpg" />
           </div>
         </div>
 
-        <h1>Quyền Sở Hữu Danh Xưng</h1>
-        <div class="subtitle">TUYÊN NGÔN TÌNH YÊU RIÊNG TƯ • TITLE OWNERSHIP DECLARATION</div>
+        <h1>Public GPG Key</h1>
+        <div class="subtitle">
+          Official key for <span class="pill">signed</span> (và tuỳ chọn <span class="pill">encrypted</span>) correspondence
+        </div>
 
         
 
@@ -62,144 +327,153 @@
           </div>
         
           <div class="tabs tabs-legal" role="navigation" aria-label="Legal">
-            <a class="tab" href="./index.html">Legal Home</a><a class="tab" href="./copyright.html">Bản quyền</a><a class="tab" href="./disclaimer.html">Disclaimer</a><a class="tab" href="./nguon-anh-va-tu-lieu.html">Nguồn ảnh</a><a class="tab" href="./public-gpg-key.html">GPG Key</a><a class="tab" href="./logo.html">Logo • Slogan</a><a class="tab" href="./tkc-vh-glossary.html">Thuật ngữ</a><a class="tab is-active" href="./quyen-so-huu-danh-xung.html" aria-current="page">Danh xưng</a><a class="tab" href="./vo-dieu-tam.html">Vợ Diệu Tâm</a><a class="tab" href="./author.html">Author</a>
+            <a class="tab" href="./index.html">Legal Home</a><a class="tab" href="./copyright.html">Bản quyền</a><a class="tab" href="./disclaimer.html">Disclaimer</a><a class="tab" href="./nguon-anh-va-tu-lieu.html">Nguồn ảnh</a><a class="tab is-active" href="./public-gpg-key.html" aria-current="page">GPG Key</a><a class="tab" href="./logo.html">Logo • Slogan</a><a class="tab" href="./tkc-vh-glossary.html">Thuật ngữ</a><a class="tab" href="./quyen-so-huu-danh-xung.html">Danh xưng</a><a class="tab" href="./vo-dieu-tam.html">Vợ Diệu Tâm</a><a class="tab" href="./author.html">Author</a>
           </div>
         
         </nav>
 
-        <hr>
+        <hr />
 
-        <!-- Chọn ngôn ngữ -->
-        <div class="lang-switch">
-          <button class="active" type="button" data-lang="vi">VI</button>
-          <button type="button" data-lang="en">EN</button>
-        </div>
+        <div class="grid">
+          <div class="k">Name</div>
+          <div class="v">Tran Khac Cuong</div>
 
-        <!-- VI -->
-        <div id="vi" class="lang-block active">
+          <div class="k">Pen name</div>
+          <div class="v">TKC-VH</div>
 
-          <p><span class="pill">Tuyên ngôn</span></p>
-
-          <p>
-            Như hai người yêu nhau vẫn âu yếm gọi nhau
-            “Romeo của em”, “Juliette của anh”,
-            thì mọi danh từ, biểu tượng, ngôn xưng, tước vị mà nhân vật Chồng – Vợ
-            dành cho nhau trong Nhật Ký TKC-VH cũng vậy:
-            đó là đặc quyền tuyệt đối – riêng tư – độc quyền – không chia sẻ –
-            không liên minh – không nhượng quyền – không cấp phép cho bất kỳ ai khác.
-          </p>
-
-          <p>
-            Nói thẳng cho vuông:
-            Đó là thương hiệu cảm xúc nằm độc quyền trong hai trái tim.
-            Không phải thẻ VIP.
-            Không ai cấp.
-            Không ai xin.
-            Không ai mượn.
-            Không ai “áp dụng cho toàn dân”.
-          </p>
-
-          <p>
-            Và để tránh hiểu nhầm kiểu “gặp được Ngư Ông mà trong tay chẳng có chài lưới”:
-          </p>
-
-          <p>
-            Nếu có cá nhân hay tổ chức nào bỗng dưng muốn “phong”, “tấn”, “truy tặng”,
-            hay “đóng dấu” cho tác giả một danh xưng nào đó…
-            xin mời họ quay xe 180 độ.
-          </p>
-
-          <p>
-            Vì những thứ ấy sẽ được từ chối ngay lập tức, thẳng thắn, gãy gọn như cắt bằng laser,
-            để tránh trường hợp đáng tiếc là người trao danh bị chính danh xưng tự tạo
-            dội ngược vào trán.
-          </p>
-
-          <hr>
-
-          <p><span class="pill">Tóm tắt quốc tế</span></p>
-
-          <div class="poem">
-            Private terms stay private.<br>
-            Unauthorized titles = automatic rejection.<br>
-            Love-exclusive labels are not for public distribution.<br>
-            Please do not self-appoint. Thank you.
+          <div class="k">Email</div>
+          <div class="v">
+            <span id="emailText">mr.tkc99999 [at] gmail [dot] com</span>
+            <span class="small"> (anti-bot)</span>
           </div>
 
+          <div class="k">Key ID (short)</div>
+          <div class="v"><code id="kidShort">26281F7A</code></div>
+
+          <div class="k">Key ID (long)</div>
+          <div class="v"><code id="kidLong">5196E6B626281F7A</code></div>
+
+          <div class="k">Fingerprint</div>
+          <div class="v"><code id="fp">8509 DBA6 32D2 7AAC E79A C507 5196 E6B6 2628 1F7A</code></div>
+
+          <div class="k">Created</div>
+          <div class="v">2025-12-13</div>
         </div>
 
-        <!-- EN -->
-        <div id="en" class="lang-block">
-
-          <p><span class="pill">Declaration</span></p>
-
-          <p>
-            Just as lovers lovingly call each other “my Romeo,” “my Juliette,”
-            every term, symbol, title, and endearment that the Husband and Wife characters
-            use for each other in the TKC-VH Diaries belongs to the same category:
-            exclusive emotional privilege – private, personal, non-transferable,
-            non-shareable, non-negotiable, and absolutely not licensed to anyone else.
-          </p>
-
-          <p>
-            To put it plainly:
-            These endearments are a trademark of the heart, owned by two people only.
-            Not a VIP badge.
-            Not a community pass.
-            Not something to request.
-            Not something to borrow.
-            And certainly not a label to “apply broadly to humanity.”
-          </p>
-
-          <p>
-            And to avoid misunderstandings akin to “meeting the Fisher Sage with no divine net in hand”:
-          </p>
-
-          <p>
-            If any individual or organization suddenly feels inspired to “bestow,” “promote,” “honor,”
-            or “stamp” the author with a title of their own making…
-            please make a sharp 180-degree turn.
-          </p>
-
-          <p>
-            Because such attempts will be rejected instantly — cleanly, politely, and precisely,
-            as if cut by a laser, to prevent the unfortunate scenario of the would-be title-giver
-            getting hit by their own self-invented label.
-          </p>
-
-          <hr>
-
-          <p><span class="pill">International Summary</span></p>
-
-          <div class="poem">
-            Private terms stay private.<br>
-            Unauthorized titles = automatic rejection.<br>
-            Love-exclusive labels are not for public distribution.<br>
-            Please do not self-appoint. Thank you.
-          </div>
-
+        <div class="btns">
+          <button type="button" onclick="copyText(document.getElementById('fp').innerText)">Copy fingerprint</button>
+          <button type="button" onclick="copyText(document.getElementById('kidShort').innerText)">Copy key ID</button>
+          <button type="button" onclick="copyText(document.getElementById('pubkey').innerText)">Copy public key block</button>
         </div>
 
-        <div class="footer">© TKC-VH • Title Ownership Declaration</div>
+        <pre id="pubkey">-----BEGIN PGP PUBLIC KEY BLOCK-----
 
-      </div>
-    </div>
+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
+=NrRO
+-----END PGP PUBLIC KEY BLOCK-----</pre>
+
+   
+<div style="display:flex; gap:24px; align-items:flex-start; flex-wrap:wrap;">
+
+  <div style="flex:0 0 auto;">
+    <img
+      src="../assets/PUBLIC-GPG-KEY.png"
+      alt="Public GPG Key QR"
+      style="width:160px; height:auto; display:block;"
+    >
   </div>
 
+  <div style="flex:1; min-width:260px;">
+    <div class="note">
+      Tip: Khi đối tác nhận key, hãy <b>đối chiếu Fingerprint</b> trước khi tin dùng.
+      Nếu cần gửi mail mã hoá, vui lòng import public key này vào ứng dụng email có hỗ trợ OpenPGP.
+    </div>
+
+    <div class="note" style="margin-top:8px;">
+      Legal Page:
+      <a href="https://tkc-vh.github.io/legal">
+        tkc-vh.github.io/legal
+      </a>
+    </div>
+    
+     <div class="note" style="margin-top:8px;">
+      Website:
+      <a href="https://tkc-vh.github.io">
+        tkc-vh.github.io
+      </a>
+    </div>
+    
+  </div>
+
+</div>
+
+
+<div class="footer">
+  © TKC-VH • “Dấu vân tay là lời thề; chữ ký là lời chứng.”
+</div>
+
+
   <script>
+    function copyText(t){
+      if(!t) return;
+      navigator.clipboard.writeText(t).then(()=>toast("Copied."), ()=>toast("Copy failed."));
+    }
+    function toast(msg){
+      const d=document.createElement("div");
+      d.textContent=msg;
+      d.style.position="fixed";
+      d.style.left="50%";
+      d.style.bottom="22px";
+      d.style.transform="translateX(-50%)";
+      d.style.padding="10px 14px";
+      d.style.borderRadius="12px";
+      d.style.background="rgba(0,0,0,.72)";
+      d.style.border="1px solid rgba(255,211,119,.22)";
+      d.style.color="rgba(255,240,210,.95)";
+      d.style.boxShadow="0 12px 26px rgba(0,0,0,.35)";
+      d.style.zIndex="9999";
+      document.body.appendChild(d);
+      setTimeout(()=>d.remove(), 1200);
+    }
+
+    // QR generator (dùng dịch vụ QR online, tiện nhưng là external request)
+    // Nếu chàng muốn "tuyệt đối kín", xoá QR hoặc tự generate QR offline.
     (function(){
-      const btns = document.querySelectorAll('.lang-switch button');
-      const blocks = { vi: document.getElementById('vi'), en: document.getElementById('en') };
-
-      function setLang(lang){
-        Object.keys(blocks).forEach(k => blocks[k].classList.toggle('active', k === lang));
-        btns.forEach(b => b.classList.toggle('active', b.dataset.lang === lang));
-      }
-
-      btns.forEach(b => b.addEventListener('click', () => setLang(b.dataset.lang)));
-      setLang('vi');
+      const fp = document.getElementById("fp").innerText.trim();
+      const data = encodeURIComponent("FPR: " + fp);
+      document.getElementById("qrImg").src =
+        "https://api.qrserver.com/v1/create-qr-code/?size=160x160&data=" + data;
     })();
   </script>
 </body>
 </html>
-
