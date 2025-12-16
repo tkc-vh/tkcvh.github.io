@@ -161,12 +161,26 @@ h1{
   color: var(--muted);
   letter-spacing:.02em;
 }
-hr{
-  border:none; height:1px; width:62%;
-  margin: 18px auto 18px;
-  background: linear-gradient(to right, rgba(255,255,255,0), rgba(255,240,210,.9), rgba(255,255,255,0));
-  box-shadow: 0 0 10px rgba(255,240,210,.75);
+
+
+/* Divider chuẩn – chỉ ăn khi có class */
+.tkc-hr{
+  border:none;
+  height:1px;
+  width:62%;
+  margin:18px auto;
+  background: linear-gradient(to right,
+    rgba(255,255,255,0),
+    rgba(255,211,119,1),
+    rgba(255,255,255,0)
+  );
+  box-shadow: 0 0 6px rgba(255,211,119,.85),
+              0 0 14px rgba(255,190,110,.45);
 }
+
+
+
+
 
 p{
   margin: 0 0 14px;
