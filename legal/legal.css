@@ -3,8 +3,13 @@
    “Nguyệt Ấn” + Hoàng gia + Vân mây
 ========================== */
 
+
+
+@import url("https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap");
 :root{
-  --bg0:#060507;
+  
+  --font-main: "EB Garamond", serif;
+--bg0:#060507;
   --bg1:#120b13;
   --ink:#f4ecdf;
   --muted:rgba(244,236,223,.82);
@@ -21,7 +26,8 @@
   --smokeB:rgba(210,170,255,.10);
 }
 
-html,body{height:100%;}
+html,body{  font-family: var(--font-main);
+height:100%;}
 body{
   margin:0;
   color:var(--ink);
