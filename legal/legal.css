@@ -5,7 +5,7 @@
 ========================== */
 
 /* Google Fonts (nhanh gọn để thử). Nếu sau này self-host, thay dòng này bằng @font-face */
-@import url("https://fonts.googleapis.com/css2?family=Borel&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap");
 
 :root{
   --bg0:#060507;
@@ -25,7 +25,7 @@
   --smokeB:rgba(210,170,255,.10);
 
   /* 1 font cho toàn trang */
-  --font:"Borel", cursive;
+  --font:"EB Garamond", serif;
 }
 
 html,body{height:100%;}
@@ -39,8 +39,8 @@ body{
     linear-gradient(160deg, #151018, #0b0a0d 55%, #181012);
 
   font-family: var(--font);
-  line-height:1.78;                /* “thở” dài hơn cho Borel */
-  letter-spacing:.01em;            /* rất nhẹ, tránh máy móc */
+  line-height:1.62;                /* EB Garamond: gọn hơn, đỡ “kéo” */
+  letter-spacing:.005em;           /* giảm spacing để bớt “in ấn” */
   overflow-x:hidden;
   -webkit-font-smoothing: antialiased;
   text-rendering: geometricPrecision;
@@ -165,7 +165,7 @@ a:hover{text-decoration: underline;}
 h1{
   margin: 10px 0 10px;
   text-align:center;
-  font-size: 30px;                 /* Borel cần “thở” chút cho tiêu đề */
+  font-size: 32px;                 /* EB Garamond hợp tiêu đề lớn hơn chút */
   line-height: 1.25;
   letter-spacing: .02em;
   text-transform: none;            /* bỏ “triều phục” — giữ “ánh trăng quê” */
@@ -187,8 +187,12 @@ hr{
 
 p{
   margin: 0 0 14px;
-  color: rgba(244,236,223,.92);
+  color: rgba(244,236,223,.88);
   text-align: left;               /* tránh “máy móc” khi justify */
+}
+
+p + p{
+  text-indent: 1.2em;             /* cảm giác “chép tay” nhẹ */
 }
 
 /* Language switch (dùng cho trang song ngữ) */
