@@ -3,47 +3,7 @@
    “Nguyệt Ấn” + Hoàng gia + Vân mây
 ========================== */
 
-/* =========================
-   EB Garamond – self-hosted
-========================== */
-@font-face{
-  font-family:"EB Garamond";
-  src:url("../assets/fonts/eb-garamond/static/EBGaramond-Regular.ttf") format("truetype");
-  font-weight:400;
-  font-style:normal;
-  font-display:swap;
-}
-@font-face{
-  font-family:"EB Garamond";
-  src:url("../assets/fonts/eb-garamond/static/EBGaramond-Italic.ttf") format("truetype");
-  font-weight:400;
-  font-style:italic;
-  font-display:swap;
-}
-@font-face{
-  font-family:"EB Garamond";
-  src:url("../assets/fonts/eb-garamond/static/EBGaramond-Medium.ttf") format("truetype");
-  font-weight:500;
-  font-style:normal;
-  font-display:swap;
-}
-@font-face{
-  font-family:"EB Garamond";
-  src:url("../assets/fonts/eb-garamond/static/EBGaramond-SemiBold.ttf") format("truetype");
-  font-weight:600;
-  font-style:normal;
-  font-display:swap;
-}
-@font-face{
-  font-family:"EB Garamond";
-  src:url("../assets/fonts/eb-garamond/static/EBGaramond-Bold.ttf") format("truetype");
-  font-weight:700;
-  font-style:normal;
-  font-display:swap;
-}
-
 :root{
-  --font-main: "EB Garamond", serif;
   --bg0:#060507;
   --bg1:#120b13;
   --ink:#f4ecdf;
@@ -61,10 +21,7 @@
   --smokeB:rgba(210,170,255,.10);
 }
 
-html,body{
-  font-family: var(--font-main);
-  height:100%;
-}
+html,body{height:100%;}
 body{
   margin:0;
   color:var(--ink);
@@ -73,7 +30,7 @@ body{
     radial-gradient(900px 520px at 80% 20%, rgba(210,170,255,.10), transparent 62%),
     radial-gradient(1200px 680px at 50% 105%, rgba(255,190,110,.08), transparent 60%),
     linear-gradient(160deg, #151018, #0b0a0d 55%, #181012);
-  font-family: inherit;
+  font-family: Georgia, "Times New Roman", serif;
   line-height:1.65;
   overflow-x:hidden;
 }
@@ -111,6 +68,83 @@ a:hover{text-decoration: underline;}
   box-shadow: inset 0 0 0 1px rgba(255,211,119,.10);
 }
 
+/* Vân mây hoàng gia 4 góc */
+.orn{
+  position:absolute;
+  width: 240px;
+  height: 160px;
+  opacity:.92;
+  pointer-events:none;
+  filter: drop-shadow(0 10px 18px rgba(0,0,0,.45));
+}
+.orn svg{width:100%;height:100%;}
+.orn path{
+  fill:none;
+  stroke: rgba(255,211,119,.62);
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.orn .mist{
+  stroke: rgba(210,170,255,.34);
+  stroke-width: 1.2;
+}
+.orn.tl{top:-26px;left:-26px;}
+.orn.tr{top:-26px;right:-26px; transform: rotate(90deg);}
+.orn.bl{bottom:-26px;left:-26px; transform: rotate(270deg);}
+.orn.br{bottom:-26px;right:-26px; transform: rotate(180deg);}
+
+/* Moon Emblem */
+@keyframes tkc-platinum-wind {
+  0%, 52% { opacity:0; transform: translateX(0) skewY(-6deg); }
+  58%     { opacity:.85; }
+  82%     { opacity:0; transform: translateX(18%) skewY(-6deg); }
+  100%    { opacity:0; transform: translateX(22%) skewY(-6deg); }
+}
+@keyframes tkc-moon-pulse{
+  0%,100%{
+    transform:scale(1);
+    box-shadow: 0 0 24px rgba(255,240,210,.92), 0 0 70px rgba(255,230,190,.5);
+  }
+  50%{
+    transform:scale(1.04);
+    box-shadow: 0 0 34px rgba(255,250,235,1), 0 0 95px rgba(255,242,210,.7);
+  }
+}
+
+.moon-wrap{display:flex;justify-content:center;margin: 6px 0 18px;}
+.moon{
+  width: 168px; height: 168px; border-radius: 50%;
+  position: relative; overflow:hidden;
+  display:flex; align-items:center; justify-content:center;
+  background: radial-gradient(circle at 50% 45%, rgba(0,0,0,.4) 0%, rgba(0,0,0,.9) 60%, rgba(0,0,0,1) 100%);
+  border: 5px solid var(--gold1);
+  animation: tkc-moon-pulse 3.8s ease-in-out infinite;
+}
+.moon img{
+  width: 90%; height: 90%; border-radius: 50%;
+  object-fit: cover; display:block;
+  box-shadow: inset 0 0 16px rgba(0,0,0,.8);
+}
+.moon::after{
+  content:"";
+  position:absolute;
+  top: 20%; left: -70%;
+  width: 220%; height: 55%;
+  background: linear-gradient(115deg,
+    rgba(255,255,255,0) 0%,
+    rgba(255,255,255,.18) 25%,
+    rgba(255,255,255,.55) 45%,
+    rgba(255,255,255,.18) 65%,
+    rgba(255,255,255,0) 100%
+  );
+  mix-blend-mode: screen;
+  opacity:0;
+  transform: skewY(-6deg);
+  animation: tkc-platinum-wind 6s ease-in-out infinite;
+  pointer-events:none;
+}
+
 /* Typography */
 h1{
   margin: 8px 0 10px;
@@ -127,22 +161,11 @@ h1{
   color: var(--muted);
   letter-spacing:.02em;
 }
-
-/* ===== DIVIDER – ÁNH KIẾM HOÀNG GIA ===== */
 hr{
-  border: none;
-  height: 1px;
-  width: 62%;
+  border:none; height:1px; width:62%;
   margin: 18px auto 18px;
-  background: linear-gradient(
-    to right,
-    rgba(255,255,255,0),
-    rgba(255,211,119,1),
-    rgba(255,255,255,0)
-  );
-  box-shadow:
-    0 0 6px rgba(255,211,119,.85),
-    0 0 14px rgba(255,190,110,.45);
+  background: linear-gradient(to right, rgba(255,255,255,0), rgba(255,240,210,.9), rgba(255,255,255,0));
+  box-shadow: 0 0 10px rgba(255,240,210,.75);
 }
 
 p{
@@ -151,9 +174,54 @@ p{
   text-align: justify;
 }
 
+/* Language switch (dùng cho trang song ngữ) */
+.lang-switch{
+  display:flex;
+  justify-content:center;
+  gap:10px;
+  margin: 12px 0 14px;
+}
+.lang-switch button{
+  appearance:none; border:none; cursor:pointer;
+  padding: 9px 12px;
+  border-radius: 12px;
+  background: rgba(255,211,119,.10);
+  color: rgba(255,240,210,.95);
+  border: 1px solid rgba(255,211,119,.22);
+  box-shadow: 0 10px 22px rgba(0,0,0,.25);
+  font-family: inherit;
+  letter-spacing:.03em;
+}
+.lang-switch button:hover{background: rgba(255,211,119,.14);}
+.lang-switch button.active{background: rgba(255,211,119,.18);}
+
+.lang-block{display:none;}
+.lang-block.active{display:block;}
+
+.poem{
+  text-align:center;
+  font-style: italic;
+  color: rgba(232,220,200,.95);
+  margin-top: 18px;
+}
+
 .footer{
   margin-top: 18px;
   text-align:center;
   color: rgba(244,236,223,.70);
   font-size: 12.5px;
+}
+
+/* Small helpers */
+.small{font-size:12px; color: rgba(244,236,223,.74);}
+.note{font-size: 13px; color: rgba(244,236,223,.78); margin-top: 10px;}
+.pill{
+  display:inline-block;
+  padding: 4px 10px;
+  border-radius:999px;
+  border: 1px solid rgba(255,211,119,.26);
+  background: rgba(255,211,119,.08);
+  font-size: 12px;
+  letter-spacing:.06em;
+  color: rgba(255,240,210,.92);
 }
