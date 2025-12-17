@@ -4,271 +4,31 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Public GPG Key | TKC-VH</title>
-  <meta name="robots" content="index,follow" />
-  <style>
-    /* =========================
-       TKC-VH | Legal – Public GPG Key
-       “Nguyệt Ấn” + Hoàng gia + Vân mây
-    ========================== */
+  <!-- === TKC-VH | Security Header (FINAL • no inline scripts) === -->
+  <meta http-equiv="Content-Security-Policy"
+  content="
+  default-src 'self';
+  img-src 'self' https://tkc-vh.github.io data:;
+  style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
+  font-src 'self' https://fonts.gstatic.com;
+  script-src 'self';
+  frame-ancestors 'none';
+  base-uri 'self';
+  form-action 'self';
+  upgrade-insecure-requests;
+  ">
+  <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+  <meta http-equiv="X-Frame-Options" content="DENY">
+  <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), payment=()">
+  
+<link rel="stylesheet" href="./legal.css">
 
-    :root{
-      --bg0:#060507;
-      --bg1:#120b13;
-      --ink:#f4ecdf;
-      --muted:rgba(244,236,223,.82);
-      --gold1:rgba(255,240,210,.95);
-      --gold2:rgba(255,211,119,.95);
-      --gold3:rgba(255,190,110,.55);
-      --frame:rgba(255,230,180,.22);
-      --glass:rgba(255,248,230,.06);
-      --shadow:rgba(0,0,0,.55);
-      --smokeA:rgba(240,220,255,.12);
-      --smokeB:rgba(210,170,255,.10);
-    }
+<meta name="robots" content="index,follow" />
+  
 
-    html,body{height:100%;}
-    body{
-      margin:0;
-      color:var(--ink);
-      background:
-        radial-gradient(900px 520px at 20% 15%, rgba(255,240,210,.08), transparent 60%),
-        radial-gradient(900px 520px at 80% 20%, rgba(210,170,255,.10), transparent 62%),
-        radial-gradient(1200px 680px at 50% 105%, rgba(255,190,110,.08), transparent 60%),
-        linear-gradient(160deg, #151018, #0b0a0d 55%, #181012);
-      font-family: Georgia, "Times New Roman", serif;
-      line-height:1.65;
-      overflow-x:hidden;
-    }
-
-    .page{
-      max-width: 980px;
-      margin: 0 auto;
-      padding: 26px 16px 72px;
-      box-sizing: border-box;
-    }
-
-    .card{
-      position:relative;
-      border-radius: 18px;
-      padding: 26px 22px 34px;
-      background:
-        radial-gradient(circle at top, var(--glass), transparent 60%),
-        linear-gradient(160deg, rgba(21,16,24,.90), rgba(11,10,13,.90) 55%, rgba(24,16,18,.92));
-      border: 1px solid var(--frame);
-      box-shadow: 0 18px 46px var(--shadow);
-      overflow:hidden;
-    }
-
-    /* ===== Vân mây hoàng gia 4 góc ===== */
-    .orn{
-      position:absolute;
-      width: 240px;
-      height: 160px;
-      opacity:.92;
-      pointer-events:none;
-      filter: drop-shadow(0 10px 18px rgba(0,0,0,.45));
-    }
-    .orn svg{width:100%;height:100%;}
-    .orn path{
-      fill:none;
-      stroke: rgba(255,211,119,.62);
-      stroke-width: 1.6;
-      stroke-linecap: round;
-      stroke-linejoin: round;
-    }
-    .orn .mist{
-      stroke: rgba(210,170,255,.34);
-      stroke-width: 1.2;
-    }
-    .orn.tl{top:-26px;left:-26px; transform: rotate(0deg);}
-    .orn.tr{top:-26px;right:-26px; transform: rotate(90deg);}
-    .orn.bl{bottom:-26px;left:-26px; transform: rotate(270deg);}
-    .orn.br{bottom:-26px;right:-26px; transform: rotate(180deg);}
-
-    /* ===== Khung vàng “niêm phong” ===== */
-    .gold-frame{
-      border-radius: 16px;
-      border: 1px solid rgba(255,240,210,.18);
-      background:
-        linear-gradient(180deg, rgba(255,240,210,.06), transparent 55%),
-        radial-gradient(520px 180px at 50% 0%, rgba(255,211,119,.10), transparent 70%);
-      padding: 18px 18px 14px;
-      box-shadow: inset 0 0 0 1px rgba(255,211,119,.10);
-    }
-
-    /* ===== Moon Emblem (style lấy theo Nguyệt Ấn) ===== */
-    @keyframes tkc-platinum-wind {
-      0%, 52% { opacity:0; transform: translateX(0) skewY(-6deg); }
-      58%     { opacity:.85; }
-      82%     { opacity:0; transform: translateX(18%) skewY(-6deg); }
-      100%    { opacity:0; transform: translateX(22%) skewY(-6deg); }
-    }
-    @keyframes tkc-moon-pulse{
-      0%,100%{
-        transform:scale(1);
-        box-shadow: 0 0 24px rgba(255,240,210,.92), 0 0 70px rgba(255,230,190,.5);
-      }
-      50%{
-        transform:scale(1.04);
-        box-shadow: 0 0 34px rgba(255,250,235,1), 0 0 95px rgba(255,242,210,.7);
-      }
-    }
-
-    .moon-wrap{display:flex;justify-content:center;margin: 6px 0 18px;}
-    .moon{
-      width: 168px; height: 168px; border-radius: 50%;
-      position: relative; overflow:hidden;
-      display:flex; align-items:center; justify-content:center;
-      background: radial-gradient(circle at 50% 45%, rgba(0,0,0,.4) 0%, rgba(0,0,0,.9) 60%, rgba(0,0,0,1) 100%);
-      border: 5px solid var(--gold1);
-      animation: tkc-moon-pulse 3.8s ease-in-out infinite;
-    }
-    .moon img{
-      width: 90%; height: 90%; border-radius: 50%;
-      object-fit: cover; display:block;
-      box-shadow: inset 0 0 16px rgba(0,0,0,.8);
-    }
-    .moon::after{
-      content:"";
-      position:absolute;
-      top: 20%; left: -70%;
-      width: 220%; height: 55%;
-      background: linear-gradient(115deg,
-        rgba(255,255,255,0) 0%,
-        rgba(255,255,255,.18) 25%,
-        rgba(255,255,255,.55) 45%,
-        rgba(255,255,255,.18) 65%,
-        rgba(255,255,255,0) 100%
-      );
-      mix-blend-mode: screen;
-      opacity:0;
-      transform: skewY(-6deg);
-      animation: tkc-platinum-wind 6s ease-in-out infinite;
-      pointer-events:none;
-    }
-
-    /* ===== Typography ===== */
-    h1{
-      margin: 8px 0 10px;
-      text-align:center;
-      font-size: 26px;
-      letter-spacing: .12em;
-      text-transform: uppercase;
-      color: #ffdf88;
-      text-shadow: 0 0 6px rgba(255,210,130,.55), 0 0 16px rgba(255,190,110,.35);
-    }
-    .subtitle{
-      text-align:center;
-      margin: 0 0 14px;
-      color: var(--muted);
-      letter-spacing:.02em;
-    }
-   
-hr{
-      border:none; height:1px; width:62%;
-      margin: 18px auto 18px;
-      background: linear-gradient(to right, rgba(255,255,255,0), rgba(255,240,210,.9), rgba(255,255,255,0));
-      box-shadow: 0 0 10px rgba(255,240,210,.75);
-    }
-
-    /* ===== Info grid ===== */
-    .grid{
-      display:grid;
-      grid-template-columns: 190px 1fr;
-      gap: 8px 14px;
-      margin: 12px 0 16px;
-      font-size: 15px;
-    }
-    .k{color: rgba(255,211,119,.90); letter-spacing:.05em;}
-    .v{color: rgba(244,236,223,.92); word-break: break-word;}
-    .pill{
-      display:inline-block;
-      padding: 4px 10px;
-      border-radius:999px;
-      border: 1px solid rgba(255,211,119,.26);
-      background: rgba(255,211,119,.08);
-      font-size: 12px;
-      letter-spacing:.06em;
-      color: rgba(255,240,210,.92);
-    }
-
-    /* ===== Buttons ===== */
-    .btns{display:flex;flex-wrap:wrap; gap:10px; margin: 8px 0 12px;}
-    button{
-      appearance:none; border:none; cursor:pointer;
-      padding: 9px 12px;
-      border-radius: 12px;
-      background: rgba(255,211,119,.10);
-      color: rgba(255,240,210,.95);
-      border: 1px solid rgba(255,211,119,.22);
-      box-shadow: 0 10px 22px rgba(0,0,0,.25);
-      font-family: inherit;
-      letter-spacing:.03em;
-    }
-    button:hover{background: rgba(255,211,119,.14);}
-    .note{
-      font-size: 13px;
-      color: rgba(244,236,223,.78);
-      margin-top: 10px;
-    }
-
-    /* ===== Key block ===== */
-    pre{
-      margin: 0;
-      padding: 14px 14px;
-      border-radius: 14px;
-      background: rgba(0,0,0,.55);
-      border: 1px solid rgba(255,240,210,.18);
-      color: rgba(255,240,210,.95);
-      overflow:auto;
-      font-size: 12px;
-      line-height: 1.42;
-      box-shadow: inset 0 0 0 1px rgba(255,211,119,.08);
-    }
-
-    /* ===== QR area ===== */
-    .qrrow{
-      display:flex;
-      gap: 14px;
-      flex-wrap:wrap;
-      align-items:flex-start;
-      margin-top: 12px;
-    }
-    .qr{
-      width: 170px;
-      border-radius: 14px;
-      padding: 10px;
-      background: rgba(255,248,230,.06);
-      border: 1px solid rgba(255,211,119,.20);
-    }
-    .qr img{width:100%; height:auto; display:block; border-radius:10px;}
-    .small{font-size:12px; color: rgba(244,236,223,.74);}
-
-    /* ===== Footer ===== */
-    .footer{
-      margin-top: 18px;
-      text-align:center;
-      color: rgba(244,236,223,.70);
-      font-size: 12.5px;
-    }
-    a{color: rgba(255,211,119,.95); text-decoration: none;}
-    a:hover{text-decoration: underline;}
-  </style>
-
-  <style>
-/* =========================
-   NAVDOCK: Global + Legal
-   (injected by build script)
-   ========================= */
-.navdock{margin:14px auto 10px;display:grid;gap:10px}
-.tabs{display:flex;flex-wrap:wrap;gap:8px;justify-content:center}
-.tab{display:inline-flex;align-items:center;justify-content:center;padding:9px 12px;border-radius:999px;text-decoration:none;font-weight:600;font-size:.92rem;letter-spacing:.2px;color:rgba(245,230,195,.92);background:rgba(0,0,0,.25);border:1px solid rgba(210,180,110,.28);box-shadow:0 0 0 1px rgba(255,215,140,.05) inset;transition:transform .15s ease,background .15s ease,border-color .15s ease}
-.tab:hover{transform:translateY(-1px);background:rgba(0,0,0,.34);border-color:rgba(235,200,120,.45)}
-.tab.is-active,.tab[aria-current="page"]{background:rgba(30,18,8,.55);border-color:rgba(255,215,140,.65);box-shadow:0 0 0 1px rgba(255,215,140,.18) inset,0 0 18px rgba(255,215,140,.08)}
-.tabs-global .tab{background:rgba(0,0,0,.30)}
-.tabs-legal .tab{font-size:.88rem;opacity:.96}
-@media (max-width:520px){.tab{padding:10px 12px;font-size:.95rem}}
-  </style>
+  
+  <script src="./legal.js" defer></script>
 </head>
 
 <body>
@@ -362,9 +122,9 @@ hr{
         </div>
 
         <div class="btns">
-          <button type="button" onclick="copyText(document.getElementById('fp').innerText)">Copy fingerprint</button>
-          <button type="button" onclick="copyText(document.getElementById('kidShort').innerText)">Copy key ID</button>
-          <button type="button" onclick="copyText(document.getElementById('pubkey').innerText)">Copy public key block</button>
+          <button type="button" data-copy="#fp">Copy fingerprint</button>
+          <button type="button" data-copy="#kidShort">Copy key ID</button>
+          <button type="button" data-copy="#pubkey">Copy public key block</button>
         </div>
 
         <pre id="pubkey">-----BEGIN PGP PUBLIC KEY BLOCK-----
@@ -438,43 +198,8 @@ dLeMvakWtK4tL0phjqh9hX3wGJ7qcrT+FpM25WXu
 
 </div>
 
-
 <div class="footer">
   © TKC-VH • “Dấu vân tay là lời thề; chữ ký là lời chứng.”
 </div>
-
-
-  <script>
-    function copyText(t){
-      if(!t) return;
-      navigator.clipboard.writeText(t).then(()=>toast("Copied."), ()=>toast("Copy failed."));
-    }
-    function toast(msg){
-      const d=document.createElement("div");
-      d.textContent=msg;
-      d.style.position="fixed";
-      d.style.left="50%";
-      d.style.bottom="22px";
-      d.style.transform="translateX(-50%)";
-      d.style.padding="10px 14px";
-      d.style.borderRadius="12px";
-      d.style.background="rgba(0,0,0,.72)";
-      d.style.border="1px solid rgba(255,211,119,.22)";
-      d.style.color="rgba(255,240,210,.95)";
-      d.style.boxShadow="0 12px 26px rgba(0,0,0,.35)";
-      d.style.zIndex="9999";
-      document.body.appendChild(d);
-      setTimeout(()=>d.remove(), 1200);
-    }
-
-    // QR generator (dùng dịch vụ QR online, tiện nhưng là external request)
-    // Nếu chàng muốn "tuyệt đối kín", xoá QR hoặc tự generate QR offline.
-    (function(){
-      const fp = document.getElementById("fp").innerText.trim();
-      const data = encodeURIComponent("FPR: " + fp);
-      document.getElementById("qrImg").src =
-        "https://api.qrserver.com/v1/create-qr-code/?size=160x160&data=" + data;
-    })();
-  </script>
 </body>
 </html>
