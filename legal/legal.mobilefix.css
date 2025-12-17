@@ -1,15 +1,20 @@
-/* Legal Library — Mobile Bilingual Fix
-   - Show VI/EN switch on small screens
-   - Prevent two columns from squeezing on phones
+/* Legal Library — Mobile Bilingual Fix (v3)
+   Fixes:
+   - Buttons clickable (pointer-events + z-index)
+   - Force single-column on phones
+   - Force hide non-active language on phones (with !important)
 */
 
-/* Keep the switch visible and centered */
+/* Switch UI */
 .lang-switch{
-  display: flex;
+  display: flex !important;
   justify-content: center;
   gap: 10px;
-  margin: 14px 0 6px;
+  margin: 14px 0 10px;
   flex-wrap: wrap;
+  position: relative;
+  z-index: 50;
+  pointer-events: auto !important;
 }
 
 .lang-switch button{
@@ -20,6 +25,10 @@
   background: rgba(0,0,0,.22);
   color: rgba(255,240,210,.92);
   cursor: pointer;
+  pointer-events: auto !important;
+  position: relative;
+  z-index: 51;
+  touch-action: manipulation;
 }
 
 .lang-switch button.active{
@@ -27,28 +36,29 @@
   background: rgba(255,211,119,.12);
 }
 
-/* Desktop stays two columns */
+/* Desktop default (keep bilingual) */
 .poem-grid{
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 28px;
 }
 
+/* Make sure bilingual block sits above any decoration overlays */
+.poem-bilingual, .gold-frame{
+  position: relative;
+  z-index: 10;
+}
+
 /* Mobile: switch mode */
 @media (max-width: 900px){
-  .lang-switch{ display:flex !important; }
-
   .poem-grid{
     grid-template-columns: 1fr !important;
     gap: 0 !important;
   }
 
-  .poem-col{
-    display: none;
-  }
-  .poem-col.active{
-    display: block;
-  }
+  /* HARD hide all columns, show only active */
+  .poem-col{ display: none !important; }
+  .poem-col.active{ display: block !important; }
 
   /* Remove divider effect on mobile */
   .poem-divider{
