@@ -67,3 +67,18 @@
     margin-top: 0 !important;
   }
 }
+
+
+
+/* Fix: center the swordline/hr on all screens */
+.gold-frame hr,
+hr.swordline{
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  margin: 18px auto !important;
+  transform: none !important;
+  left: auto !important;
+  right: auto !important;
+}
+
