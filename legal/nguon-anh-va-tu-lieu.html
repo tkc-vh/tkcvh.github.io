@@ -4,24 +4,30 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Về Nguồn Ảnh & Tư Liệu | TKC-VH Diary</title>
-
-  <!-- CSS chung Legal -->
+  <!-- === TKC-VH | Security Header (FINAL • no inline scripts) === -->
+  <meta http-equiv="Content-Security-Policy"
+  content="
+  default-src 'self';
+  img-src 'self' https://tkc-vh.github.io data:;
+  style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
+  font-src 'self' https://fonts.gstatic.com;
+  script-src 'self';
+  frame-ancestors 'none';
+  base-uri 'self';
+  form-action 'self';
+  upgrade-insecure-requests;
+  ">
+  <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+  <meta http-equiv="X-Frame-Options" content="DENY">
+  <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), payment=()">
+  
+<!-- CSS chung Legal -->
   <link rel="stylesheet" href="./legal.css">
 
-  <style>
-/* =========================
-   NAVDOCK: Global + Legal
-   (injected by build script)
-   ========================= */
-.navdock{margin:14px auto 10px;display:grid;gap:10px}
-.tabs{display:flex;flex-wrap:wrap;gap:8px;justify-content:center}
-.tab{display:inline-flex;align-items:center;justify-content:center;padding:9px 12px;border-radius:999px;text-decoration:none;font-weight:600;font-size:.92rem;letter-spacing:.2px;color:rgba(245,230,195,.92);background:rgba(0,0,0,.25);border:1px solid rgba(210,180,110,.28);box-shadow:0 0 0 1px rgba(255,215,140,.05) inset;transition:transform .15s ease,background .15s ease,border-color .15s ease}
-.tab:hover{transform:translateY(-1px);background:rgba(0,0,0,.34);border-color:rgba(235,200,120,.45)}
-.tab.is-active,.tab[aria-current="page"]{background:rgba(30,18,8,.55);border-color:rgba(255,215,140,.65);box-shadow:0 0 0 1px rgba(255,215,140,.18) inset,0 0 18px rgba(255,215,140,.08)}
-.tabs-global .tab{background:rgba(0,0,0,.30)}
-.tabs-legal .tab{font-size:.88rem;opacity:.96}
-@media (max-width:520px){.tab{padding:10px 12px;font-size:.95rem}}
-  </style>
+  
+
+  <script src="./legal.js" defer></script>
 </head>
 
 <body>
@@ -169,24 +175,5 @@
       </div>
     </div>
   </div>
-
-  <script>
-    (function(){
-      const btns = document.querySelectorAll('.lang-switch button');
-      const blocks = { vi: document.getElementById('vi'), en: document.getElementById('en') };
-
-      function setLang(lang){
-        Object.keys(blocks).forEach(k =>
-          blocks[k].classList.toggle('active', k === lang)
-        );
-        btns.forEach(b =>
-          b.classList.toggle('active', b.dataset.lang === lang)
-        );
-      }
-
-      btns.forEach(b => b.addEventListener('click', () => setLang(b.dataset.lang)));
-      setLang('vi');
-    })();
-  </script>
 </body>
 </html>
