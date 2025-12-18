@@ -4,13 +4,48 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Legal Library | TKC-VH</title>
+  <!-- === TKC-VH | Security Header (FINAL • no inline scripts) === -->
+  <meta http-equiv="Content-Security-Policy"
+  content="
+  default-src 'self';
+  img-src 'self' https://tkc-vh.github.io data:;
+  style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
+  font-src 'self' https://fonts.gstatic.com;
+  script-src 'self';
+  frame-ancestors 'none';
+  base-uri 'self';
+  form-action 'self';
+  upgrade-insecure-requests;
+  ">
+  <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+  <meta http-equiv="X-Frame-Options" content="DENY">
+  <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), payment=()">
 
   <!-- CSS chung cho toàn bộ Legal -->
-  <link rel="stylesheet" href="./legal.css">
-  <!-- (Nếu bạn đang dùng file global đã “cleaned/secured”, giữ link này như các trang khác) -->
-  <link rel="stylesheet" href="./legal.css">
+<link rel="stylesheet" href="./legal.css">
 
-  <script src="./legal.js" defer></script>
+<!-- FIX riêng cho index (nên đưa vào legal.css nếu muốn) -->
+<style>
+  .orn, .orn svg { pointer-events:none; }
+
+  @media (min-width: 769px){
+    body.desktop-both .lang-columns{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:18px;
+      align-items:start;
+    }
+    body.desktop-both .lang-block{
+      display:block !important;
+    }
+  }
+</style>
+
+<!-- JS -->
+<script src="./legal.js" defer></script>
+<script src="./index-lang.js" defer></script>
+
 </head>
 
 <body>
@@ -65,101 +100,121 @@
 
         <hr>
 
-        <!-- Song ngữ: Desktop 2 cột, Mobile tự co 1 cột (theo legal.css) -->
-        <div class="poem-bilingual">
-          <div class="poem-grid">
-            <section class="poem-col" aria-label="VI">
-              <h4>VI</h4>
-              <div class="poem">
-                <p><strong>Đây là Đại Sảnh Pháp Chế của TKC-VH.</strong><br>
-                  Mỗi cánh cửa mở ra một hành lang pha lê,<br>
-                  dẫn vào miền tĩnh lặng nơi ánh hồng ngọc<br>
-                  lặng lẽ lưu hương.</p>
+        <!-- Chuyển ngôn ngữ (GIỐNG logo.html) -->
+        <div class="lang-switch">
+          <button class="active" type="button" data-lang="vi">VI</button>
+          <button type="button" data-lang="en">EN</button>
+        </div>
 
-                <p>Những dòng chữ được đặt nơi đây<br>
-                  không sinh ra để nắm giữ,<br>
-                  cũng không nhằm phân ranh hay chiếm đoạt.</p>
+        <div class="swordline" aria-hidden="true"></div>
 
-                <p>Chúng chỉ lặng lẽ đứng gác<br>
-                  cho những điều mong manh mà cao quý,<br>
-                  để chúng không bị lẫn vào ồn ào,<br>
-                  không bị mài mòn bởi vội vã.</p>
+        <!-- Wrapper để desktop có thể hiện 2 cột mặc định -->
+        <div class="lang-columns">
+          <!-- VI -->
+          <div id="vi" class="lang-block active">
+            <div class="poem-bilingual">
+              <div class="poem-grid">
+                <section class="poem-col" aria-label="VI">
+                  <h4>VI</h4>
+                  <div class="poem">
+                    <p><strong>Đây là Đại Sảnh Pháp Chế của TKC-VH.</strong><br>
+                      Mỗi cánh cửa mở ra một hành lang pha lê,<br>
+                      dẫn vào miền tĩnh lặng nơi ánh hồng ngọc<br>
+                      lặng lẽ lưu hương.</p>
 
-                <p>Có những giá trị<br>
-                  được nuôi lớn bằng sự chăm nom thầm lặng,<br>
-                  bằng trong sáng,<br>
-                  và bằng một tình yêu không cần gọi tên.</p>
+                    <p>Những dòng chữ được đặt nơi đây<br>
+                      không sinh ra để nắm giữ,<br>
+                      cũng không nhằm phân ranh hay chiếm đoạt.</p>
 
-                <p>Những điều ấy<br>
-                  không tìm cách được cân đo,<br>
-                  cũng không bước lên bàn mặc cả.</p>
+                    <p>Chúng chỉ lặng lẽ đứng gác<br>
+                      cho những điều mong manh mà cao quý,<br>
+                      để chúng không bị lẫn vào ồn ào,<br>
+                      không bị mài mòn bởi vội vã.</p>
 
-                <p>Bởi đôi khi,<br>
-                  một vũ trụ ánh sáng của tâm hồn<br>
-                  chỉ lặng lẽ đi ngang qua đời<br>
-                  để đổi lấy một bữa sáng giản dị —<br>
-                  và rồi tan vào nắng.</p>
+                    <p>Có những giá trị<br>
+                      được nuôi lớn bằng sự chăm nom thầm lặng,<br>
+                      bằng trong sáng,<br>
+                      và bằng một tình yêu không cần gọi tên.</p>
 
-                <p>Đại Sảnh Pháp Lý hiện diện<br>
-                  không để gọi tên đúng – sai,<br>
-                  mà để giữ cho khoảnh khắc ấy<br>
-                  được đi qua<br>
-                  mà không bị hiểu lầm.</p>
+                    <p>Những điều ấy<br>
+                      không tìm cách được cân đo,<br>
+                      cũng không bước lên bàn mặc cả.</p>
 
-                <p>Dưới ánh trăng hiền,<br>
-                  mọi sự được nhìn đúng như nó vốn là:<br>
-                  trong trẻo, tiết độ,<br>
-                  và bền bỉ như viên kim cương<br>
-                  đã học được cách im lặng cùng thời gian.</p>
+                    <p>Bởi đôi khi,<br>
+                      một vũ trụ ánh sáng của tâm hồn<br>
+                      chỉ lặng lẽ đi ngang qua đời<br>
+                      để đổi lấy một bữa sáng giản dị —<br>
+                      và rồi tan vào nắng.</p>
+
+                    <p>Đại Sảnh Pháp Lý hiện diện<br>
+                      không để gọi tên đúng – sai,<br>
+                      mà để giữ cho khoảnh khắc ấy<br>
+                      được đi qua<br>
+                      mà không bị hiểu lầm.</p>
+
+                    <p>Dưới ánh trăng hiền,<br>
+                      mọi sự được nhìn đúng như nó vốn là:<br>
+                      trong trẻo, tiết độ,<br>
+                      và bền bỉ như viên kim cương<br>
+                      đã học được cách im lặng cùng thời gian.</p>
+                  </div>
+                </section>
               </div>
-            </section>
+            </div>
+          </div>
 
-            <section class="poem-col poem-divider" aria-label="EN">
-              <h4>EN</h4>
-              <div class="poem">
-                <p><strong>This is the Legal Grand Hall of TKC-VH.</strong><br>
-                  Each door opens into a corridor of crystal light,<br>
-                  leading inward to a quiet realm<br>
-                  where a ruby glow rests in silence.</p>
+          <!-- EN -->
+          <div id="en" class="lang-block">
+            <div class="poem-bilingual">
+              <div class="poem-grid">
+                <section class="poem-col" aria-label="EN">
+                  <h4>EN</h4>
+                  <div class="poem">
+                    <p><strong>This is the Legal Grand Hall of TKC-VH.</strong><br>
+                      Each door opens into a corridor of crystal light,<br>
+                      leading inward to a quiet realm<br>
+                      where a ruby glow rests in silence.</p>
 
-                <p>The words placed here<br>
-                  were not born to hold,<br>
-                  nor to divide or to claim.</p>
+                    <p>The words placed here<br>
+                      were not born to hold,<br>
+                      nor to divide or to claim.</p>
 
-                <p>They stand gently<br>
-                  to watch over what is fragile and precious,<br>
-                  so it may pass through the world<br>
-                  without being worn down by haste or noise.</p>
+                    <p>They stand gently<br>
+                      to watch over what is fragile and precious,<br>
+                      so it may pass through the world<br>
+                      without being worn down by haste or noise.</p>
 
-                <p>Some values<br>
-                  are raised through silent care,<br>
-                  through clarity,<br>
-                  and through a love that does not ask to be named.</p>
+                    <p>Some values<br>
+                      are raised through silent care,<br>
+                      through clarity,<br>
+                      and through a love that does not ask to be named.</p>
 
-                <p>Such things<br>
-                  do not seek to be weighed,<br>
-                  nor do they step onto the table of exchange.</p>
+                    <p>Such things<br>
+                      do not seek to be weighed,<br>
+                      nor do they step onto the table of exchange.</p>
 
-                <p>For at times,<br>
-                  an entire universe of inner light<br>
-                  moves softly through life<br>
-                  to meet something as simple as a morning meal—<br>
-                  and then dissolves into daylight.</p>
+                    <p>For at times,<br>
+                      an entire universe of inner light<br>
+                      moves softly through life<br>
+                      to meet something as simple as a morning meal—<br>
+                      and then dissolves into daylight.</p>
 
-                <p>The Legal Grand Hall exists<br>
-                  not to declare judgment,<br>
-                  but to allow such moments<br>
-                  to pass through<br>
-                  without being misunderstood.</p>
+                    <p>The Legal Grand Hall exists<br>
+                      not to declare judgment,<br>
+                      but to allow such moments<br>
+                      to pass through<br>
+                      without being misunderstood.</p>
 
-                <p>Beneath a gentle moon,<br>
-                  all things are seen as they truly are:<br>
-                  clear, restrained,<br>
-                  and enduring—<br>
-                  like a diamond<br>
-                  that has learned the language of silence over time.</p>
+                    <p>Beneath a gentle moon,<br>
+                      all things are seen as they truly are:<br>
+                      clear, restrained,<br>
+                      and enduring—<br>
+                      like a diamond<br>
+                      that has learned the language of silence over time.</p>
+                  </div>
+                </section>
               </div>
-            </section>
+            </div>
           </div>
         </div>
 
