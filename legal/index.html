@@ -4,48 +4,34 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Legal Library | TKC-VH</title>
-  <!-- === TKC-VH | Security Header (FINAL • no inline scripts) === -->
-  <meta http-equiv="Content-Security-Policy"
-  content="
-  default-src 'self';
-  img-src 'self' https://tkc-vh.github.io data:;
-  style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
-  font-src 'self' https://fonts.gstatic.com;
-  script-src 'self';
-  frame-ancestors 'none';
-  base-uri 'self';
-  form-action 'self';
-  upgrade-insecure-requests;
+
+  <!-- === TKC-VH | Security Header (GitHub Pages • no inline scripts) === -->
+  <meta http-equiv="Content-Security-Policy" content="
+    default-src 'self';
+    base-uri 'self';
+    form-action 'self';
+    frame-ancestors 'none';
+    object-src 'none';
+
+    script-src 'self';
+    style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
+
+    img-src 'self' https://tkc-vh.github.io data:;
+    font-src 'self' https://fonts.gstatic.com;
+
+    connect-src 'self';
+    media-src 'self';
+    manifest-src 'self';
+
+    upgrade-insecure-requests;
   ">
+
   <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
-  <meta http-equiv="X-Content-Type-Options" content="nosniff">
-  <meta http-equiv="X-Frame-Options" content="DENY">
   <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), payment=()">
 
-  <!-- CSS chung cho toàn bộ Legal -->
-<link rel="stylesheet" href="./legal.css">
-
-<!-- FIX riêng cho index (nên đưa vào legal.css nếu muốn) -->
-<style>
-  .orn, .orn svg { pointer-events:none; }
-
-  @media (min-width: 769px){
-    body.desktop-both .lang-columns{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:18px;
-      align-items:start;
-    }
-    body.desktop-both .lang-block{
-      display:block !important;
-    }
-  }
-</style>
-
-<!-- JS -->
-<script src="./legal.js" defer></script>
-<script src="./index-lang.js" defer></script>
-
+  <!-- CSS / JS -->
+  <link rel="stylesheet" href="./legal.css">
+  <script src="./legal.js" defer></script>
 </head>
 
 <body>
@@ -100,7 +86,7 @@
 
         <hr>
 
-        <!-- Chuyển ngôn ngữ (GIỐNG logo.html) -->
+        <!-- Chuyển ngôn ngữ (giống logo.html) -->
         <div class="lang-switch">
           <button class="active" type="button" data-lang="vi">VI</button>
           <button type="button" data-lang="en">EN</button>
@@ -108,113 +94,98 @@
 
         <div class="swordline" aria-hidden="true"></div>
 
-        <!-- Wrapper để desktop có thể hiện 2 cột mặc định -->
-        <div class="lang-columns">
-          <!-- VI -->
-          <div id="vi" class="lang-block active">
-            <div class="poem-bilingual">
-              <div class="poem-grid">
-                <section class="poem-col" aria-label="VI">
-                  <h4>VI</h4>
-                  <div class="poem">
-                    <p><strong>Đây là Đại Sảnh Pháp Chế của TKC-VH.</strong><br>
-                      Mỗi cánh cửa mở ra một hành lang pha lê,<br>
-                      dẫn vào miền tĩnh lặng nơi ánh hồng ngọc<br>
-                      lặng lẽ lưu hương.</p>
+        <!-- VI (mặc định hiển thị) -->
+        <div id="vi" class="lang-block active">
+          <div class="poemblock">
+            <div class="poemtitle">LEGAL • VI</div>
+            <p class="poemtext"><strong>Đây là Đại Sảnh Pháp Chế của TKC-VH.</strong>
+Mỗi cánh cửa mở ra một hành lang pha lê,
+dẫn vào miền tĩnh lặng nơi ánh hồng ngọc
+lặng lẽ lưu hương.
 
-                    <p>Những dòng chữ được đặt nơi đây<br>
-                      không sinh ra để nắm giữ,<br>
-                      cũng không nhằm phân ranh hay chiếm đoạt.</p>
+Những dòng chữ được đặt nơi đây
+không sinh ra để nắm giữ,
+cũng không nhằm phân ranh hay chiếm đoạt.
 
-                    <p>Chúng chỉ lặng lẽ đứng gác<br>
-                      cho những điều mong manh mà cao quý,<br>
-                      để chúng không bị lẫn vào ồn ào,<br>
-                      không bị mài mòn bởi vội vã.</p>
+Chúng chỉ lặng lẽ đứng gác
+cho những điều mong manh mà cao quý,
+để chúng không bị lẫn vào ồn ào,
+không bị mài mòn bởi vội vã.
 
-                    <p>Có những giá trị<br>
-                      được nuôi lớn bằng sự chăm nom thầm lặng,<br>
-                      bằng trong sáng,<br>
-                      và bằng một tình yêu không cần gọi tên.</p>
+Có những giá trị
+được nuôi lớn bằng sự chăm nom thầm lặng,
+bằng trong sáng,
+và bằng một tình yêu không cần gọi tên.
 
-                    <p>Những điều ấy<br>
-                      không tìm cách được cân đo,<br>
-                      cũng không bước lên bàn mặc cả.</p>
+Những điều ấy
+không tìm cách được cân đo,
+cũng không bước lên bàn mặc cả.
 
-                    <p>Bởi đôi khi,<br>
-                      một vũ trụ ánh sáng của tâm hồn<br>
-                      chỉ lặng lẽ đi ngang qua đời<br>
-                      để đổi lấy một bữa sáng giản dị —<br>
-                      và rồi tan vào nắng.</p>
+Bởi đôi khi,
+một vũ trụ ánh sáng của tâm hồn
+chỉ lặng lẽ đi ngang qua đời
+để đổi lấy một bữa sáng giản dị —
+và rồi tan vào nắng.
 
-                    <p>Đại Sảnh Pháp Lý hiện diện<br>
-                      không để gọi tên đúng – sai,<br>
-                      mà để giữ cho khoảnh khắc ấy<br>
-                      được đi qua<br>
-                      mà không bị hiểu lầm.</p>
+Đại Sảnh Pháp Lý hiện diện
+không để gọi tên đúng – sai,
+mà để giữ cho khoảnh khắc ấy
+được đi qua
+mà không bị hiểu lầm.
 
-                    <p>Dưới ánh trăng hiền,<br>
-                      mọi sự được nhìn đúng như nó vốn là:<br>
-                      trong trẻo, tiết độ,<br>
-                      và bền bỉ như viên kim cương<br>
-                      đã học được cách im lặng cùng thời gian.</p>
-                  </div>
-                </section>
-              </div>
-            </div>
+Dưới ánh trăng hiền,
+mọi sự được nhìn đúng như nó vốn là:
+trong trẻo, tiết độ,
+và bền bỉ như viên kim cương
+đã học được cách im lặng cùng thời gian.</p>
           </div>
+        </div>
 
-          <!-- EN -->
-          <div id="en" class="lang-block">
-            <div class="poem-bilingual">
-              <div class="poem-grid">
-                <section class="poem-col" aria-label="EN">
-                  <h4>EN</h4>
-                  <div class="poem">
-                    <p><strong>This is the Legal Grand Hall of TKC-VH.</strong><br>
-                      Each door opens into a corridor of crystal light,<br>
-                      leading inward to a quiet realm<br>
-                      where a ruby glow rests in silence.</p>
+        <!-- EN -->
+        <div id="en" class="lang-block">
+          <div class="poemblock">
+            <div class="poemtitle">LEGAL • EN</div>
+            <p class="poemtext"><strong>This is the Legal Grand Hall of TKC-VH.</strong>
+Each door opens into a corridor of crystal light,
+leading inward to a quiet realm
+where a ruby glow rests in silence.
 
-                    <p>The words placed here<br>
-                      were not born to hold,<br>
-                      nor to divide or to claim.</p>
+The words placed here
+were not born to hold,
+nor to divide or to claim.
 
-                    <p>They stand gently<br>
-                      to watch over what is fragile and precious,<br>
-                      so it may pass through the world<br>
-                      without being worn down by haste or noise.</p>
+They stand gently
+to watch over what is fragile and precious,
+so it may pass through the world
+without being worn down by haste or noise.
 
-                    <p>Some values<br>
-                      are raised through silent care,<br>
-                      through clarity,<br>
-                      and through a love that does not ask to be named.</p>
+Some values
+are raised through silent care,
+through clarity,
+and through a love that does not ask to be named.
 
-                    <p>Such things<br>
-                      do not seek to be weighed,<br>
-                      nor do they step onto the table of exchange.</p>
+Such things
+do not seek to be weighed,
+nor do they step onto the table of exchange.
 
-                    <p>For at times,<br>
-                      an entire universe of inner light<br>
-                      moves softly through life<br>
-                      to meet something as simple as a morning meal—<br>
-                      and then dissolves into daylight.</p>
+For at times,
+an entire universe of inner light
+moves softly through life
+to meet something as simple as a morning meal—
+and then dissolves into daylight.
 
-                    <p>The Legal Grand Hall exists<br>
-                      not to declare judgment,<br>
-                      but to allow such moments<br>
-                      to pass through<br>
-                      without being misunderstood.</p>
+The Legal Grand Hall exists
+not to declare judgment,
+but to allow such moments
+to pass through
+without being misunderstood.
 
-                    <p>Beneath a gentle moon,<br>
-                      all things are seen as they truly are:<br>
-                      clear, restrained,<br>
-                      and enduring—<br>
-                      like a diamond<br>
-                      that has learned the language of silence over time.</p>
-                  </div>
-                </section>
-              </div>
-            </div>
+Beneath a gentle moon,
+all things are seen as they truly are:
+clear, restrained,
+and enduring—
+like a diamond
+that has learned the language of silence over time.</p>
           </div>
         </div>
 
@@ -266,7 +237,7 @@
           </a>
         </div>
 
-        <div class="rowline"></div>
+        <div class="swordline" aria-hidden="true"></div>
 
         <div class="nav-row">
           <a class="navbtn" href="../index.html">← Trang Chủ</a>
