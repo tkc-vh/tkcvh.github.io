@@ -25,13 +25,11 @@ upgrade-insecure-requests;
   <meta name="description" content="Cổng Thành công khai của TKC-VH Diary. Dư âm vẫn ngân sau những mùa xuân vĩnh cửu." />
   <meta property="og:title" content="TKC-VH Temple" />
   <meta property="og:description" content="Cổng Thành công khai của TKC-VH Diary. Dư âm vẫn ngân sau những mùa xuân vĩnh cửu." />
-  <meta property="og:image" content="assets/moon-diamond.jpg" />
+  <meta property="og:image" content="./assets/moon-diamond.jpg" />
   <meta property="og:type" content="website" />
 
-  <link rel="icon" href="assets/moon-diamond.jpg" />
-  <link rel="stylesheet" href="legal/legal.css" />
-
-  <style>
+  <link rel="icon" href="./assets/moon-diamond.jpg" />
+<style>
     /* =========================================================
        HOME (Temple) – dùng legal.css + bổ sung lớp hoàng gia
        ========================================================= */
@@ -191,7 +189,7 @@ upgrade-insecure-requests;
       margin: 0 auto 14px;
       text-align: left;
       border-radius: 14px;
-      padding: 16px 16px 14px;
+      padding: 18px 18px 16px;
       border: 1px solid rgba(255,240,210,.12);
       background: rgba(0,0,0,.10);
       position:relative;
@@ -251,7 +249,7 @@ upgrade-insecure-requests;
     }
 
     .poem-col{
-      padding: 14px 14px;
+      padding: 16px 16px;
       border-radius: 12px;
       background: rgba(0,0,0,.06);
       border: 1px solid rgba(255,240,210,.10);
@@ -267,7 +265,8 @@ upgrade-insecure-requests;
     }
     .poem-line{
       margin: 0 0 14px;
-      line-height: 1.95;
+      line-height: 2.12;
+      letter-spacing: .12px;
       font-size: 14.6px;
       opacity: .96;
     }
@@ -391,10 +390,24 @@ upgrade-insecure-requests;
       .temple-wrap{ margin: 44px auto 66px; }
       .gate{ padding: 20px 16px 22px; }
       h1.temple-title{ font-size: 24px; }
-      .seal{ width: 120px; height: 120px; }
-    }
+}
+  /* ===================== MOBILE HARD FIX (tránh chữ bị kéo giãn & 2 cột quá hẹp) ===================== */
+@media (max-width: 860px){
+  .poem-grid{ grid-template-columns: 1fr !important; }
+  .poem-grid::after{ display:none !important; }
+  .poem-line{
+    text-align: left !important;
+    word-spacing: normal !important;
+    letter-spacing: .08px !important;
+  }
+}
+@media (max-width: 620px){
+  .poem-title{ font-size: 15px; }
+  .poem-line{ font-size: 15px; line-height: 2.1; }
+}
   </style>
   <script src="./site.js" defer></script>
+  <link rel="stylesheet" href="./legal/legal.css" />
 </head>
 
 <body>
@@ -405,7 +418,7 @@ upgrade-insecure-requests;
 
         <div class="seal-wrap">
           <div class="seal" aria-label="Moon Emblem">
-            <img src="assets/moon-diamond.jpg" alt="Moon–Diamond Emblem" />
+            <img src="./assets/moon-diamond.jpg" alt="Moon–Diamond Emblem" />
           </div>
         </div>
 
@@ -478,7 +491,7 @@ upgrade-insecure-requests;
                 traces of light:<br>
                 hesitant invocations,<br>
                 halls still holding a warmth of presence,<br>
-                guiding thought toward the Luminous Origin,<br>
+                guiding thought toward the luminous Origin,<br>
                 and the works that have taken form in life.
               </p>
             </section>
