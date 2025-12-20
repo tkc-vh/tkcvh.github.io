@@ -1,0 +1,248 @@
+/* ===========================================================
+   TKC-VH MASTER CSS FOR EPUB
+   Classic • Clear • Noble Reading Experience
+   Compatible: Google • Apple • Kobo • Amazon • KDP PDF
+   =========================================================== */
+
+/* -------------------------------------------
+   1. TKC-VH BASE TYPOGRAPHY
+   ------------------------------------------- */
+
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1em;
+  line-height: 1.48;          /* Đội hình chặt, vẫn thoáng – đẹp trên Google Play */
+  text-align: justify;
+}
+
+/* Đoạn văn – hàng ngũ cổ điển, thụt đầu dòng */
+p {
+  margin: 0 0 0.6em;          /* từ 0.75em → 0.6em: vững hơn */
+  text-indent: 1.45em;        /* cảm giác sách in thật */
+}
+
+/* Đoạn mở đặc biệt: không thụt đầu dòng (chủ động gán class trong HTML) */
+p.first,
+.no-indent {
+  text-indent: 0;
+}
+
+/* Đoạn mở ngay dưới tiêu đề – có thể dùng class .no-indent nếu cần
+   (mặc định: vẫn thụt như các đoạn khác, tạo nhịp thống nhất) */
+h1 + p,
+h2 + p,
+h3 + p,
+h4 + p,
+h5 + p,
+h6 + p {
+  margin-top: 0.4em;
+}
+
+/* -------------------------------------------
+   2. TKC-VH HEADINGS – BODHI CAPITALS
+   Chữ hoa mềm như lá Bồ Đề
+   ------------------------------------------- */
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 1.6em 0 0.5em;      /* trên rộng – dưới gọn, khí tướng soái */
+  text-align: center;
+  text-indent: 0;
+
+  font-weight: 600;           /* mềm hơn bold, vẫn rất vững */
+  text-transform: uppercase;
+  letter-spacing: 0.03em;     /* lá Bồ Đề mở nhẹ */
+  line-height: 1.18;          /* cô đọng, cổ điển */
+}
+
+/* Cấp bậc kích thước – hoàng gia nhưng không quá lấn át nội dung */
+h1 { font-size: 1.42em; }
+h2 { font-size: 1.28em; }
+h3 { font-size: 1.16em; }
+h4 { font-size: 1.08em; }
+h5,
+h6 { font-size: 1em; }
+
+/* BODHI HALO GLOW – quầng sáng cực nhẹ quanh tiêu đề lớn
+   (reader yếu sẽ bỏ qua text-shadow, không sao) */
+h1,
+h2 {
+  text-shadow:
+    0 0 1px rgba(255, 255, 255, 0.85),
+    0 0 5px rgba(200, 165, 70, 0.40);
+}
+
+/* Bảo vệ tiêu đề khi xuất sang PDF/in: tránh rơi lẻ loi ở cuối trang */
+h1, h2, h3, h4 {
+  page-break-after: avoid;
+}
+
+/* -------------------------------------------
+   3. TKC-VH STRUCTURE & SEPARATORS
+   ------------------------------------------- */
+
+.chapter {
+  margin-top: 2em;
+}
+
+.pagebreak {
+  page-break-before: always;  /* Dùng tốt cho engine in/EPUB */
+}
+
+/* Gạch ngang – ngắt mạch nội dung */
+hr {
+  border: none;
+  border-top: 1px solid #999999;
+  margin: 1.5em 0;
+}
+
+/* -------------------------------------------
+   4. TKC-VH QUOTES & POETRY
+   ------------------------------------------- */
+
+blockquote {
+  margin: 1.2em 1em;
+  padding: 0.6em 1em;
+  border-left: 3px solid #666666;
+  background-color: #f5f5f5;
+}
+
+.verse {
+  text-align: center;
+  line-height: 1.8;
+}
+
+/* -------------------------------------------
+   5. TKC-VH LISTS
+   ------------------------------------------- */
+
+ul,
+ol {
+  margin: 0 0 1em 2em;
+  padding: 0;
+}
+
+li {
+  margin: 0.3em 0;
+}
+
+/* -------------------------------------------
+   6. TKC-VH LINKS – ROYAL LINK STYLE
+   ------------------------------------------- */
+
+a {
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 1px dotted #555555;
+  padding: 0 0.12em;          /* cho chữ có khoảng thở nhẹ */
+}
+
+a:link,
+a:visited {
+  color: inherit;
+}
+
+/* Hiệu ứng hover – nhẹ, quý tộc, không phá layout */
+a:hover,
+a:focus {
+  background-color: #f7f1df;      /* vàng ngà rất nhạt */
+  border-top: 1px solid #d0b97a;  /* vầng miện */
+  border-bottom: 1px solid #5a4630;
+  font-weight: bold;
+  letter-spacing: 0.03em;
+  padding: 0.05em 0.18em;
+  color: inherit;
+}
+
+/* -------------------------------------------
+   7. TKC-VH IMAGES – FULL-BLEED GLASS CANVAS
+   Tranh tràn viền – phủ gương nhẹ, hoà tan vào vũ trụ
+   ------------------------------------------- */
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+
+  margin: 0.8em auto;          /* tràn viền, chỉ chừa chút khoảng thở trên/dưới */
+  padding: 0;
+
+  border: none;
+  background: transparent;
+
+  border-radius: 6px;          /* mép kính hơi bo, không gắt */
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.15),   /* viền sáng mỏng như kính */
+    0 10px 28px rgba(0, 0, 0, 0.35);       /* bóng sâu, tạo cảm giác nổi */
+
+  page-break-inside: avoid;    /* khi in/PDF: tránh cắt đôi tranh */
+}
+
+/* Khối bọc ảnh (nếu dùng riêng) */
+.figure,
+.image-container {
+  text-align: center;
+  margin: 1.5em 0;
+}
+
+/* Tránh ảnh dính sát chữ */
+img + p,
+p + img {
+  margin-top: 1.2em;
+}
+
+/* -------------------------------------------
+   8. TKC-VH TABLES
+   ------------------------------------------- */
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1em 0;
+  page-break-inside: avoid;    /* bảng không bị chẻ đôi khi in */
+}
+
+th,
+td {
+  border: 1px solid #999999;
+  padding: 0.5em;
+  text-align: left;
+}
+
+thead th {
+  background-color: #e6e6e6;
+  font-weight: bold;
+}
+
+/* -------------------------------------------
+   9. TKC-VH CODE & TECHNICAL SNIPPETS
+   ------------------------------------------- */
+
+code,
+kbd,
+samp,
+pre {
+  font-family: Menlo, Monaco, Consolas, monospace;
+  font-size: 0.95em;
+}
+
+pre {
+  overflow: auto;              /* CSS2.1 hợp lệ */
+  padding: 0.8em;
+  border: 1px solid #cccccc;
+  background-color: #f7f7f7;
+}
+
+/* -------------------------------------------
+   10. TKC-VH UTILITY CLASSES
+   ------------------------------------------- */
+
+.center { text-align: center; }
+.right  { text-align: right;  }
+
+.small  { font-size: 0.9em;  }
+.tiny   { font-size: 0.85em; }
+
+
+
