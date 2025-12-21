@@ -75,11 +75,11 @@
 
         <h1>Public GPG Key</h1>
         <div class="subtitle">
-          Official key for <span class="pill">signed</span> (và tuỳ chọn <span class="pill">encrypted</span>) correspondence
+          Official key for <span class="pill">signed</span> (and  <span class="pill">encrypted</span> option) correspondence
         </div>
 
         
-
+ <hr />
         <!-- NAV: Global + Legal (2 tầng tap) -->
         <nav class="navdock" aria-label="Điều hướng nhanh">
         
@@ -93,7 +93,7 @@
         
         </nav>
 
-       <hr />
+  <hr />
 
        <div class="note">
  
@@ -116,7 +116,7 @@
     <span class="small">(anti-bot)</span>
   </p>
 
-  <hr/>
+  
 
   <p><strong>OpenPGP Identity</strong></p>
 
@@ -143,14 +143,14 @@
     <strong>Key Created:</strong> 2025-12-13
   </p>
 
-  <hr/>
+ 
 
   <p><strong>SSH (GitHub Infrastructure)</strong></p>
 
   <p>
     <strong>SSH Public Key Fingerprint (SHA256):</strong><br/>
-    <code>
-      SHA256:uu91Aw6/jbLFdXJwbhRbvFi69fHJn2NCyZ+fKK1vbQo
+    <code id="SHA256">
+	SHA256:uu91Aw6/jbLFdXJwbhRbvFi69fHJn2NCyZ+fKK1vbQo
     </code>
   </p>
 
@@ -159,7 +159,7 @@
     and infrastructure access (e.g. GitHub).
   </p>
 
-  <hr/>
+  
 
   <p class="small">
     Authoritative public keys, signed statements, and verification
@@ -173,10 +173,14 @@
 
 
         <div class="btns">
-          <button type="button" data-copy="#fp">Copy fingerprint</button>
-          <button type="button" data-copy="#kidShort">Copy key ID</button>
+          <button type="button" data-copy="#fp">Copy GPG fingerprint</button>
+		<button type="button" data-copy="#SHA256">Copy SSH fingerprint</button>
+
+          <button type="button" data-copy="#kidShort">Copy key ID (short)</button>
+		<button type="button" data-copy="#kidLong">Copy key ID (long)</button>
+
           <button type="button" data-copy="#pubkey">Copy public key block</button>
-        </div>
+ </div>
 
         <pre id="pubkey">-----BEGIN PGP PUBLIC KEY BLOCK-----
 
