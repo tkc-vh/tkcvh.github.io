@@ -17,11 +17,6 @@
 | **T19C1-VI** | `PDF` | `0eeabc0e17dc50702ca07cf7f86158c74f959b95c313a6329ca7c7e84409207e` |
 
 ===================
-b57695dd2f9c8b6bd004529ce23715ffe96a319840c3e2a4019e1477448ac6c1  T19C1-En.epub
-7c5929e006b83477f25a4469dc32c5b742349cb5dc5c7c2f501982f64a305f83  T19C1-En.pdf
-51a92b6a9915c0c24d61f947bf200f35739c1a2450416d6e94d950a15cfac4aa  T19C1-VI.epub
-0eeabc0e17dc50702ca07cf7f86158c74f959b95c313a6329ca7c7e84409207e  T19C1-VI.pdf
-===================
 
 ## 🛠️ Cách thức kiểm tra (Verification)
 Để kiểm tra tính nguyên bản của file bạn đang sở hữu, bạn có thể sử dụng lệnh sau trên Terminal (macOS/Linux):
