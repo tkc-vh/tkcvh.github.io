@@ -6,7 +6,7 @@ the SHA-256 hashes published in T19C1_hash_ban_quyen.md.
 Signed by:
 TRAN KHAC CUONG (TKC-VH)
 RSA 4096 – Key ID: 26281F7A
-Signing date: 22 Dec 2025
+Signing date: 23 Dec 2025
 
 Verification:
 gpg --verify <file>.asc <original-file>
