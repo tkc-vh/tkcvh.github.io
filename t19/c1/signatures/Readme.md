@@ -7,7 +7,7 @@ Protection methods:
 - SHA-256 cryptographic hash manifest
 - PGP detached digital signatures (RSA 4096)
 - Digital authenticity certificate
-- Signing date: 22 Dec 2025
+- Signing date: 23 Dec 2025
 
 Any modification to any file will invalidate the signatures.
 
