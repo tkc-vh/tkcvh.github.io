@@ -39,6 +39,9 @@
 > Nội dung gốc được phân phối chính thức qua **Amazon**, **Google Play Books**, **Apple Books**, và **Kobo Store**.
 > Mọi thay đổi về nội dung sẽ làm vô hiệu hóa mã Hash này.
 
+🔗 Digital signatures:
+https://github.com/tkc-vh/tkc-vh.github.io/tree/main/t19/c1/signatures
+
 ---
 
 **© 2025 TKC-VH. All Rights Reserved.**
