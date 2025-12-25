@@ -61,6 +61,22 @@ and prove that the file is not the original author-issued version.
 This archive serves as a technical and legal reference point for copyright
 verification, dispute resolution, and long-term archival purposes.
 
+
+### Multilingual Legal Archives
+
+In addition to the Vietnamese (VI) and English (EN) editions,
+T42C2 has been released in multiple international language versions.
+
+The cryptographic notarization for the French, Chinese, Japanese,
+and Korean editions is documented here:
+
+- **FR / CN / JA / KO Legal Archive**
+  https://github.com/tkc-vh/tkc-vh.github.io/tree/main/t42/c2/legal-archive/FR-JA-CN-KO-archive
+
+These records supplement the previously notarized VI and EN editions
+and together form a complete multilingual verification set for T42C2.
+
+
 © 2025 Tran Khac Cuong (TKC-VH). All Rights Reserved.
 
 
