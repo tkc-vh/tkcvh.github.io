@@ -11,6 +11,7 @@
 html, body {
   margin: 0;
   padding: 0;
+  /* Base serif for VI / EN / FR */
   font-family:
     "Palatino Linotype",
     Palatino,
@@ -23,19 +24,12 @@ html, body {
   text-align: justify;
 }
 
-
-
-
-
-
 /* ===== LANGUAGE-SPECIFIC FONT OVERRIDES (CSS 2.1 SAFE) ===== */
 
-:lang(fr) {
-  line-height: 1.50;   /* Pháp đọc dễ hơn chút */
-}
+/* French: nếu muốn thoáng nhẹ hơn (giữ như bạn đang có) */
+:lang(fr) { line-height: 1.50; }
 
-
-/* Japanese */
+/* Japanese (Mincho/Serif) */
 :lang(ja) {
   font-family:
     "Hiragino Mincho ProN", "Hiragino Mincho Pro",
@@ -44,9 +38,8 @@ html, body {
     serif;
 }
 
-/* Chinese Simplified (zh / zh-Hans) */
-:lang(zh),
-:lang(zh-Hans) {
+/* Chinese Simplified (zh-Hans) + fallback zh */
+:lang(zh-Hans), :lang(zh) {
   font-family:
     "Songti SC", "STSong", "SimSun",
     "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei",
@@ -54,15 +47,15 @@ html, body {
     serif;
 }
 
-
-/* Korean */
+/* Korean (ưu tiên Myeongjo/Serif trước; sans chỉ là fallback) */
 :lang(ko) {
   font-family:
-    "AppleMyungjo", "Batang", "Malgun Gothic",
-    "Apple SD Gothic Neo",
+    "AppleMyungjo", "Batang",
     "Noto Serif CJK KR", "Source Han Serif KR",
+    "Malgun Gothic", "Apple SD Gothic Neo",
     serif;
 }
+
 
 
 
