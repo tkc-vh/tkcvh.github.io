@@ -1,0 +1,36 @@
+T42C2 – Multilingual Legal Archive
+Signing Information
+
+Author:
+  TKC-VH (Tran Khac Cuong)
+
+Signing Purpose:
+  Public notarization and integrity verification for the
+  French, Chinese, Japanese, and Korean editions of T42C2.
+
+Signing Date:
+  2025-12-25
+
+Signing Environment:
+  macOS
+
+Cryptographic Method:
+  - SHA-256 checksums for all referenced EPUB and PDF files
+  - OpenPGP (GPG) detached signatures (.asc)
+
+PGP Key Information:
+  Key Type: RSA 4096-bit
+  Key ID: 262B17FA
+  User ID: TKC-VH <mr.tkc99999@gmail.com>
+
+Public Key:
+  The corresponding public key is available in this repository
+  and may also be retrieved from standard public key servers.
+
+Verification Commands (example):
+
+  shasum -a 256 <file>
+  gpg --verify <file>.asc <file>
+
+This signing record forms part of the permanent legal
+and scholarly archive for T42C2.
