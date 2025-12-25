@@ -11,13 +11,64 @@
 html, body {
   margin: 0;
   padding: 0;
-  font-family: Georgia, "Times New Roman", serif;
+  font-family:
+    "Palatino Linotype",
+    Palatino,
+    "Book Antiqua",
+    "Georgia",
+    "Times New Roman",
+    serif;
   font-size: 1em;
-  line-height: 1.48;          /* Đội hình chặt, vẫn thoáng – đẹp trên Google Play */
+  line-height: 1.48;
   text-align: justify;
 }
 
-/* Đoạn văn – hàng ngũ cổ điển, thụt đầu dòng */
+
+
+
+
+
+/* ===== LANGUAGE-SPECIFIC FONT OVERRIDES (CSS 2.1 SAFE) ===== */
+
+:lang(fr) {
+  line-height: 1.50;   /* Pháp đọc dễ hơn chút */
+}
+
+
+/* Japanese */
+:lang(ja) {
+  font-family:
+    "Hiragino Mincho ProN", "Hiragino Mincho Pro",
+    "Yu Mincho", "MS Mincho",
+    "Noto Serif CJK JP", "Source Han Serif JP",
+    serif;
+}
+
+/* Chinese Simplified (zh / zh-Hans) */
+:lang(zh),
+:lang(zh-Hans) {
+  font-family:
+    "Songti SC", "STSong", "SimSun",
+    "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei",
+    "Noto Serif CJK SC", "Source Han Serif SC",
+    serif;
+}
+
+
+/* Korean */
+:lang(ko) {
+  font-family:
+    "AppleMyungjo", "Batang", "Malgun Gothic",
+    "Apple SD Gothic Neo",
+    "Noto Serif CJK KR", "Source Han Serif KR",
+    serif;
+}
+
+
+
+
+
+/* ĐOẠN VĂN – HÀNG NGŨ CỔ ĐIỂN, THỤT ĐẦU DÒNG */
 p {
   margin: 0 0 0.6em;          /* từ 0.75em → 0.6em: vững hơn */
   text-indent: 1.45em;        /* cảm giác sách in thật */
