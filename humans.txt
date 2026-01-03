@@ -2,8 +2,12 @@
 Author & Maintainer:
   Name: Tran Khac Cuong
   Pen name: TKC-VH (Orion DiyaTam)
-  Contact: orionel.diyatam@gmail.com
-  Location: Japan
+  - Contact: orionel.diyatam@gmail.com
+  + Contact: mr.tkc99999@gmail.com
+
+- Location: Japan
++ Location: Vietnam
+
 
 /* SITE */
 Site name: TKC-VH Archive
@@ -27,7 +31,7 @@ Rights: All rights reserved
 Policy: https://tkc-vh.github.io/legal/
 
 /* SECURITY */
-Security contact: orionel.diyatam@gmail.com
+Security contact: orionel.diyatam@gmail.com + Contact: mr.tkc99999@gmail.com
 Security policy: https://tkc-vh.github.io/SECURITY.md
 Security file: https://tkc-vh.github.io/.well-known/security.txt
 
