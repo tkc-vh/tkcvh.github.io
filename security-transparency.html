@@ -74,6 +74,27 @@
       box-shadow: inset 0 0 0 1px rgba(255,211,119,.08);
       overflow:auto;
     }
+
+
+.sec-text p {
+  margin: 6px 0;
+  line-height: 1.55;
+}
+
+.sec-text strong {
+  color: var(--gold, #e6c26b);
+  font-weight: 600;
+}
+
+.mono {
+  margin-top: 6px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 13px;
+  letter-spacing: .08em;
+  opacity: .95;
+}
+
+
   </style>
 </head>
 
@@ -113,22 +134,39 @@
         <div class="rowline"></div>
 
         <h3 class="gold-title">1) Website model</h3>
-        <div class="sec-grid" role="list">
-          <div class="k" role="listitem">Hosting</div>
-          <div class="v">GitHub Pages (static hosting)</div>
+    
 
-          <div class="k" role="listitem">Server-side code</div>
-          <div class="v">None (no backend execution)</div>
+    
+<section class="sec-text" aria-labelledby="website-model">
 
-          <div class="k" role="listitem">User accounts</div>
-          <div class="v">None</div>
+  <p>
+    <strong>Hosting:</strong>
+    GitHub Pages (static hosting).
+  </p>
 
-          <div class="k" role="listitem">Data collection</div>
-          <div class="v">None (no forms, no analytics/ads scripts)</div>
+  <p>
+    <strong>Server-side code:</strong>
+    None. No backend execution.
+  </p>
 
-          <div class="k" role="listitem">Primary domain</div>
-          <div class="v"><a href="https://tkc-vh.github.io/">https://tkc-vh.github.io/</a></div>
-        </div>
+  <p>
+    <strong>User accounts:</strong>
+    None.
+  </p>
+
+  <p>
+    <strong>Data collection:</strong>
+    None. No forms, no analytics, no advertising scripts.
+  </p>
+
+  <p>
+    <strong>Primary domain:</strong>
+    <a href="https://tkc-vh.github.io/">https://tkc-vh.github.io/</a>
+  </p>
+</section>
+
+
+
 
         <div class="rowline"></div>
 
@@ -138,19 +176,32 @@
           vui lòng liên hệ theo các kênh dưới đây.
         </p>
 
-        <div class="sec-grid" role="list">
-          <div class="k" role="listitem">Primary contact</div>
-          <div class="v"><a href="mailto:mr.tkc99999@gmail.com">mr.tkc99999@gmail.com</a></div>
 
-          <div class="k" role="listitem">Secondary contact</div>
-          <div class="v"><a href="mailto:orionel.diyatam@gmail.com">orionel.diyatam@gmail.com</a></div>
+<section class="sec-text" aria-labelledby="security-reporting">
 
-          <div class="k" role="listitem">security.txt</div>
-          <div class="v"><a href="/.well-known/security.txt">/.well-known/security.txt</a></div>
+  <p>
+    <strong>Primary contact:</strong>
+    <a href="mailto:mr.tkc99999@gmail.com">mr.tkc99999@gmail.com</a>
+  </p>
 
-          <div class="k" role="listitem">Security policy</div>
-          <div class="v"><a href="/SECURITY.md">/SECURITY.md</a></div>
-        </div>
+  <p>
+    <strong>Secondary contact:</strong>
+    <a href="mailto:orionel.diyatam@gmail.com">orionel.diyatam@gmail.com</a>
+  </p>
+
+  <p>
+    <strong>security.txt:</strong>
+    <a href="/.well-known/security.txt">/.well-known/security.txt</a>
+  </p>
+
+  <p>
+    <strong>Security policy:</strong>
+    <a href="/SECURITY.md">/SECURITY.md</a>
+  </p>
+</section>
+
+
+
 
         <div class="links" aria-label="Quick links">
           <a href="/.well-known/security.txt">security.txt</a>
@@ -168,17 +219,35 @@
           Các tham chiếu dưới đây hỗ trợ việc xác nhận tính chính thống của kho nguồn và nhận diện tác giả.
         </p>
 
-        <div class="sec-grid" role="list">
-          <div class="k" role="listitem">Repository</div>
-          <div class="v"><a href="https://github.com/tkc-vh/tkc-vh.github.io">https://github.com/tkc-vh/tkc-vh.github.io</a></div>
+        
 
-          <div class="k" role="listitem">OpenPGP Fingerprint</div>
-          <div class="v"><span class="pill">Public reference</span></div>
-        </div>
 
-        <div class="mono" aria-label="OpenPGP fingerprint">
-8509 DBA6 32D2 7AAC E79A C507 5196 E6B6 2628 1F7A
-        </div>
+<section class="sec-text" aria-labelledby="integrity-verification">
+
+  <p>
+    <strong>Repository:</strong>
+    <a href="https://github.com/tkc-vh/tkc-vh.github.io">
+      https://github.com/tkc-vh/tkc-vh.github.io
+    </a>
+  </p>
+
+  <p>
+    <strong>OpenPGP fingerprint:</strong>
+    <span class="pill">Public reference</span>
+  </p>
+
+  <div class="mono" aria-label="OpenPGP fingerprint">
+    8509 DBA6 32D2 7AAC E79A C507 5196 E6B6 2628 1F7A
+  </div>
+
+  <div class="rowline"></div>
+</section>
+
+
+
+    
+
+
 
         <div class="rowline"></div>
 
